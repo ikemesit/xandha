@@ -3,7 +3,7 @@
 /* Set body base font family and lighter body text */
 
 body {
-  color: #000000; //#5a5a5a;
+  color: #3a3a3a;
   font-family: $paragraph-font-family;
   font-size: 16px;
 }
@@ -49,6 +49,7 @@ body {
 button, .btn{
 	outline: none;
 	font-family: $raleway-bold;
+	border-radius: 24px;
 	&:focus{
 		outline: none !important;
 		font-family: $raleway-bold;

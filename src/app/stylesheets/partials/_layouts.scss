@@ -1,11 +1,11 @@
-/*======== Landing Viewport wrapper ========*/
-.landing-viewport-wrap{
+// ATF WRAP  
+.atf-wrap{
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
-  height: auto;
-  box-shadow: inset 0 80px 100px rgba($black, 0.6);
+  height: 100vh;
+  box-shadow: inset 0 100vh rgba($prime-blue, 0.7);
 
   & video{
     position: absolute;
@@ -23,19 +23,10 @@
     &::-webkit-media-controls{
       display: none !important;
     }
-    // @include media(">=xl"){
-    //   min-width: 100%;
-    //   max-width: auto;
-    // }
   }
-
-  // @include media("<sm"){
-    //background-color: $orange;
-    // box-shadow: none;
-  // }
 }
 
-/*======== Customize landing viewport top nav ========*/
+// MAIN NAV
 nav[role="main-nav"].navbar.navbar-default{
     background-color: rgba(#eee, 0);
     border-color: rgba(#eee, 0);
@@ -45,11 +36,9 @@ nav[role="main-nav"]{
 	padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-	// height: 10vh;
   background-color: none;
 
 	.navbar-brand{
-    margin-top: -8px;
 		font-size: 4.5rem;
 		font-weight: bold;
 		font-family: $headings-font-family;
@@ -59,16 +48,29 @@ nav[role="main-nav"]{
     }
 	}
 
+  .navbar-nav{
+    margin-right: 20px;
+    a{
+      color: $white;
+      font-family: $raleway-bold;
+      transition: color 0.2s;
+      &:hover{
+        color: $comp_1;
+      }
+    }
+  }
+
   button.navbar-toggle{
     color: $white;
     font-size: rem-calc(30);
   }
 
 	button.btn-primary{
-		margin-right: rem-calc(20);
-    background-color: $primary;
-    border-color: $primary;
+		padding: 5px 20px;
+    background-color: rgba($white, 0);
+    border: 2px solid $white;
     transition: all 0.3s ease;
+    font-family: $raleway-bold;
     &:hover{
       background-color: $comp_1;
       border-color: $comp_1;
@@ -76,9 +78,8 @@ nav[role="main-nav"]{
 	}
 }
 
-/*======== Alternate top nav ========*/
+// ALT NAV
 nav[role="alt-nav"]{
-  // background-color: $comp_2;
   padding-top: 1rem;
   height: auto;
   box-shadow: 0px 1px 1px rgba($black, 0.2);
@@ -130,9 +131,9 @@ nav[role="alt-nav"]{
   }
 }
 
-/*======== Landing Viewport content styles ========*/
-.landing-viewport-content {
-  height: 80vh;
+// ATF CONTENT
+.atf-content {
+  height: 100vh;
   margin-bottom: 0;
   display: table;
   width: 100%;
@@ -153,10 +154,6 @@ nav[role="alt-nav"]{
     display: block;
     margin-top: 30vh;
     font-size: 8rem;
-    // @include media('<sm'){
-    //   margin-top: 15vh;
-    //   font-size: 3rem;
-    // }
   }
 
   & p{
@@ -170,97 +167,14 @@ nav[role="alt-nav"]{
     input.form-control{
       border: 2px solid $white;
     }
-
-    // @include media("<=sm"){
-    //   margin: 1rem 3rem auto 3rem;
-    //   width: auto;
-    // }
-
-    // @include media(">=md"){
       @include center-block();
       width: 600px;
-    // }
-  }
-
-  & button{
-    // @include media("<sm"){
-    //   margin-left: auto;
-    //   margin-right: auto;
-    //   margin-top: 2rem;
-    // }
   }
 }
 
-.landing-viewport-footer{
-  height: auto;
-  background-color: rgba($primary, 0.7);
-  clear: both;
-  overflow: hidden;
-  & p, a{
-    color: $white;
-  }
+// COMMON CONTENT STYLES FOR LANDING PAGE
 
-  & ul{
-    padding: 0;
-    display: table;
-    width: 60%;
-    //height: 10vh;
-    margin-left: 0; //auto;
-    margin-right: 0;//auto;
-    margin-bottom: 0;
-    float: left;
-    & li{
-      list-style: none;
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      border-right: thin solid darken($primary, 10%);
-      transition: all 0.3s ease;
-      &:hover{
-        border-right: thin solid $comp_1;
-      }
-    }
-    & a{
-      height: 10vh;
-      display: block;
-      padding: 3.5vh 3.5vw;
-      font-family: $raleway-bold;
-      transition: all 0.3s ease;
-      &:hover{
-        height: 10vh;
-        display: block;
-        background-color: $comp_1;
-        padding: 3.5vh 3.5vw;
-        text-decoration: none;
-      }
-    }
-    &:nth-of-type(2){
-      margin-left: 0;
-      margin-right: 0;
-      float: right;
-      width: 15%;
-      border: none;
-      & li{
-          border: none;
-      }
-      & a{
-        height: 10vh;
-        display: block;
-        padding: 3.5vh .5vw;
-        &:hover{
-          height: 10vh;
-          display: block;
-          padding: 3.5vh .5vw;
-        }
-      }
-    }
-  }
-}
-
-/* COMMON CONTENT STYLES FOR LANDING PAGE
--------------------------------------------------- */
-
-/* Center and set styling for section header and sub-text */
+// Center and set styling for section header and sub-text
 .section-header , .section-subtext{
 	@include center-block;
 	text-align: center;
@@ -304,17 +218,11 @@ nav[role="alt-nav"]{
 
 /*======== Content Wrap ========*/
 .content-wrap{
-  //background-color: #EDEFED;
   background-color: $white;
   width: 100%;
   height: auto;
   &[class~="padded"]{
-    background-color: $neutral1;
-  //   background: red; /* For browsers that do not support gradients */
-  // background: -webkit-linear-gradient(left top, $fundy-fog, $neutral1); /* For Safari 5.1 to 6.0 */
-  // background: -o-linear-gradient(bottom right, $fundy-fog, $neutral1); /* For Opera 11.1 to 12.0 */
-  // background: -moz-linear-gradient(bottom right, $fundy-fog, $neutral1); /* For Firefox 3.6 to 15 */
-  // background: linear-gradient(to bottom right, $fundy-fog, $neutral1); /* Standard syntax */
+    background-color: $white; //$neutral1;
   }
 }
 
@@ -333,7 +241,9 @@ nav[role="alt-nav"]{
     background-color: $white;
     overflow-y: auto;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px #eee;
+    box-shadow: 2px 2px 4px #ddd;
+    transition: box-shadow 0.4s;
+    margin-bottom: 20px;
     & a{
       width: auto;
       height: auto;
@@ -341,15 +251,19 @@ nav[role="alt-nav"]{
       color: none;
       overflow: auto;
     }
+    &:hover{
+      box-shadow: 2px 2px 4px darken(#ddd, 15%);
+    }
   }
 
 	.card-img-top {
 		max-width: 100%; //rem-calc(354);
+    height: 200px;
     margin-bottom: 0;
 	}
 
 	.card-title {
-		color: $styx;
+		color: $prime-blue;
 		font-family: $raleway-bold;
 		font-size: 1em;
     padding: 5px 10px;
@@ -358,6 +272,13 @@ nav[role="alt-nav"]{
 			font-family: "FontAwesome";
 			float: right;
 		}
+    & a{
+      color: $prime-blue;
+      transition: color 0.2s;
+      &:hover{
+        color: $comp_1;
+      }
+    }
 	}
 
   // @include media(">=md", "<lg"){
@@ -380,14 +301,6 @@ nav[role="alt-nav"]{
 /*======== ACTIVITIES ========*/
 
 .activities {
-  // @include media(">=md", "<lg"){
-      //@extend %vertical-padding;
-      // padding-top: 50px;
-      // padding-bottom: 50px;
-  // }
-
-  // @include media(">=lg"){
-    //@extend %vertical-padding;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 85px;
@@ -396,8 +309,6 @@ nav[role="alt-nav"]{
     .col-lg-12 {
       padding: 0 100px;
     }
-
-  // }
 
 	.section-header {
 		margin-bottom: 50px;
@@ -428,8 +339,8 @@ nav[role="alt-nav"]{
     display: table;
     width: 100%;
     height: 100%;
-    background-color: rgba($orange, 0);
-    transition: background-color 0.3s ease;
+    background-color: rgba($prime-blue, 0.5);
+    transition: background-color 0.3s;
 
     & .activity-content{
       display: table-cell;
@@ -506,13 +417,12 @@ nav[role="alt-nav"]{
 }
 
 .upper-footer{
-  //background-color: lighten($black, 10%);
-  background-color: darken($primary, 5%);
+  background-color: darken($prime-blue, 7%);
 }
 
 .bottom-footer{
-  //background-color: lighten($black, 5%);
-  background-color: darken($primary, 12%);
+  font-size: 0.8em;
+  background-color: darken($prime-blue, 7%);
 }
 
 
@@ -532,20 +442,6 @@ nav[role="alt-nav"]{
   background-color: $neutral2;
   height: 8em;
   padding: 1em 0;
-  // background: url("../images/destination_images/slide2.jpg") no-repeat;
-  // background-size: cover;
-  // box-shadow: inset 0 8rem 8rem rgba($black, 0.6);
-  // background: red; /* For browsers that do not support gradients */
-  // background: -webkit-linear-gradient(left top, $fundy-fog, $ancient-ochre); /* For Safari 5.1 to 6.0 */
-  // background: -o-linear-gradient(bottom right, $fundy-fog, $ancient-ochre); /* For Opera 11.1 to 12.0 */
-  // background: -moz-linear-gradient(bottom right, $fundy-fog, $ancient-ochre); /* For Firefox 3.6 to 15 */
-  // background: linear-gradient(to bottom right, $fundy-fog, $ancient-ochre); /* Standard syntax */
-  // & h2{
-  //   margin-top: 2.5rem;
-  //   font-family: $raleway-bold;
-  //   color: $white;
-  //   text-align: center;
-  // }
 }
 
 /*======== filter space ========*/

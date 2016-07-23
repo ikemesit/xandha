@@ -124,15 +124,22 @@ input.form-control{
 
 
 /*======== Destination Search module ========*/
+@keyframes animate-bg-fade{
+  from{ background-color: rgba($prime-blue, 0); }
+  to{ background-color: rgba($prime-blue, 0.6); }
+}
 .lookup-backdrop{
 	position: fixed;
 	z-index: 1;
-	background-color: rgba($blue, 0.6);
+	background-color: rgba(#072967, 0.6);
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	display: none;
+	animation-name: animate-bg-fade;
+	animation-duration: 0.6s;
+	animation-direction: forward;
 }
 .destination-lookup-container{
 	display: block;
@@ -226,17 +233,19 @@ input.form-control{
 	& button{
 		position: relative;
 		width: 10%;
+		height: 52px;
 		border: none;
 		border-radius: 0;
 		border-top-right-radius: 3px;
 		border-bottom-right-radius: 3px;
-		padding: 15px;
+		padding: auto 15px;
 		background-color: $primary;
 		color: $white;
 		z-index: 1;
-		transition: background-color 0.2s ease;
+		transition: background-color 0.2s;
 		&:hover{
 			background-color: $comp_1;
+			color: $white;
 		}
 
 	}

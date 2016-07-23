@@ -1,10 +1,10 @@
-<!--======== Landing Viewport wrap ========-->
-<div class="landing-viewport-wrap">
+<!-- ATF Content Begins -->
+<div class="atf-wrap">
+
   <video autoplay loop id="bgvid" poster="assets/images/globe-poster.png">
     <source src="assets/images/globe.mp4" type="video/mp4">
   </video>
 
-  <!-- Top Nav -->
   <nav class="navbar navbar-default" role="main-nav">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,69 +23,36 @@
   
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <button type="button" class="btn btn-primary navbar-btn navbar-right">Sign in</button>
         <ul class="nav navbar-nav navbar-right">
-          <!-- <li><a href="#">Link</a></li> -->
-          <li><button type="button" class="btn btn-primary" >Log in</button></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Tourism Mart</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
-  </nav>
-  <!-- End of Top Nav -->
+  </nav><!-- / .navbar -->
 
   <div class="container-fluid">
-    <!-- Landing Viewport content -->
-    <div class="landing-viewport-content">
+    <!-- ATF content -->
+    <div class="atf-content">
       <div class="inner">
         <h2>Find amazing spots to relax</h2>
         <p class="hidden-sm-down">Find that perfect spot to chillout and unwind, or if you prefer, have breath-taking fun. Why wait? You can start right below.</p>
-
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <!-- Search Form directive -->
             <div search-form></div>
           </div>
-        </div>
+        </div><!-- / .row -->
+      </div><!-- / .inner -->
 
+    </div><!-- / .ATF content -->
+  </div><!-- / .container-fluid -->
+</div><!-- / .landing-viewport-wrap -->
 
-        <!-- End of Booking Form -->
-      </div>
-    </div>
-    <!-- end of landing viewport content -->
-  </div>
-  <!-- end of landing viewport content container -->
-
-  <!--Landing Viewport Footer -->
-  <div class="landing-viewport-footer hidden-sm-down">
-    <ul>
-      <li><a ui-sref="destinations" title="">Destinations</a></li>
-      <li><a ui-sref="packages" title="">Packages</a></li>
-      <li><a ui-sref="events" title="">Events</a></li>
-      <li><a ui-sref="#" title="">Tourism Mart</a></li>
-    </ul>
-    <ul>
-      <li><a ui-sref="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
-      <li><a ui-sref="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
-      <li><a ui-sref="#" title=""><i class="fa fa-google-plus fa-2x"></i></a></li>
-    </ul>
-  </div>
-  <!-- /.Landing Viewport Footer -->
-</div>
-<!--======== End of Landing Viewport wrap ========-->
-
-
-<!-- ======== Intro Section ======== -->
-<div class="content-wrap">
-  <div class="container">
-    <!-- Introductory phrase -->
-    <div class="row intro">
-      <div class="col-lg-12">
-        <h2 class="section-header featurette-heading"><span class="emphasis">Take a trip.</span> Discover Naija like never before</h2>
-        <p class="section-subtext">Welcome to Nigeria, the home of hospitality, a land of diverse opportunities with a unique history, culture, climate, investment opportunities, tourist attractions and holiday resorts. As the heartbeat of Africa, Nigeria truly represents the commercial and cultural nerve-center of Africa. You are welcome.</p>
-      </div>
-    </div>
-  </div><!-- /.Container -->
-</div><!-- /.Content-wrap -->
-<!-- ======== End of Intro Section ======== -->
+<!-- End of ATF Content -->
 
 <!-- ======== Content Wrap ======== -->
 <div class="content-wrap padded">
@@ -94,14 +61,69 @@
   <!--======== Trending Destinations ========-->
     <div class="row trending-destinations">
       <div class="col-lg-12">
-        <h2 class="section-header">Trending Destinations</h2>
+        <h2 class="section-header">#Explore wonderful places</h2>
 
-         <div class="col-lg-4"  ng-repeat="dest in viewDestinations">
+         <div class="col-lg-4">
           <div class="card">
-            <a href="#" ng-click="viewDestination(dest.id)">
-              <img class="card-img-top" ng-src="{{dest.dest_media_path}}" alt="{{dest.dest_name}}">
+            <a href="#">
+              <img class="card-img-top" ng-src="assets/images/destination_images/whispering_palms_thumb.jpg" alt="#">
               <div class="card-block">
-                <h4 class="card-title"><a href="#" ng-click="viewDestination(dest.id)">{{dest.dest_name}}</a></h4>
+                <h4 class="card-title"><a href="#">Whispering Palms</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+         <div class="col-lg-4">
+          <div class="card">
+            <a href="#">
+              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1468476775582-6bede20f356f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=50c6901b794046c29f94700a8b940ad4" alt="#">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#">The Icecapes</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+         <div class="col-lg-4">
+          <div class="card">
+            <a href="#">
+              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1464695110811-dcf3903dc2f4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=34cc42f969e2f39d7a8af95d16c7dcca" alt="#">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#">Lake Placid</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+         <div class="col-lg-4">
+          <div class="card">
+            <a href="#">
+              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=29a9bb29bcbf19a5954d0110b19d5b51" alt="#">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#">Rail Treks</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+         <div class="col-lg-4">
+          <div class="card">
+            <a href="#">
+              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b734e103303c5965225682077ee72f86" alt="#">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#">Yosemite</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+         <div class="col-lg-4">
+          <div class="card">
+            <a href="#">
+              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1459197648846-52de5e4d1e9a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d406bed6e26fba43fe84f14e2a95dd3c" alt="#">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#">North of the Wall</a></h4>
               </div>
             </a>
           </div>

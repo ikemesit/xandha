@@ -1,7 +1,8 @@
-/* COLORS
--------------------------------------------------- */
+/*
+** COLORS 
+*/
 
-/* Regular colors */
+// --- Regular colors --- //
 $white       			:	rgb(255,255,255);
 $black					:	rgb(0, 0, 0);
 $orange					:	rgb(246, 146, 30);
@@ -10,11 +11,11 @@ $comp_1					:	#ff4a4a;
 $comp_2					:	#FE8F24; //#FFAE4D; //#FFC34A;
 $neutral1				:	#f4f4f4;
 $neutral2				:	#5a5a5a;
-$blue					: 	#327CCB;
+$prime-blue				: 	#072967;
 
 /*
-**	PALETTE =>	True Peacock
-**	URL		=>	http://www.colourlovers.com/palette/4064586/true_peacock
+	PALETTE =>	True Peacock
+	URL		=>	http://www.colourlovers.com/palette/4064586/true_peacock
 */
 $fundy-fog				:	rgb(185,237,199);
 $florabrin-green		:	rgb(155,196,156);
@@ -24,8 +25,8 @@ $styx					:	rgb(0,16,40);
 
 
 /*
-**  PALETTE =>  APC Travel Mountain
-**  URL   =>  http://www.colourlovers.com/palette/2122252/APC_Travel_Mountain
+	PALETTE =>  APC Travel Mountain
+	URL   =>  http://www.colourlovers.com/palette/2122252/APC_Travel_Mountain
 */
 $savant : rgb(193,221,199);
 $sweet-vanilla : rgb(245,232,198);
@@ -33,13 +34,12 @@ $mountain-green : rgb(187,205,119);
 $aprikose : rgb(220,128,81);
 $ancient-ochre : rgb(244,210,121);
 
-$global-edge-margin:	30px;
 
+/*
+** TYPOGRAPHY 
+*/
 
-/*======== Typography Settings ========*/
-
-
-/* INSTALLED FONTS*/
+// --- INSTALLED FONTS --- //
 
 // Raleway
 $raleway-bold			:	'ralewaybold';
