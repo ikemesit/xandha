@@ -1,0 +1,386 @@
+/*======== input form ========*/
+input.form-control{
+	// border: 2px solid $input-border-color;
+	// border-right: rgba($input-border-color, 0);
+	transition: all 0.3s ease;
+
+	&:hover{
+		border: 2px solid $primary;
+		// border-right: rgba($input-border-color, 0);
+	}
+	&:focus{
+		border: 2px solid $primary;
+		// border-right: rgba($input-border-color, 0);
+	}
+}
+
+& .input-group-addon{
+  	background-color: $primary;
+  	color: $white;
+  	border: $primary;
+  	transition: all 0.3s ease;
+  &:hover{
+    background-color: $comp_1;
+    cursor: pointer;
+  }
+}
+
+
+/*======== Listing Card Template ========*/
+
+.listing-card{
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 1px rgba($black, 0.2);
+  background-color: $white;
+  margin-bottom: 30px;
+  border-radius: 4px;
+
+  & a.click-wrap{
+    text-decoration: none;
+    color: none;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    &:hover{
+    	cursor: pointer;
+    }
+  }
+
+  & img{
+    width: 100%;
+    height: 160px;
+    margin-bottom: 5px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  & h4{
+    color: rgba($black, 0.8);
+  }
+}
+
+.listing-body{
+  width: 100%;
+  display: block;
+  padding: 5px 10px;
+  & p{
+    font-size: 12px;
+    margin-bottom: 0;
+    color: rgba($black, 0.5);
+  }
+  // & p.date{
+  //   text-transform: uppercase;
+  //   margin: 0 0 5px 0;
+  //   color: rgba($black, 0.6);
+  // }
+  // & h4.title{
+  //   font-family: $raleway-extra-bold;
+  //   font-size: 16px;
+  //   margin: 0;
+  // }
+  // & .listing-excerpt{
+  //   & p{
+  //     font-size: 12px;
+  //   }
+  // }
+}
+
+.listing-footer{
+  width: 100%;
+  height: 40px;
+  overflow: auto;
+  display: block;
+  border-top: thin solid rgba($black, 0.1);
+  & .listing-tags{
+    display: inline-block;
+    float: left;
+    padding: 5px 10px;
+    width: 70%;
+    height: 100%;
+
+    & a{
+      display: inline-block;
+      margin: 0 10px 0 0;
+      font-size: 12px;
+      color: rgba($black, 0.6);
+      font-weight: bold;
+    }
+  }
+  & .share, .bookmark{
+    width: 15%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    padding: 5px 10px;
+  }
+  & .share{
+    border-right: thin solid rgba($black, 0.1);
+    border-left:  thin solid rgba($black, 0.1);
+  }
+  & .fa-bookmark{
+    //padding-left: 10px;
+  }
+}
+
+
+/*======== Destination Search module ========*/
+.lookup-backdrop{
+	position: fixed;
+	z-index: 1;
+	background-color: rgba($blue, 0.6);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+}
+.destination-lookup-container{
+	display: block;
+	margin-top: 20px;
+
+	& .location-dropdown{
+		position: relative;
+		background-color: $white;
+		padding: 15px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-right: thin solid rgba($black, 0.5);
+		float: left;
+		width: 25%;
+		cursor: pointer;
+		z-index: 1;
+		& span{
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		// &.fa-location-arrow{
+		// 	display: block;
+		// }
+		& .location-list{
+			list-style: none;
+			background-color: $white;
+			top: 100%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			& .location-list-data{
+				display: none;
+				list-style: none;
+				padding: 10px 10px 10px 15px;
+				border-top: 1px solid #eee;
+			}
+		}
+	}
+
+	& .destination-dropdown{
+		position: relative;
+		background-color: $white;
+		width: 65%;
+		padding: 15px;
+		float: left;
+		cursor: pointer;
+		z-index: 1;
+		& .fa-search{
+			float: left;
+			margin-left: 0;
+			margin-right: 20px;
+			margin-top: 5px;
+		}
+		& span{
+			float: left;
+		}
+		& input{
+			width: 100%;
+			display: none;
+			outline: none;
+			border: 0;
+			position: absolute;
+		}
+		& .fa-cog{
+			position: absolute;
+			z-index: 1;
+			font-size: 20px;
+			right: 10px;
+		}
+		& .destination-list{
+			//display: block;
+			list-style: none;
+			background-color: $white;
+			top: 100%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			& .destination-list-data{
+				//display: none;
+				list-style: none;
+				padding: 10px 10px 10px 15px;
+				border-top: 1px solid #eee;
+				text-align: left;
+			}
+		}
+	}
+	& button{
+		position: relative;
+		width: 10%;
+		border: none;
+		border-radius: 0;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		padding: 15px;
+		background-color: $primary;
+		color: $white;
+		z-index: 1;
+		transition: background-color 0.2s ease;
+		&:hover{
+			background-color: $comp_1;
+		}
+
+	}
+}
+
+
+
+/*======== Packages card ========*/
+.package-card{
+	& .card-overlay{
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($black, 0.9);
+		position: absolute;
+		//filter: blur;
+		border-radius: 0.25rem;
+		& a{
+			background-color: $primary;
+			display: block;
+			margin: 50% 80px;
+			transition: color 0.2s ease;
+			outline: none;
+			border: none;
+			font-family: $raleway-bold;
+			box-shadow: 0px 0px 25px rgba($black, 0.6);
+			&:focus{
+				background-color: darken($primary, 10%);
+			}
+			&:hover{
+				background-color: darken($primary, 10%);
+			}
+			&:active{
+				background-color: darken($primary, 10%);
+			}
+			& i{
+			    color: $white;
+			    margin-left: 10px;
+			    opacity: 0;
+			  }
+			  &:hover{
+			    background-color: $comp_1;
+			    & i{
+			      // @include slideInDown(
+			      //   $duration: 0.3s,
+			      //   $count: 1,
+			      //   $delay: 0s,
+			      //   $function: ease,
+			      //   $fill: both
+			      // );
+			    }
+			  }
+		}
+		&:hover{
+			// @include fadeIn(
+			// 	$duration: 0.3s,
+			//     $count: 1,
+			//     $delay: 0s,
+			//     $function: ease,
+			//     $fill: both
+			// );
+		}
+	}
+  	& a{
+  		text-decoration: none;
+
+  		&:hover{
+  			cursor: pointer;
+  		}
+  	}
+	img.card-img-top{
+		background: url("../images/destination_images/protea_hotels_thumb.jpg") no-repeat;
+		width: 100%;
+		height: 10rem;
+	}
+	& .card-block{
+		//max-height: 9rem;
+		@include clearfix();
+	}
+	& h4.card-title{
+		font-family: $raleway-bold;
+		color: $neutral2;
+		margin-bottom: 0;
+	}
+
+	& hr{
+		margin: 5px 0;
+	}
+
+	& p.card-text{
+		color: $neutral2;
+		font-size: 0.75rem;
+		//margin-bottom: 0;
+	}
+
+	& small{
+		font-size: 0.75rem;
+	}
+
+	& i{
+		color: $neutral2;
+		transition: color 0.2s ease;
+		&:hover{
+			color: $comp_1;
+		}
+		& small{
+			font-family: $opensans;
+			margin-right: 1rem;
+		}
+	}
+
+	& ul.features{
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+		& li{
+			margin-right: 0.5rem;
+			& i{
+				color: $comp_2;
+			}
+			& small{
+				color: $comp_2;
+				font-family: $raleway-bold;
+				font-size: 0.75rem;
+				margin-left: 5px;
+				//transition: color 0.2s ease;
+				// &:hover{
+				// 	color: $comp_2;
+				// }
+			}
+		}
+	}
+
+	& .card-footer{
+		@include clearfix();
+		background-color: $neutral1;
+		& i{
+			margin-right: 1rem;
+			&[class*="fa-bookmark"]{
+				margin-right: 0;
+			}
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,209 @@
+<!--======== Landing Viewport wrap ========-->
+<div class="landing-viewport-wrap">
+  <video autoplay loop id="bgvid" poster="assets/images/globe-poster.png">
+    <source src="assets/images/globe.mp4" type="video/mp4">
+  </video>
+
+  <!-- Top Nav -->
+  <nav class="navbar navbar-default" role="main-nav">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="home">
+          <!-- <img src="assets/images/xandha_logo.svg" alt=""> -->
+          Xandha
+        </a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#">Link</a></li> -->
+          <li><button type="button" class="btn btn-primary" >Log in</button></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+  <!-- End of Top Nav -->
+
+  <div class="container-fluid">
+    <!-- Landing Viewport content -->
+    <div class="landing-viewport-content">
+      <div class="inner">
+        <h2>Find amazing spots to relax</h2>
+        <p class="hidden-sm-down">Find that perfect spot to chillout and unwind, or if you prefer, have breath-taking fun. Why wait? You can start right below.</p>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <!-- Search Form directive -->
+            <div search-form></div>
+          </div>
+        </div>
+
+
+        <!-- End of Booking Form -->
+      </div>
+    </div>
+    <!-- end of landing viewport content -->
+  </div>
+  <!-- end of landing viewport content container -->
+
+  <!--Landing Viewport Footer -->
+  <div class="landing-viewport-footer hidden-sm-down">
+    <ul>
+      <li><a ui-sref="destinations" title="">Destinations</a></li>
+      <li><a ui-sref="packages" title="">Packages</a></li>
+      <li><a ui-sref="events" title="">Events</a></li>
+      <li><a ui-sref="#" title="">Tourism Mart</a></li>
+    </ul>
+    <ul>
+      <li><a ui-sref="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
+      <li><a ui-sref="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
+      <li><a ui-sref="#" title=""><i class="fa fa-google-plus fa-2x"></i></a></li>
+    </ul>
+  </div>
+  <!-- /.Landing Viewport Footer -->
+</div>
+<!--======== End of Landing Viewport wrap ========-->
+
+
+<!-- ======== Intro Section ======== -->
+<div class="content-wrap">
+  <div class="container">
+    <!-- Introductory phrase -->
+    <div class="row intro">
+      <div class="col-lg-12">
+        <h2 class="section-header featurette-heading"><span class="emphasis">Take a trip.</span> Discover Naija like never before</h2>
+        <p class="section-subtext">Welcome to Nigeria, the home of hospitality, a land of diverse opportunities with a unique history, culture, climate, investment opportunities, tourist attractions and holiday resorts. As the heartbeat of Africa, Nigeria truly represents the commercial and cultural nerve-center of Africa. You are welcome.</p>
+      </div>
+    </div>
+  </div><!-- /.Container -->
+</div><!-- /.Content-wrap -->
+<!-- ======== End of Intro Section ======== -->
+
+<!-- ======== Content Wrap ======== -->
+<div class="content-wrap padded">
+  <!--======== Centering Container ========-->
+  <div class="container">
+  <!--======== Trending Destinations ========-->
+    <div class="row trending-destinations">
+      <div class="col-lg-12">
+        <h2 class="section-header">Trending Destinations</h2>
+
+         <div class="col-lg-4"  ng-repeat="dest in viewDestinations">
+          <div class="card">
+            <a href="#" ng-click="viewDestination(dest.id)">
+              <img class="card-img-top" ng-src="{{dest.dest_media_path}}" alt="{{dest.dest_name}}">
+              <div class="card-block">
+                <h4 class="card-title"><a href="#" ng-click="viewDestination(dest.id)">{{dest.dest_name}}</a></h4>
+              </div>
+            </a>
+          </div>
+         </div>
+
+      </div>
+      <!-- /col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <!--======== End of Trending Destinations ========-->
+    <hr class="featurette-divider"></hr>
+    <!--======== Activities ========*-->
+    <div class="row activities">
+      <div class="col-lg-12">
+        <h2 class="section-header">What you can do this holiday</h2>
+        <p class="section-subtext">
+        Escape the hustle &amp; bustle of life, find pleasure in the simple things. From camping to beach massages, engage in fun activities of variety...your experience begins here.
+        </p>
+      </div>
+      <!--/.col-lg-12-->
+      <div class="col-xs-12 col-md-8 activity-card-container">
+        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg')">
+          <a ui-sref="#" title="">
+            <div class="content-wrap">
+              <div class="activity-content">
+                <h2>Horse Back riding</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 activity-card-container">
+        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg')">
+          <a ui-sref="#" title="">
+            <div class="content-wrap">
+              <div class="activity-content">
+                <h2>Canoeing</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 activity-card-container">
+        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg')">
+          <a ui-sref="#" title="">
+            <div class="content-wrap">
+              <div class="activity-content">
+                <h2>Water Skiing</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 activity-card-container">
+        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg')">
+          <a ui-sref="#" title="">
+            <div class="content-wrap">
+              <div class="activity-content">
+                <h2>Jet Surfing</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 activity-card-container">
+        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg')">
+          <a ui-sref="#" title="">
+            <div class="content-wrap">
+              <div class="activity-content">
+                <h2>Exploring</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--======== End of Activities ========-->
+    <hr class="featurette-divider"></hr>
+    <!--======== Partnerships ========-->
+    <div class="row partnerships">
+      <div class="col-xs-12">
+        <h2 class="section-header">Partner with us</h2>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-circle" src="assets/images/we-cover-you.png" alt="Generic placeholder image" width="250" height="250">
+        <h4>Work with us</h4>
+        <p>Are you a resort, a vacation spot or a chillout spot? Grow your business &amp; increase your customer base by partnering with us and leveraging our unique network </p>
+        <p><a class="btn btn-success btn-lg" ui-sref="#" role="button">View details</a></p>
+      </div>
+      <!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <img class="img-circle" src="assets/images/serve-your-product.png" alt="Generic placeholder image" width="250" height="250">
+        <h4>Market your product with us</h4>
+        <p>Got amazing art &amp; crafts works to sell? We've got you covered. Leverage on our platform to generate thousands of sales leads by listing your art &amp; crafts works with us!</p>
+        <p><a class="btn btn-success btn-lg" ui-sref="#" role="button">View details</a></p>
+      </div>
+      <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
+    <!--======== End of partnerships ========-->
+  </div>
+  <!-- /.container -->
+  <!--======== End of Centering Container ========-->
+</div><!-- /.Content Wrap -->
+<div global-footer></div>

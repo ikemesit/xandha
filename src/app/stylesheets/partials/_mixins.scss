@@ -1,0 +1,47 @@
+//Rem Fontsize with Px fallback
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem-calc($size);
+}
+
+// Background Gradient
+// @param {Color} $startColor [#3C3C3C] - Start Color
+// @param {Color} $endColor [#999999] - End Color
+
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:      -o-linear-gradient(to bottom, $startColor, $endColor);
+    background-image:         linear-gradient(to bottom, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+
+// vertical & Horizontal Centering
+// @param {Boolean} $horizontal - Center horizontally?
+// @param {Boolean} $vertical - Center Vertically?
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+
+// Default effect transition settings
+// @param {string} $property - property animated (coould be multiple)
+// @param {int} $transition-duration
+// @param {string} $transition-func
+// @param {string} $transition-delay

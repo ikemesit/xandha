@@ -1,0 +1,64 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Set body base font family and lighter body text */
+
+body {
+  color: #000000; //#5a5a5a;
+  font-family: $paragraph-font-family;
+  font-size: 16px;
+}
+
+
+
+
+.btn .success{
+	background-color: $primary;
+	&:hover{
+		background-color: $comp_1;
+		border: thin solid $comp_1;
+	}
+}
+
+.emphasis{
+	color: $comp_2;
+}
+
+
+
+
+/*======== Placeholders ========*/
+
+%vertical-padding {
+	padding-top: rem-calc(50);
+	padding-bottom: rem-calc(50);
+
+}
+
+%horizontal-padding {
+	// @include media('<768px') {
+	//  	padding-left: rem-calc(50);
+	// 	padding-right: rem-calc(50);
+	// }
+
+	// @include media('>768px') {
+	 	padding-left: rem-calc(200);
+		padding-right: rem-calc(200);
+	// }
+}
+
+button, .btn{
+	outline: none;
+	font-family: $raleway-bold;
+	&:focus{
+		outline: none !important;
+		font-family: $raleway-bold;
+	}
+	&:active{
+		outline: none !important;
+		font-family: $raleway-bold;
+	}
+	&:hover{
+		outline: none !important;
+		font-family: $raleway-bold;
+	}
+}

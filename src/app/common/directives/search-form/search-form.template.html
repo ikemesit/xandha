@@ -1,0 +1,30 @@
+<div class="lookup-backdrop"></div>
+<div class="destination-lookup-container">
+  <div class="location-dropdown">
+    <i class="fa fa-location-arrow"></i>
+    <span class="location-init">Abuja</span>
+    <i class="fa fa-caret-down pull-right" id="show-location-list"></i>
+    <div class="location-list-container" style="display: none">
+      <ul class="location-list">
+        <li class="location-list-data">Abuja</li>
+        <li class="location-list-data">Lagos</li>
+        <li class="location-list-data">Cross River</li>
+        <li class="location-list-data">Port Harcourt</li>
+        <li class="location-list-data">Jos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="destination-dropdown">
+    <i class="fa fa-search"></i>
+    <span class="destination-init">Select a Destination</span>
+    <input type="text" name="" value="" id="destination-search" placeholder="Search For a Destination" ng-model="searchText">
+    <i class="fa fa-cog fa-spin" style="display: none;"></i>
+    <div class="destination-list-container" style="display: none">
+      <ul class="destination-list" >
+        <li class="destination-list-data">La Campagne</li>
+        <!-- <li class="destination-list-data" ng-repeat="dest in viewDestinations | filter:searchText ">{{dest.dest_name}}</li> -->
+      </ul>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default btn-lg" ng-click="findDestination(destination)">Go</button>
+</div>

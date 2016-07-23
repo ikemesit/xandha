@@ -1,0 +1,856 @@
+/*======== Landing Viewport wrapper ========*/
+.landing-viewport-wrap{
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: auto;
+  box-shadow: inset 0 80px 100px rgba($black, 0.6);
+
+  & video{
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    max-width: auto;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    &::-webkit-media-controls{
+      display: none !important;
+    }
+    // @include media(">=xl"){
+    //   min-width: 100%;
+    //   max-width: auto;
+    // }
+  }
+
+  // @include media("<sm"){
+    //background-color: $orange;
+    // box-shadow: none;
+  // }
+}
+
+/*======== Customize landing viewport top nav ========*/
+nav[role="main-nav"].navbar.navbar-default{
+    background-color: rgba(#eee, 0);
+    border-color: rgba(#eee, 0);
+}
+
+nav[role="main-nav"]{
+	padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+	// height: 10vh;
+  background-color: none;
+
+	.navbar-brand{
+    margin-top: -8px;
+		font-size: 4.5rem;
+		font-weight: bold;
+		font-family: $headings-font-family;
+    color: $white;
+    & img{
+      max-width: 10rem;
+    }
+	}
+
+  button.navbar-toggle{
+    color: $white;
+    font-size: rem-calc(30);
+  }
+
+	button.btn-primary{
+		margin-right: rem-calc(20);
+    background-color: $primary;
+    border-color: $primary;
+    transition: all 0.3s ease;
+    &:hover{
+      background-color: $comp_1;
+      border-color: $comp_1;
+    }
+	}
+}
+
+/*======== Alternate top nav ========*/
+nav[role="alt-nav"]{
+  // background-color: $comp_2;
+  padding-top: 1rem;
+  height: auto;
+  box-shadow: 0px 1px 1px rgba($black, 0.2);
+
+  .navbar-brand{
+    margin-top: -10px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: $opensans-bold;
+    color: $primary;
+
+    & img{
+      max-width: 9rem;
+    }
+  }
+
+  .navbar-nav{
+    margin-left: 3.5rem;
+  }
+
+  .nav-item{
+    margin-right: 20px;
+  }
+
+  .navbar-nav li a{
+    font-family: $raleway-bold;
+    color: $neutral2;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover{
+      color: $comp_1;
+    }
+  }
+
+  button.navbar-toggler{
+    color: $white;
+    font-size: rem-calc(30);
+  }
+
+  button.btn-primary{
+    margin-right: rem-calc(20);
+    background-color: $primary;
+    border-color: $primary;
+    transition: all 0.3s ease;
+    &:hover{
+      background-color: $comp_1;
+      border-color: $comp_1;
+    }
+  }
+}
+
+/*======== Landing Viewport content styles ========*/
+.landing-viewport-content {
+  height: 80vh;
+  margin-bottom: 0;
+  display: table;
+  width: 100%;
+
+  & .inner{
+    display: table-row;
+    text-align: center;
+  }
+
+  & h2, p{
+    color: $white;
+    text-align: center;
+  }
+
+  & h2{
+  	font-family: $raleway-bold;
+  	text-shadow: none;
+    display: block;
+    margin-top: 30vh;
+    font-size: 8rem;
+    // @include media('<sm'){
+    //   margin-top: 15vh;
+    //   font-size: 3rem;
+    // }
+  }
+
+  & p{
+  	text-shadow: none;
+    display: block;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  & form{
+    input.form-control{
+      border: 2px solid $white;
+    }
+
+    // @include media("<=sm"){
+    //   margin: 1rem 3rem auto 3rem;
+    //   width: auto;
+    // }
+
+    // @include media(">=md"){
+      @include center-block();
+      width: 600px;
+    // }
+  }
+
+  & button{
+    // @include media("<sm"){
+    //   margin-left: auto;
+    //   margin-right: auto;
+    //   margin-top: 2rem;
+    // }
+  }
+}
+
+.landing-viewport-footer{
+  height: auto;
+  background-color: rgba($primary, 0.7);
+  clear: both;
+  overflow: hidden;
+  & p, a{
+    color: $white;
+  }
+
+  & ul{
+    padding: 0;
+    display: table;
+    width: 60%;
+    //height: 10vh;
+    margin-left: 0; //auto;
+    margin-right: 0;//auto;
+    margin-bottom: 0;
+    float: left;
+    & li{
+      list-style: none;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      border-right: thin solid darken($primary, 10%);
+      transition: all 0.3s ease;
+      &:hover{
+        border-right: thin solid $comp_1;
+      }
+    }
+    & a{
+      height: 10vh;
+      display: block;
+      padding: 3.5vh 3.5vw;
+      font-family: $raleway-bold;
+      transition: all 0.3s ease;
+      &:hover{
+        height: 10vh;
+        display: block;
+        background-color: $comp_1;
+        padding: 3.5vh 3.5vw;
+        text-decoration: none;
+      }
+    }
+    &:nth-of-type(2){
+      margin-left: 0;
+      margin-right: 0;
+      float: right;
+      width: 15%;
+      border: none;
+      & li{
+          border: none;
+      }
+      & a{
+        height: 10vh;
+        display: block;
+        padding: 3.5vh .5vw;
+        &:hover{
+          height: 10vh;
+          display: block;
+          padding: 3.5vh .5vw;
+        }
+      }
+    }
+  }
+}
+
+/* COMMON CONTENT STYLES FOR LANDING PAGE
+-------------------------------------------------- */
+
+/* Center and set styling for section header and sub-text */
+.section-header , .section-subtext{
+	@include center-block;
+	text-align: center;
+}
+
+.section-header {
+	font-family: $raleway-bold;
+  font-size: 3rem;
+}
+
+.section-subtext {
+	margin-bottom: rem-calc(50);
+}
+
+
+/* INTRODUCTORY CONTENT
+-------------------------------------------------- */
+
+.intro{
+	//@extend %vertical-padding;
+  & .section-header{
+    color: $primary;
+  }
+
+	h2.section-subtext {
+		margin-bottom: 100px;
+	}
+
+  // @include media(">=md"){
+    @extend %vertical-padding;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .section-subtext {
+      margin-bottom: 50px;
+    }
+  // }
+}
+
+
+
+
+/*======== Content Wrap ========*/
+.content-wrap{
+  //background-color: #EDEFED;
+  background-color: $white;
+  width: 100%;
+  height: auto;
+  &[class~="padded"]{
+    background-color: $neutral1;
+  //   background: red; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(left top, $fundy-fog, $neutral1); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(bottom right, $fundy-fog, $neutral1); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(bottom right, $fundy-fog, $neutral1); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(to bottom right, $fundy-fog, $neutral1); /* Standard syntax */
+  }
+}
+
+
+/*======== TRENDING DESTINATIONS ========*/
+
+.trending-destinations {
+
+	.section-header {
+		margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 2em;
+	}
+
+  .card{
+    background-color: $white;
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #eee;
+    & a{
+      width: auto;
+      height: auto;
+      text-decoration: none;
+      color: none;
+      overflow: auto;
+    }
+  }
+
+	.card-img-top {
+		max-width: 100%; //rem-calc(354);
+    margin-bottom: 0;
+	}
+
+	.card-title {
+		color: $styx;
+		font-family: $raleway-bold;
+		font-size: 1em;
+    padding: 5px 10px;
+		&:after {
+			content: "\f152";
+			font-family: "FontAwesome";
+			float: right;
+		}
+	}
+
+  // @include media(">=md", "<lg"){
+      //@extend %vertical-padding;
+      padding-top: 50px;
+      padding-bottom: 50px;
+  // }
+
+  // @include media(">=lg"){
+    //@extend %vertical-padding;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .col-lg-12 {
+      padding: 0 100px;
+    }
+  // }
+}
+
+
+/*======== ACTIVITIES ========*/
+
+.activities {
+  // @include media(">=md", "<lg"){
+      //@extend %vertical-padding;
+      // padding-top: 50px;
+      // padding-bottom: 50px;
+  // }
+
+  // @include media(">=lg"){
+    //@extend %vertical-padding;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 85px;
+    padding-right: 85px;
+
+    .col-lg-12 {
+      padding: 0 100px;
+    }
+
+  // }
+
+	.section-header {
+		margin-bottom: 50px;
+		font-size: 2em;
+	}
+
+  .activity-card-container{
+    padding: 10px;
+    height: 400px;
+  }
+  .activity-card {
+    height: 100%;
+    display: block;
+    background-size: cover;
+  }
+
+  & a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    //transition
+    color: $white;
+  }
+
+  .content-wrap{
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($orange, 0);
+    transition: background-color 0.3s ease;
+
+    & .activity-content{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      & h2{
+        font-family: $raleway-bold;
+        color: $white;
+      }
+    }
+
+    &:hover{
+      background-color: rgba($orange, 0.6);
+    }
+
+  }
+
+}
+
+
+/*======== PARTNERSHIPS ========*/
+
+.partnerships {
+
+  .section-header{
+    margin-bottom: 50px;
+    font-size: 2em;
+    @include center-block();
+  }
+  .col-lg-6 {
+    margin-bottom: 1.5em;
+    text-align: center;
+    p {
+      margin-right: .75em;
+      margin-left: .75em;
+    }
+  }
+
+   h4 {
+    font-weight: normal;
+    font-family: $raleway-bold;
+    margin-top: 10px;
+  }
+}
+
+
+/* FOOTER
+-------------------------------------------------- */
+.upper-footer, .bottom-footer{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: darken($white, 10%);
+
+  & a{
+    color: darken($white, 10%);
+    &:hover{
+      color: $comp_2;
+      text-decoration: none;
+    }
+  }
+
+  & h4{
+    font-family: $raleway-bold;
+  }
+  & ul{
+    list-style: none;
+    padding-left: 0;
+  }
+
+  & hr{
+    border-color: rgba($white, 0.3);
+  }
+}
+
+.upper-footer{
+  //background-color: lighten($black, 10%);
+  background-color: darken($primary, 5%);
+}
+
+.bottom-footer{
+  //background-color: lighten($black, 5%);
+  background-color: darken($primary, 12%);
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 2rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+
+
+/*======== Page Header ========*/
+.page-header{
+  width: 100%;
+  display: block;
+  background-color: $neutral2;
+  height: 8em;
+  padding: 1em 0;
+  // background: url("../images/destination_images/slide2.jpg") no-repeat;
+  // background-size: cover;
+  // box-shadow: inset 0 8rem 8rem rgba($black, 0.6);
+  // background: red; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(left top, $fundy-fog, $ancient-ochre); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(bottom right, $fundy-fog, $ancient-ochre); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(bottom right, $fundy-fog, $ancient-ochre); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(to bottom right, $fundy-fog, $ancient-ochre); /* Standard syntax */
+  // & h2{
+  //   margin-top: 2.5rem;
+  //   font-family: $raleway-bold;
+  //   color: $white;
+  //   text-align: center;
+  // }
+}
+
+/*======== filter space ========*/
+// .filter-space{
+//   @extend %vertical-padding;
+// }
+
+/*======== footer block ========*/
+.footer-block{
+  @extend %vertical-padding;
+  & button{
+    @include center-block();
+  }
+}
+
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 5rem;
+  }
+}
+
+
+/*======== Generic page wrappers ========*/
+.page-wrap{
+  width: 100%;
+  display: block;
+  height: auto;
+  //background-color: darken($neutral1, 5%);
+  & .container{
+    background-color: $white;
+    & div[class*="col-md-8"]{
+      @extend %vertical-padding;
+      min-height: 500px;
+    }
+    & aside{
+      @extend %vertical-padding;
+      background-color: $neutral1; //$comp_2;
+      & img{
+        // width: 100%;
+        // height: auto;
+        width: 50%;
+        height: auto;
+        opacity: 0.9;
+        transition: all 0.3s ease-in;
+        padding: 2px;
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+      & .related-images{
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+      & input.form-control{
+          // border: 2px solid $input-border-color;
+          transition: all 0.3s ease;
+          margin-bottom: 1rem;
+
+          &:hover{
+            border: 2px solid $primary;
+          }
+          &:focus{
+            border: 2px solid $primary;
+          }
+      }
+    }
+    & h2, h6{
+      color: $neutral2;
+      font-family: $raleway-bold;
+    }
+    & h6{
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+
+.listing-wrap{
+  width: 100%;
+  height: auto;
+  background-color: $neutral1;
+}
+
+
+/*======== Destination Page Layout ========*/
+
+.dst-list-wrap{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.dst-card{
+
+  & img{
+    height: 200px;
+  }
+  & .dst-body{
+    height: 80px;
+  }
+  & h4.title{
+    font-family: $raleway-bold;
+    color: $neutral2;
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  & p.address{
+    color: $neutral2;
+    font-size: 0.75rem;
+  }
+}
+
+/*======== Destination profile layout ========*/
+.destination-profile-image{
+  width: 100%;
+  height: 20rem;
+  background-color: $neutral2;
+  background-size: cover;
+  & img{
+    width: 100%;
+  }
+}
+
+#map{
+  width: 100%;
+  height: 300px;
+}
+
+// .destination-feature{
+//   padding: 5px;
+//   display: inline-block;
+//   margin-right: 2px;
+//   background-color: $neutral2;
+//   border-radius: $border-radius;
+
+// }
+//
+/*======== Package Details layout ========*/
+
+.pd-header{
+  width: 100%;
+  display: block;
+  height: 15rem;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.pd-section{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.package-title{
+  font-family: $raleway-bold;
+}
+
+.package-feature-title{
+  font-family: $raleway-bold;
+}
+
+.package-features{
+  list-style: none;
+  padding-left: 0;
+  & i{
+    margin-right: 10px;
+  }
+}
+
+.package-btn{
+  background-color: $primary;
+  border: none;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+   & i{
+    color: $white;
+    margin-left: 10px;
+    opacity: 0;
+  }
+  &:hover{
+    background-color: $comp_1;
+    & i{
+      // @include slideInDown(
+      //   $duration: 0.3s,
+      //   $count: 1,
+      //   $delay: 0s,
+      //   $function: ease,
+      //   $fill: both
+      // );
+    }
+  }
+
+}
+
+.action-layout{
+  padding: 5rem 0;
+  background-color: $neutral1;
+  margin-bottom: 0;
+}
+
+.contact{
+  // width: 10rem;
+  // @include center-block;
+   text-align: center;
+  & i{
+    text-align: center;
+  }
+
+}
+
+
+/*======== Events Page layout ========*/
+
+
+.event-page-header{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  & h4{
+    font-family: $raleway-bold;
+  }
+  & hr{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.event-sidebar{
+  width: 100%;
+  height: auto;
+  border-left: thin solid rgba($black, 0.1);
+  border-right: thin solid rgba($black, 0.1);
+  border-top: thin solid rgba($black, 0.1);
+}
+
+.event-filter{
+  list-style: none;
+  padding-left: 0;
+  background-color: $white;
+  & li{
+    display: block;
+    padding: 10px 10px 10px 20px;
+    text-transform: uppercase;
+    border-bottom: thin solid rgba($black, 0.1);
+    vertical-align: middle;
+
+    & i{
+      // @include pull-right;
+      margin-top: 5px;
+      color: $comp_2;
+    }
+    &:first-of-type{
+      border-top: thin solid rgba($black, 0.1);
+    }
+    &:hover{
+      cursor: pointer;
+      background-color: #f7f7f7;
+    }
+  }
+}
+
+.event-card{
+
+  & img{
+    width: 100%;
+    height: 160px;
+    margin-bottom: 5px;
+  }
+
+  & h4{
+    color: rgba($black, 0.8);
+  }
+}
+
+.event-card-body{
+  & p{
+    font-size: 12px;
+    margin-bottom: 0;
+    color: rgba($black, 0.5);
+  }
+  & p.date{
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    color: rgba($black, 0.6);
+  }
+  & h4.title{
+    font-family: $raleway-extra-bold;
+    font-size: 16px;
+    margin: 0;
+  }
+  & .event-excerpt{
+    & p{
+      font-size: 12px;
+    }
+  }
+}
