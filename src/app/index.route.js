@@ -15,10 +15,23 @@
         controllerAs: 'home'
       })
 
+      .state('destinations', {
+        url: '/destinations',
+        templateUrl: 'app/destinations/destinations.html',
+        controllerAs: 'dest'
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/login.html',
         controllerAs: 'login'
+      })
+
+      .state('admin', {
+        url: '/admin',
+        templateUrl: 'app/admin/dashboard.html',
+        controller: 'AdminController',
+        controllerAs: 'admin'
       });
 
     $urlRouterProvider.otherwise('/');

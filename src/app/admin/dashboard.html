@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Test Console</h1>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">
+			<form action="" method="POST" role="form">
+				<legend>Add a Facility</legend>
+			
+				<div class="form-group">
+					<label for="dest-name">Name</label>
+					<input type="text" class="form-control" id="dest-name" placeholder="Name">
+				</div>
+				<div class="form-group">
+					<label for="dest-address">Address</label>
+					<input type="text" class="form-control" id="dest-address" placeholder="Address">
+				</div>
+				<div class="form-group">
+					<label for="dest-address">Description</label>
+					<textarea class="form-control" id="dest-desc" placeholder="Description" rows="10"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="dest-activities">Activities</label>
+					<input type="text" class="form-control" id="dest-activities" placeholder="Activities">
+				</div>
+	
+				<button type="button" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<button type="button" ng-click="admin.getData();">Log Data</button>
+	</div>
+</div>

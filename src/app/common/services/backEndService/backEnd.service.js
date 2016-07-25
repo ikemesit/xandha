@@ -3,10 +3,24 @@
 
 	angular
 		.module('xandha')
-		.service('backEndService', backEndService);
+		.factory('backEndService', backEndService);
 
 
-	function backEndService(){
+	function backEndService($firebaseObject){
 		
+		var database = firebase.database();
+
+		var service = {
+				getAllDestinations: getAllDestinations
+		};
+
+		return service;
+
+		function getAllDestinations(){
+			var dataRef = $firebaseObject(database.ref('destinations'));
+			return dataRef;
+		}
+
+
 	}
 })();
