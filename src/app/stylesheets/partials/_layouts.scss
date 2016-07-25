@@ -54,7 +54,16 @@ nav[role="main-nav"]{
       color: $white;
       font-family: $raleway-bold;
       transition: color 0.2s;
+      // &:visited{
+      //   color: $comp_1;
+      // }
       &:hover{
+        color: $comp_1;
+      }
+      &:active{
+        color: $comp_1;
+      }
+      &:focus{
         color: $comp_1;
       }
     }
@@ -112,6 +121,12 @@ nav[role="alt-nav"]{
     &:hover{
       color: $comp_1;
     }
+    &:active{
+      color: $comp_1;
+    }
+    &:visited{
+      color: $comp_1;
+    }
   }
 
   button.navbar-toggler{
@@ -152,8 +167,8 @@ nav[role="alt-nav"]{
   	font-family: $raleway-bold;
   	text-shadow: none;
     display: block;
-    margin-top: 30vh;
-    font-size: 8rem;
+    margin-top: 25vh;
+    font-size: 7rem;
   }
 
   & p{
