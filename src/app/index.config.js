@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider, localStorageServiceProvider, toastrConfig) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -16,6 +16,11 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
+
+    // Set prefix for local storage
+    localStorageServiceProvider
+                .setPrefix('xandha')
+                .setNotify(true, true);
   }
 
 })();

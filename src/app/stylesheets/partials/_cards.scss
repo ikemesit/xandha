@@ -1,0 +1,46 @@
+.card{
+  background-color: $white;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #e3e3e3;
+  transition: box-shadow 0.4s;
+  margin-bottom: 20px;
+  & a{
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color: none;
+    overflow: auto;
+  }
+  &:hover{
+    box-shadow: 2px 2px 4px darken(#ddd, 15%);
+  }
+  $parent : ".card";
+  @include bg-variant($parent, $primary);
+}
+
+.card-img-top {
+	max-width: 100%; //rem-calc(354);
+  height: 200px;
+  margin-bottom: 0;
+}
+
+.card-title {
+	font-family: $raleway-bold;
+	font-size: 1em;
+  padding: 5px 10px;
+	&:after {
+		content: "\f152";
+		font-family: "FontAwesome";
+		float: right;
+	}
+  & a{
+    color: $prime-blue;
+    transition: color 0.2s;
+    &:hover{
+      color: $comp_1;
+    }
+  }
+
+  
+}

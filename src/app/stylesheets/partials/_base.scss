@@ -5,7 +5,7 @@
 body {
   color: #3a3a3a;
   font-family: $paragraph-font-family;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .emphasis{
@@ -29,32 +29,7 @@ body {
 }
 
 
-// Button Styles
-button, .btn{
-	outline: none;
-	font-family: $raleway-bold;
-	border-radius: 24px;
-	&:focus{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
-	&:active{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
-	&:hover{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
-}
 
-.btn .success{
-	background-color: $primary;
-	&:hover{
-		background-color: $comp_1;
-		border: thin solid $comp_1;
-	}
-}
 
 
 
