@@ -22,6 +22,13 @@
         controllerAs: 'dest'
       })
 
+      .state('destination-detail', {
+        url: '/destination',
+        templateUrl: 'app/destinations/destination-detail.html',
+        controller: 'DestinationDetail',
+        controllerAs: 'dd'
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/login.html',
