@@ -7,6 +7,7 @@
 
 
   function DestinationDetail(){
-
+  	var vm = this;
+  		vm.dt = {};
   }
 })();

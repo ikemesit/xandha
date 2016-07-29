@@ -92,7 +92,7 @@ nav[role="alt-nav"]{
   padding: 10px 20px;
   height: auto;
   background-color: $white;
-  border-bottom: none;
+  border-bottom: thin solid lighten($black, 90%);
   border-radius: 0;
   margin-bottom: 0;
 
@@ -182,7 +182,7 @@ nav[role="alt-nav"]{
     display: block;
     padding-left: 20%;
     padding-right: 20%;
-    margin-bottom:  20px;
+    margin-bottom:  40px;
   }
 
   & form{
@@ -596,21 +596,178 @@ nav[role="alt-nav"]{
   }
 }
 
-/*======== Destination profile layout ========*/
-.destination-profile-image{
-  width: 100%;
-  height: 20rem;
-  background-color: $neutral2;
-  background-size: cover;
-  & img{
-    width: 100%;
+/*======== Destination detail layout ========*/
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+.imgs{
+    height: 300px;
+    background: url("http://hidroplay.com.au/wp-content/uploads/2012/09/Gold-Coast7.jpg");
+    background-position: 0px 0px;
+    background-size: cover;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 300px rgba($prime-blue, 0.8);
+    // animation: animatedBackground 100s linear infinite;
+    transition: all 0.4s;
+    &:hover{
+      box-shadow: inset 0 300px rgba($prime-blue, 0.4);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+   
+    & h2{
+      color: $white;
+      padding: 0;
+      margin: 0;
+      margin-top: 200px;
+      font-family: $raleway-bold;
+      font-size: 4em;
+      // border-bottom: thin solid $white;
+      display: inline-block;
+      // padding-bottom: 10px;
+    }
+    i{
+      display: inline-block;
+      color: $white;
+      margin-right: 5px;
+      transition: color 0.4s;
+      &:hover{
+        color: $comp_2;
+      }
+    }
+    address{
+      color: $white;
+      display: inline-block;
+    }
+
+    & .social-icons{
+      margin-top: 200px;
+      i {
+        color: $white;
+        margin-right: 20px;
+        display: inline-block;
+      }
+    }
+  }
+.destination-detail{
+  .summary-title{
+    font-family: $opensans-bold;
+    margin-bottom: 20px;
+  }
+  & .horizontal-nav{
+    padding-left: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    // box-shadow: 0px 2px 5px #e5e5e5;
+    border-bottom: 3px solid darken($neutral1, 10%);
+    & li{
+      display: inline-block;
+      margin-right: 20px;
+      & a{
+        font-family: $raleway-bold;
+        font-size: 16px;
+        color: lighten(#3a3a3a, 20%);
+        // border-bottom: 2px solid $white;
+        transition: all 0.6s;
+        &:hover{
+          // border-bottom: 2px solid $comp_2;
+          text-decoration: none;
+          color: #3a3a3a;
+        }
+
+        &.active{
+          color: $comp_2;
+        }
+      }
+    }
+  }
+  & .rating-summary{
+    & h3{
+      margin: 0;
+      color: $primary;
+      font-size: 4rem;
+      font-family: $opensans;
+    }
+  }
+  & .review-highlights{
+    padding-left: 0;
+    list-style: none;
+    line-height: 10px;
+    & li{
+      @include clearfix();
+      display: block;
+    }
+
+    & label{
+      width: 100px;
+      display: inline-block;
+      float: left;
+      font-family: $opensans-light;
+    }
+    & .progress{
+      width: 200px;
+      height: 10px;
+      margin: 0;
+      margin-bottom: 15px;
+      display: inline-block;
+      float: left;
+    }
+    & .progress-bar{
+      background-color: darken($neutral1, 10%);
+      box-shadow: none;
+    }
+    & span{
+      display: inline;
+      float: left;
+      text-align: right;
+      margin-left: 20px;
+    }
+  }
+  & h2{
+    font-family: $raleway-bold;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  & .more-images{
+    margin-top: 40px;
+    img{
+      height: 150px;
+    }
   }
 }
+.booking-form{
+    border: thin solid #e5e5e5;
+    padding: 20px;
+    legend{
+      @include center-block;
+      text-align: center;
+      font-family: $raleway-bold;
+      padding-bottom: 20px;
+      color: $prime-blue;
+    }
 
-#map{
-  width: 100%;
-  height: 300px;
-}
+    a{
+      display: block;
+      font-size: 12px;
+      margin-top: 20px;
+      &:hover{
+        color: $comp_1;
+      }
+    }
+
+    button{
+      background-color: $white;
+      border: 2px solid $primary;
+      color: $primary;
+      &:hover{
+        background-color: $comp_1;
+        color: $white;
+        border: 2px solid $comp_1;
+      }
+    }
+  }
 
 // .destination-feature{
 //   padding: 5px;
