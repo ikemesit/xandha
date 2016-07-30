@@ -601,7 +601,7 @@ nav[role="alt-nav"]{
   from { background-position: 0 0; }
   to { background-position: 100% 100%; }
 }
-.imgs{
+.page-header-2{
     height: 300px;
     background: url("http://hidroplay.com.au/wp-content/uploads/2012/09/Gold-Coast7.jpg");
     background-position: 0px 0px;
@@ -661,16 +661,16 @@ nav[role="alt-nav"]{
     padding-bottom: 20px;
     margin-bottom: 20px;
     // box-shadow: 0px 2px 5px #e5e5e5;
-    border-bottom: 3px solid darken($neutral1, 10%);
+    border-bottom: 3px solid $prime-blue;
     & li{
       display: inline-block;
       margin-right: 20px;
       & a{
         font-family: $raleway-bold;
         font-size: 16px;
-        color: lighten(#3a3a3a, 20%);
+        color: $prime-blue; //darken($neutral1, 20%);
         // border-bottom: 2px solid $white;
-        transition: all 0.6s;
+        transition: all 0.4s;
         &:hover{
           // border-bottom: 2px solid $comp_2;
           text-decoration: none;
@@ -715,7 +715,7 @@ nav[role="alt-nav"]{
       float: left;
     }
     & .progress-bar{
-      background-color: darken($neutral1, 10%);
+      background-color: darken($neutral1, 20%);
       box-shadow: none;
     }
     & span{
@@ -730,13 +730,42 @@ nav[role="alt-nav"]{
     margin-top: 0;
     padding-top: 0;
   }
+  .section-title{
+    font-family: $raleway-bold;
+  }
   & .more-images{
     margin-top: 40px;
+    .image-grid{
+      @include clearfix();
+      display: block;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background-color: $neutral1;
+    }
+    .grid-item{
+      margin: 5px;
+      float: left;
+      display: inline-block;
+      background-color: $neutral2;
+    }
     img{
-      height: 150px;
+      // max-height: 250px;
+      // height: 350px;
+    }
+    .width-1{
+      width: 40%;
+      // height: 250px;
+    }
+    .width-2{
+      width: 28%;
+    }
+    .width-3{
+      width: 57.3%;
     }
   }
 }
+.angular-google-map-container { height: 400px; };
 .booking-form{
     border: thin solid #e5e5e5;
     padding: 20px;

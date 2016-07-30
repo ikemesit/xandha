@@ -6,7 +6,7 @@
 		.factory('dataAPI', dataAPI);
 
 
-	function dataAPI($firebaseObject, $firebaseArray, $log, $http, toastr){
+	function dataAPI($firebaseObject, $firebaseArray){
 		
 		var database = firebase.database();
 

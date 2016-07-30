@@ -21,6 +21,7 @@
     localStorageServiceProvider
                 .setPrefix('xandha')
                 .setNotify(true, true);
-  }
+  
 
+  }
 })();

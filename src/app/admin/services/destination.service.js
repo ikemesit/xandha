@@ -27,7 +27,8 @@
     function addDest(data){
       dataAPI.dbArrRef("destinations")
         .$add(data)
-        .then(function(ref){
+        .then(function(){
+          // Get passed ref key
           // var key = ref.key;
           // dataAPI.dbArrRef("destIndx/" + data.name ).$add(key);
           toastr.success("Destination Added!");
