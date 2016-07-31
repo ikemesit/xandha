@@ -62,18 +62,29 @@
      */
     function loadDest(){
       dataAPI.dbObjRef("destinations").$loaded().then(function(snapshot){
-        var dataObj = [], res = {};
-        Object.keys(snapshot).filter(function(data){
+        var dataIndxObj = [], dataObj = [], indxTmp = {}, dataTmp = {}, ind = 0;
+
+        // Get data Keys
+        var keys = Object.keys(snapshot).filter(function(data){
           return data.slice(0, 1) != "$";
-        }).map(function(data){
-          // res['key'] = data;
-          // res['record'] = snapshot[data];
-          res[snapshot[data].name] = data;
-          dataObj.push(res);
         });
-        localStorageService.remove("destinations");
-        localStorageService.set('destinations',dataObj);
-        // vm.destOut = localStorageService.get('destinations');
+        snapshot.forEach(function(data){
+          // dataTmp[data.name] = data;
+          indxTmp[data.name] = keys[ind];
+          dataObj.push(data);
+          dataIndxObj.push(indxTmp);
+
+          // Reset Containers
+          // dataTmp = {};
+          indxTmp = {};
+          ind += 1;
+          
+        });
+        
+        localStorageService.remove("dst-indices");
+        localStorageService.remove("dst-data");
+        localStorageService.set('dst-indices',dataIndxObj);
+        localStorageService.set('dst-data',dataObj);
       });
     }
 

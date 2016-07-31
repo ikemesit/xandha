@@ -23,7 +23,7 @@
       })
 
       .state('destination-detail', {
-        url: '/destination',
+        url: '/destination/{name}',
         templateUrl: 'app/destinations/destination-detail.html',
         controller: 'DestinationDetailController',
         controllerAs: 'dd'

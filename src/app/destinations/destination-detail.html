@@ -29,14 +29,12 @@
 <div class="page-header-2">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
-        <h2>Destination Name</h2>
+      <div class="col-xs-12">
+        <h2>{{ dd.destination.name }}</h2>
         <address>
           <i class="fa fa-map-marker"></i>
-          3850 S. Las Vegas Boulevard, Las Vegas, NV 89109, United States
+          {{ dd.destination.address }}
         </address>
-      </div>
-      <div class="col-xs-5">
       </div>
     </div>
   </div>
@@ -85,18 +83,7 @@
       <hr>
       <h2>Overview</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>{{ dd.destination.desc }}</p>
       <div class="more-images">
         <h4 class="section-title">Other Images</h4>
         <hr>

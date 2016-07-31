@@ -48,13 +48,13 @@
         <h4>Filter</h4>
       </div>
       <div class="col-xs-10">
-        <div class="col-lg-4">
+        <div class="col-lg-4" ng-repeat="destination in dest.destinations">
             <div class="card">
               <div class="overlay">
-                <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
+                <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
               </div>
               <img class="card-img-top" ng-src="assets/images/destination_images/whispering_palms_thumb.jpg" alt="#">
-              <h4 class="card-title" ui-sref="destination-detail"><a href="#">Whispering Palms</a></h4>
+              <h4 class="card-title" ui-sref="destination-detail({ name: destination.name })"><a href="#">{{ destination.name }}</a></h4>
             </div>
            </div>
 

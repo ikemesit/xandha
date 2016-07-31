@@ -6,7 +6,7 @@
     .controller('DestinationDetailController', DestinationDetailController);
 
 
-  function DestinationDetailController() {
+  function DestinationDetailController($log, $stateParams, localStorageService) {
 	var vm = this;
 		vm.dt = {};
 		vm.images = [
@@ -27,6 +27,19 @@
 			options : {title: 'Destination', draggable: false, animation: 1}
 		};
 
+		// Destination details
+		vm.destinations = localStorageService.get('dst-data');
+		
+		//Init
+		getDestinationData();
 
+		$log.info(vm.destination);
+
+
+		function getDestinationData(){
+			vm.destination = vm.destinations.filter(function(data){
+				return data.name === $stateParams.name;
+			})[0];
+		}
 	}
 })();
