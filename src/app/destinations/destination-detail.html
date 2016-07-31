@@ -26,7 +26,7 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav><!-- / .navbar -->
-<div class="page-header-2">
+<div class="page-header-2" style="background: url('{{ dd.destination.himage }}');">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -104,25 +104,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-xs-6 col-md-3">
-            <img class="img-responsive" src="https://images.unsplash.com/photo-1468476775582-6bede20f356f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=50c6901b794046c29f94700a8b940ad4" alt="...">
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <img class="img-responsive" src="https://images.unsplash.com/photo-1464695110811-dcf3903dc2f4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=34cc42f969e2f39d7a8af95d16c7dcca" alt="...">
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <img class="img-responsive" src="https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=29a9bb29bcbf19a5954d0110b19d5b51" alt="...">
-          </div>
-          <div class="col-xs-6 col-md-3">
-            <img class="img-responsive" src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b734e103303c5965225682077ee72f86" alt="...">
-          </div> -->
         </div>
       </div>
       <div class="location-map">
         <h4 class="section-title">Map</h4>
         <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{dd.googleMapsUrl}}">
-          <ng-map zoom="15" center="[36.1249185, -115.3150844]" draggable="false" scrollwheel="false">
-            <marker position="[36.1249185, -115.3150844]" title="Destination" animation="Animation.BOUNCE"></marker>
+          <ng-map zoom="15" center="{{ dd.destination.cordinates }}" draggable="false" scrollwheel="false">
+            <marker position="{{ dd.destination.cordinates }}" title="Destination" animation="Animation.BOUNCE"></marker>
           </ng-map>
         </div>
       </div>

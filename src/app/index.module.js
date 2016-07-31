@@ -13,7 +13,6 @@
 		'ui.router', 
 		'ui.bootstrap', 
 		'toastr', 
-		'masonryLayout', 
 		'firebase', 
 		'LocalStorageModule',
 		'ngMap'

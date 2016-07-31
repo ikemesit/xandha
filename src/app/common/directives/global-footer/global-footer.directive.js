@@ -17,6 +17,7 @@
 
 		return directive;
 
+		/**@ngInject*/
 		function GlobalFooterController(){
 
 		}

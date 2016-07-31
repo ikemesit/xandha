@@ -16,7 +16,8 @@
         evt.preventDefault();
         $state.go(to.redirectTo, params, {location: 'replace'})
       }
-    })
+    });
+
 
     // redirectScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
     //   if(error === "AUTH_REQUIRED"){

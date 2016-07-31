@@ -5,7 +5,7 @@
 		.module('xandha')
 		.controller('AdminController', AdminController);
 
-
+	/**@ngInject*/
 	function AdminController($log, destinationFactory){
 
 		var vm = this;
@@ -15,11 +15,17 @@
 			name: "name",
 			address: "address",
 			desc: "description",
-			activities: "activities"
+			activities: "activities",
+			cordinates: "cordinates",
+			himage: "himage"
 		};
 		vm.destOut;
 		vm.addDestination = addDestination;
 		vm.deleteDestination = deleteDestination;
+
+		// Show/Hide Add Destination
+		vm.addNewDest = null;
+		vm.showForm = showForm;
 
 		// Init
 		destinationFactory.loadDest();
@@ -45,6 +51,9 @@
 			destinationFactory.deleteDest(data);
 		}
 
-
+		function showForm(){
+			if(vm.addNewDest === null)
+				vm.addNewDest = true;
+		}
 	}
 })();

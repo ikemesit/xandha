@@ -17,23 +17,24 @@
 		];
 		// Map Settings
 		vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3QUKXul7-e8AfIGGjkB92u5-PXCwfXtY";
-		vm.map = { center: { latitude: 7.0151090, longitude: 27.9529442 }, zoom: 15};
-		vm.options = {draggable: false, scrollwheel: false};
+		// vm.map = { center: { latitude: 7.0151090, longitude: 27.9529442 }, zoom: 15};
+		// vm.options = {draggable: false, scrollwheel: false};
 
 		// Map Marker
-		vm.marker = {
-			id : 1,
-			coords : {"latitude": 5.0151090,"longitude": 7.9539446},
-			options : {title: 'Destination', draggable: false, animation: 1}
-		};
+		// vm.marker = {
+		// 	id : 1,
+		// 	coords : {"latitude": 5.0151090,"longitude": 7.9539446},
+		// 	options : {title: 'Destination', draggable: false, animation: 1}
+		// };
 
 		// Destination details
 		vm.destinations = localStorageService.get('dst-data');
-		
+
+			
 		//Init
 		getDestinationData();
 
-		$log.info(vm.destination);
+		
 
 
 		function getDestinationData(){
@@ -41,5 +42,7 @@
 				return data.name === $stateParams.name;
 			})[0];
 		}
+
+		
 	}
 })();

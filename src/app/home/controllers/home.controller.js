@@ -6,7 +6,9 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController() {
+  function HomeController(destinationFactory) {
+
+    destinationFactory.loadDest();
     //$rootScope, $scope, $log, $http, $state, $timeout, webDevTec, toastr, Data
     // var vm = this;
 

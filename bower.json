@@ -24,7 +24,6 @@
     "firebase": "^3.2.0",
     "angularfire": "^2.0.1",
     "angular-local-storage": "^0.2.7",
-    "angular-masonry-fly": "*",
     "ngmap": "^1.17.3"
   },
   "devDependencies": {
