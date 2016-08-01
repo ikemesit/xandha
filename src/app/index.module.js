@@ -15,7 +15,8 @@
 		'toastr', 
 		'firebase', 
 		'LocalStorageModule',
-		'ngMap'
+		'ngMap',
+		'ngWig'
 	]);
 
 })();

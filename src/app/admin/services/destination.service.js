@@ -52,7 +52,7 @@
      * supplied from localstorage
      */
     function getDestByRef(ref){
-      dataAPI.dbObjRef("destinations");
+      dataAPI.dbObjRef(ref);
     }
 
     /**
@@ -62,14 +62,13 @@
      */
     function loadDest(){
       dataAPI.dbObjRef("destinations").$loaded().then(function(snapshot){
-        var dataIndxObj = [], dataObj = [], indxTmp = {}, dataTmp = {}, ind = 0;
+        var dataIndxObj = [], dataObj = [], indxTmp = {}, ind = 0;
 
         // Get data Keys
         var keys = Object.keys(snapshot).filter(function(data){
           return data.slice(0, 1) != "$";
         });
         snapshot.forEach(function(data){
-          // dataTmp[data.name] = data;
           indxTmp[data.name] = keys[ind];
           dataObj.push(data);
           dataIndxObj.push(indxTmp);
@@ -92,13 +91,17 @@
      * Delete destnation
      */
     function deleteDest(ref){
+      
       // Retrieve record key from localstorage for query
-      var recs = localStorageService.get('destinations')[0];
-      var key = recs[ref];
+      var recs = localStorageService.get('dst-indices');
+      var key = recs.filter(function(obj){
+          if(ref in obj)
+            return obj;
+      })[0];
+      
       // Delete record and reload data model
-      dataAPI.dbObjRef("/destinations/" + key).$remove().then(function(){
+      dataAPI.dbObjRef("/destinations/" + key[ref] ).$remove().then(function(){
         toastr.success("Record deleted!");
-        loadDest();
       });
     }
 

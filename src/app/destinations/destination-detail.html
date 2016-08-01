@@ -26,7 +26,7 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav><!-- / .navbar -->
-<div class="page-header-2" style="background: url('{{ dd.destination.himage }}');">
+<div class="page-header-2" style="background: url('{{ dd.destination.himage }}'); background-size: cover; background-position: 0px 0px;">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -83,7 +83,7 @@
       <hr>
       <h2>Overview</h2>
       <hr>
-      <p>{{ dd.destination.desc }}</p>
+      <p ng-bind-html="dd.destination.desc"></p>
       <div class="more-images">
         <h4 class="section-title">Other Images</h4>
         <hr>

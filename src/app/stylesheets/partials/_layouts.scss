@@ -185,13 +185,13 @@ nav[role="alt-nav"]{
     margin-bottom:  40px;
   }
 
-  & form{
-    input.form-control{
-      border: 2px solid $white;
-    }
-      @include center-block();
-      width: 600px;
-  }
+  // & form{
+  //   input.form-control{
+  //     border: 2px solid $white;
+  //   }
+  //     @include center-block();
+  //     width: 600px;
+  // }
 }
 
 // COMMON CONTENT STYLES FOR LANDING PAGE
@@ -225,14 +225,12 @@ nav[role="alt-nav"]{
 		margin-bottom: 100px;
 	}
 
-  // @include media(">=md"){
-    @extend %vertical-padding;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    .section-subtext {
-      margin-bottom: 50px;
-    }
-  // }
+  @extend %vertical-padding;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .section-subtext {
+    margin-bottom: 50px;
+  }
 }
 
 
@@ -604,8 +602,7 @@ nav[role="alt-nav"]{
 .page-header-2{
     height: 300px;
     // background: url("http://hidroplay.com.au/wp-content/uploads/2012/09/Gold-Coast7.jpg");
-    background-position: 0px 0px;
-    background-size: cover;
+    //background-size: cover;
     margin-bottom: 30px;
     background-repeat: no-repeat;
     box-shadow: inset 0 300px rgba($prime-blue, 0.8);

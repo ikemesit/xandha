@@ -15,9 +15,9 @@
 			name: "name",
 			address: "address",
 			desc: "description",
-			activities: "activities",
-			cordinates: "cordinates",
-			himage: "himage"
+			activities: "Enter Activities seperated by a comma - temporary",
+			cordinates: "Enter Location cordinates seperated by a comma - temporary",
+			himage: "Enter image full url - temporary"
 		};
 		vm.destOut;
 		vm.addDestination = addDestination;
@@ -40,15 +40,18 @@
 		 * @param {obj} data [destination object]
 		 */
 		function addDestination(data){
+			// $log.info(data.desc);
+			// data.desc = $sce.trustAsHtml(data.desc);
 			destinationFactory.addDest(data);
 		}
 
 		/**
-		 * [Adds new destination]
+		 * [Deletes destination]
 		 * @param {obj} data [destination object]
 		 */
 		function deleteDestination(data){
 			destinationFactory.deleteDest(data);
+			destinationFactory.loadDest();
 		}
 
 		function showForm(){

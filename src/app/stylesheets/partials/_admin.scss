@@ -50,3 +50,72 @@ h2.nav-title{
 		padding-left: 20px;
 	}
 }
+
+// ui-tab
+ul.nav{
+	margin-bottom: 50px;
+	& li{
+		background-color: $prime-blue;
+		& a{
+			color: $white;
+			font-family: $raleway-bold;
+		}
+		&:hover{
+			background-color: $orange;
+		}
+	}
+	& li.active{
+		background-color: $orange;
+		font-family: $raleway-bold;
+		// &:hover{
+		// 	background-color: $orange;
+		// }
+		// &:active{
+		// 	background-color: $orange;
+		// }
+		// &:focus{
+		// 	background-color: $orange;
+		// }
+	}
+	& li.disabled{
+		background-color: $orange;
+	}
+}
+
+.available-destinations-list{
+	display: block;
+	border: thin solid #e5e5e5;
+	padding: 10px;
+	transition: all 0.2s;
+	@include clearfix();
+	& h4{
+		font-family: $raleway-bold;
+		color: $neutral2;
+	}
+	& button{
+		margin-right: 10px;
+		border-radius: 4px;
+		margin-top: 5px;
+	}
+	&:hover{
+		background-color: $prime-blue;
+		// cursor: pointer;
+		border: thin solid $prime-blue;
+		& h4{
+			color: $white;
+		}
+	}
+}
+
+.nw-editor{
+	background-color: #CED9DD;
+}
+
+div.tab-pane.active{
+	opacity: 1;
+}
+
+div.tab-pane{
+	opacity: 0;
+	transition: all 1s;
+}
