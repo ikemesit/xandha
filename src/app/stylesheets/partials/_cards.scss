@@ -42,24 +42,22 @@
       color: $comp_1;
     }
   }
-  
+
 }
 
 
-.card-wrapper .ng-move, 
-.card-wrapper .ng-enter, 
-.card-wrapper .ng-leave{
-  transition: all 2s;
-}
-
-.card-wrapper .ng-leave .ng-leave-active, 
-.card-wrapper .ng-move, 
+.card-wrapper .ng-move,
 .card-wrapper .ng-enter{
+  transition: all 2s;
   opacity: 0;
-} 
+}
 
-.card-wrapper .ng-leave, 
-.card-wrapper .ng-move .ng-move-active, 
+// .card-wrapper .ng-leave .ng-leave-active,
+// .card-wrapper .ng-move,
+// .card-wrapper .ng-enter{
+//   opacity: 0;
+// }
+.card-wrapper .ng-move .ng-move-active,
 .card-wrapper .ng-enter .ng-enter-active{
   opacity: 1;
-}  
+}

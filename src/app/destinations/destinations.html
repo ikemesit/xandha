@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default" role="alt-nav">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -38,18 +38,43 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 search-header">
+  <div class="row search-header">
+    <div class="col-xs-4">
       <h4>Showing destinations in Abuja</h4>
+    </div>
+    <div class="col-xs-offset-3 col-xs-5 clearfix">
+      <h4 class="pull-left">Filter By:</h4>
+      <form class="form-inline pull-right">
+        <div class="form-group">
+          <label for="">Price</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Ratings</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-12">
+      <hr>
     </div>
   </div>
     <div class="row destinations">
-      <div class="col-xs-2 sidebar">
-        <h4>Filter</h4>
-      </div>
-      <div class="col-xs-10">
+      <div class="col-xs-12">
         <div class="row">
-          <div class="col-lg-4 card-wrapper" ng-repeat="destination in dest.destinations" ng-cloak>
+          <div class="col-xs-1 col-lg-3 card-wrapper" ng-repeat="destination in dest.destinations" ng-cloak>
               <div class="card">
                 <div class="overlay">
                   <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
@@ -58,60 +83,8 @@
                 <h4 class="card-title" ui-sref="destination-detail({ name: destination.name })"><a href="#">{{ destination.name }}</a></h4>
               </div>
           </div>
-
-           <!-- <div class="col-lg-4">
-            <div class="card">
-                <div class="overlay">
-                  <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
-              </div>
-                <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1468476775582-6bede20f356f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=50c6901b794046c29f94700a8b940ad4" alt="#">
-                <h4 class="card-title" ui-sref="destination-detail"><a href="#">The Icecapes</a></h4>
-            </div>
-           </div>
-
-           <div class="col-lg-4">
-            <div class="card">
-              <div class="overlay">
-                <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
-              </div>
-              <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1464695110811-dcf3903dc2f4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=34cc42f969e2f39d7a8af95d16c7dcca" alt="#">
-        <h4 class="card-title" ui-sref="destination-detail"><a href="#">Lake Placid</a></h4>
-            </div>
-           </div>
-
-           <div class="col-lg-4">
-            <div class="card">
-                <div class="overlay">
-                <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
-              </div>
-                <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=29a9bb29bcbf19a5954d0110b19d5b51" alt="#">
-                <h4 class="card-title" ui-sref="destination-detail"><a href="#">Rail Treks</a></h4>
-            </div>
-           </div>
-
-           <div class="col-lg-4">
-            <div class="card">
-                <div class="overlay">
-                <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
-              </div>
-                <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b734e103303c5965225682077ee72f86" alt="#">
-                <h4 class="card-title" ui-sref="destination-detail"><a href="#">Yosemite</a></h4>
-            </div>
-           </div>
-
-           <div class="col-lg-4">
-            <div class="card">
-                <div class="overlay">
-                <a ui-sref="destination-detail"><i class="fa fa-eye fa-3x"></i></a>
-              </div>
-                <img class="card-img-top" ng-src="https://images.unsplash.com/photo-1459197648846-52de5e4d1e9a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d406bed6e26fba43fe84f14e2a95dd3c" alt="#">
-                <h4 class="card-title" ui-sref="destination-detail"><a href="#">North of the Wall</a></h4>
-            </div>
-           </div> -->
-          </div>
+        </div>
       </div>
-
-
 
     </div>
 </div>

@@ -1,26 +1,26 @@
 // Button Styles
 button, .btn{
-	outline: none;
-	font-family: $raleway-bold;
-	border-radius: 24px;
-	&:focus{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
-	&:active{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
-	&:hover{
-		outline: none !important;
-		font-family: $raleway-bold;
-	}
+  outline: none;
+  font-family: $raleway-bold;
+  border-radius: 2px;
+  &:focus{
+    outline: none !important;
+    font-family: $raleway-bold;
+  }
+  &:active{
+    outline: none !important;
+    font-family: $raleway-bold;
+  }
+  &:hover{
+    outline: none !important;
+    font-family: $raleway-bold;
+  }
 }
 
 .btn .success{
-	background-color: $primary;
-	&:hover{
-		background-color: $comp_1;
-		border: thin solid $comp_1;
-	}
+  background-color: $primary;
+  &:hover{
+    background-color: $comp_1;
+    border: thin solid $comp_1;
+  }
 }
