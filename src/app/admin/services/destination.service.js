@@ -13,17 +13,14 @@
       addDest : addDest,
       getAllDest : getAllDest,
       getDestByRef : getDestByRef,
-      updateDest : updateDest,
+      uploadDestImages : uploadDestImages,
       loadDest : loadDest,
       deleteDest : deleteDest
     }
 
     return factory;
 
-    /**
-     * Adds new destination and
-     * updates LocalStorage
-     */
+   
     function addDest(data){
       dataAPI.dbArrRef("destinations")
         .$add(data)
@@ -38,28 +35,67 @@
         });
     }
 
-    /**
-     * Loads destinations record
-     * and return promise
-     *
-     */
     function getAllDest(){
       return dataAPI.dbArrRef("destinations").$loaded();
     }
 
-    /**
-     * Gets destination record by index
-     * supplied from localstorage
-     */
-    function getDestByRef(ref){
-      dataAPI.dbObjRef(ref);
+    function getDestKey(name){
+      var key = localStorageService.get("dst-indices").filter(function(obj){
+          if(name in obj)
+            return obj;
+      })[0];
+      return key[name];
     }
 
-    /**
-     *  Loads all destinations data,
-     *  maps indexes to objects and
-     *  saves to web storage for persistence
-     */
+    function uploadDestImages(dest, data){
+      var key = getDestKey(dest);
+      var downloadURL = [];
+
+      for(var i = 0; i < data.length; i++){
+        var uploadTask = dataAPI.storage.ref('/' + key + '/' + data[i].name ).put(data[i]);
+        // Listen for state changes, errors, and completion of the upload.
+        uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+          function(snapshot) {
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            $log.info('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+              case firebase.storage.TaskState.PAUSED: // or 'paused'
+                $log.info('Upload is paused');
+                break;
+              case firebase.storage.TaskState.RUNNING: // or 'running'
+                $log.info('Upload is running');
+                break;
+            }
+          }, function(error) {
+          switch (error.code) {
+            case 'storage/unauthorized':
+              // User doesn't have permission to access the object
+              break;
+
+            case 'storage/canceled':
+              // User canceled the upload
+              break;
+            case 'storage/unknown':
+              // Unknown error occurred, inspect error.serverResponse
+              break;
+          }
+        }, function() {
+          // Upload completed successfully, now we can get the download URL
+          downloadURL.push(uploadTask.snapshot.downloadURL);
+          firebase.database().ref("/destinations/" + key).update({ himage:downloadURL[0] });
+          loadDest();
+          toastr.success("Images Uploaded");
+        });
+      }
+      
+    }
+
+    function getDestByRef(ref){
+      var key = getDestKey(ref);
+      return dataAPI.dbObjRef("/destinations/" + key);
+    }
+
     function loadDest(){
       dataAPI.dbObjRef("destinations").$loaded().then(function(snapshot){
         var dataIndxObj = [], dataObj = [], indxTmp = {}, ind = 0;
@@ -87,29 +123,11 @@
       });
     }
 
-    /**
-     * Delete destnation
-     */
     function deleteDest(ref){
-      
-      // Retrieve record key from localstorage for query
-      var recs = localStorageService.get('dst-indices');
-      var key = recs.filter(function(obj){
-          if(ref in obj)
-            return obj;
-      })[0];
-      
-      // Delete record and reload data model
-      dataAPI.dbObjRef("/destinations/" + key[ref] ).$remove().then(function(){
+      var key = getDestKey(ref);
+      dataAPI.dbObjRef("/destinations/" + key ).$remove().then(function(){
         toastr.success("Record deleted!");
       });
-    }
-
-    /**
-     *
-     */
-    function updateDest(){
-
     }
 
   }

@@ -48,15 +48,16 @@
         <h4>Filter</h4>
       </div>
       <div class="col-xs-10">
-        <div class="col-lg-4" ng-repeat="destination in dest.destinations">
-            <div class="card">
-              <div class="overlay">
-                <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
+        <div class="row">
+          <div class="col-lg-4 card-wrapper" ng-repeat="destination in dest.destinations" ng-cloak>
+              <div class="card">
+                <div class="overlay">
+                  <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
+                </div>
+                <img class="card-img-top" ng-src="{{ destination.himage }}" alt="#">
+                <h4 class="card-title" ui-sref="destination-detail({ name: destination.name })"><a href="#">{{ destination.name }}</a></h4>
               </div>
-              <img class="card-img-top" ng-src="{{ destination.himage }}" alt="#">
-              <h4 class="card-title" ui-sref="destination-detail({ name: destination.name })"><a href="#">{{ destination.name }}</a></h4>
-            </div>
-           </div>
+          </div>
 
            <!-- <div class="col-lg-4">
             <div class="card">
@@ -107,6 +108,7 @@
                 <h4 class="card-title" ui-sref="destination-detail"><a href="#">North of the Wall</a></h4>
             </div>
            </div> -->
+          </div>
       </div>
 
 

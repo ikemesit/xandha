@@ -6,11 +6,11 @@
 		.controller('AdminController', AdminController);
 
 	/**@ngInject*/
-	function AdminController($log, destinationFactory){
+	function AdminController($log, toastr, destinationFactory){
 
 		var vm = this;
 
-		// Destinations
+		// Destination Models
 		vm.destIn ={
 			name: "name",
 			address: "address",
@@ -20,12 +20,22 @@
 			himage: "Enter image full url - temporary"
 		};
 		vm.destOut;
-		vm.addDestination = addDestination;
-		vm.deleteDestination = deleteDestination;
+		vm.destEdit;
+		vm.progress = 0;
 
-		// Show/Hide Add Destination
+		// Destination Functions
+		vm.addDestination = addDestination;
+		vm.editDestination = editDestination;
+		vm.saveEdit = saveEdit;
+		vm.deleteDestination = deleteDestination;
+		vm.uploadDestImages = uploadDestImages;
+
+		// Show/Hide
+		vm.editFormHidden = true;
 		vm.addNewDest = null;
 		vm.showForm = showForm;
+		vm.showUpper = true;
+		vm.showNext = showNext;
 
 		// Init
 		destinationFactory.loadDest();
@@ -35,23 +45,38 @@
 
 
 
-		/**
-		 * [Adds new destination]
-		 * @param {obj} data [destination object]
-		 */
+		
 		function addDestination(data){
-			// $log.info(data.desc);
-			// data.desc = $sce.trustAsHtml(data.desc);
 			destinationFactory.addDest(data);
+			showNext();
 		}
 
-		/**
-		 * [Deletes destination]
-		 * @param {obj} data [destination object]
-		 */
+		function uploadDestImages(dest){
+			var data = document.querySelector("#dest-images-upload").files;
+			destinationFactory.uploadDestImages(dest, data);
+			vm.showUpper = true;
+		}
+
 		function deleteDestination(data){
 			destinationFactory.deleteDest(data);
 			destinationFactory.loadDest();
+		}
+
+		
+		function editDestination(name){
+			vm.destEdit = destinationFactory.getDestByRef(name);
+			$log.info(vm.destEdit);
+			vm.editFormHidden = false;
+		}
+
+		function saveEdit(){
+			vm.destEdit.$save().then(function(){
+				toastr.success("Edit Successful!");
+			});
+		}
+
+		function showNext(){
+			vm.showUpper = false;
 		}
 
 		function showForm(){

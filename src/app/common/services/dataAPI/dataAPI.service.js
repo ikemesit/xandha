@@ -9,10 +9,12 @@
 	function dataAPI($firebaseObject, $firebaseArray){
 		
 		var database = firebase.database();
+		var storage = firebase.storage();
 
 		var service = {
 			dbObjRef: dbObjRef,
-			dbArrRef: dbArrRef
+			dbArrRef: dbArrRef,
+			storage: storage
 		};
 
 		return service;

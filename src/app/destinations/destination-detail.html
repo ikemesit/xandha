@@ -26,12 +26,19 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav><!-- / .navbar -->
-<div class="page-header-2" style="background: url('{{ dd.destination.himage }}'); background-size: cover; background-position: 0px 0px;">
+<style type="text/css" media="screen">
+  .page-header-2{
+    background: url('{{ dd.destination.himage }}'); 
+    background-size: cover; 
+    background-position: 0px 0px;
+  }
+</style>
+<div class="page-header-2">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2>{{ dd.destination.name }}</h2>
-        <address>
+        <h2 ng-cloak>{{ dd.destination.name }}</h2>
+        <address ng-cloak>
           <i class="fa fa-map-marker"></i>
           {{ dd.destination.address }}
         </address>

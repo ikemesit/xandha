@@ -7,6 +7,27 @@
 	padding-left: 20px;
 	float: left;
 	margin-left: 15vw;
+	& form{
+		& .btn{
+			@include center-block();
+			margin-bottom: 40px;
+			margin-top: 20px;
+			border-radius: 2px;
+			min-width: 400px;
+		}
+
+		& input[type="file"]{
+			button{
+				height: 50px;
+			}
+		}
+		& .row{
+			transition: all 0.6s;
+		}
+		& .row .ng-hide{
+			opacity: 0;
+		}
+	}
 }
 
 // Admin Sidebar
@@ -52,8 +73,8 @@ h2.nav-title{
 }
 
 // ui-tab
-ul.nav{
-	margin-bottom: 50px;
+ul.nav-Pill{
+	margin-bottom: 20px;
 	& li{
 		background-color: $prime-blue;
 		& a{
@@ -82,15 +103,18 @@ ul.nav{
 	}
 }
 
+
+
 .available-destinations-list{
 	display: block;
 	border: thin solid #e5e5e5;
 	padding: 10px;
 	transition: all 0.2s;
 	@include clearfix();
-	& h4{
+	& p{
 		font-family: $raleway-bold;
 		color: $neutral2;
+		font-size: 12px;
 	}
 	& button{
 		margin-right: 10px;
@@ -101,7 +125,7 @@ ul.nav{
 		background-color: $prime-blue;
 		// cursor: pointer;
 		border: thin solid $prime-blue;
-		& h4{
+		& p{
 			color: $white;
 		}
 	}
