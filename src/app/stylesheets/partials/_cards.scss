@@ -45,19 +45,13 @@
 
 }
 
-
-.card-wrapper .ng-move,
-.card-wrapper .ng-enter{
-  transition: all 2s;
+.card{
+  // opacity: 0;
+  transition: all 0.4s ease;
+}
+.card.ng-enter{
   opacity: 0;
 }
-
-// .card-wrapper .ng-leave .ng-leave-active,
-// .card-wrapper .ng-move,
-// .card-wrapper .ng-enter{
-//   opacity: 0;
-// }
-.card-wrapper .ng-move .ng-move-active,
-.card-wrapper .ng-enter .ng-enter-active{
+.card.ng-enter.ng-enter-active{
   opacity: 1;
 }
