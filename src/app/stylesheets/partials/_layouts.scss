@@ -533,17 +533,18 @@ nav[role="alt-nav"]{
   margin-top: 10px;
   margin-bottom: 10px;
   //background-color: $neutral1;
-  & h4{
+  & h5{
     // text-align: center;
     font-family: $raleway-bold;
     padding: 0;
-      margin: 5px 0;
+    margin: 10px 0;
   }
   & label{
-    margin-left: 40px;
+    margin-left: 10px;
   }
   & select.form-control{
     width: 100px;
+    margin-left: 15px;
   }
   & hr{
     border-bottom: thin solid #e7e7e7;
@@ -593,13 +594,19 @@ nav[role="alt-nav"]{
       font-size: 14px;
       padding-left: 0;
       padding-right: 0;
+      margin-bottom: 0;
       &:after {
-        content: "\f004";
-        font-family: "FontAwesome";
-        float: right;
-        color: $comp_1;
-        padding-right: 10px;
+        content: " ";//"\f004";
+        // font-family: "FontAwesome";
+        // float: right;
+        // color: $comp_1;
+        // padding-right: 10px;
       }
+    }
+    small{
+      margin-top: 0;
+      font-family: $raleway-bold, sans-serif;
+      color: $comp_1; //lighten($neutral2, 20%);
     }
   }
 }
@@ -814,162 +821,4 @@ nav[role="alt-nav"]{
 
 // }
 //
-/*======== Package Details layout ========*/
 
-.pd-header{
-  width: 100%;
-  display: block;
-  height: 15rem;
-  background-size: cover;
-  margin-bottom: 20px;
-}
-
-.pd-section{
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.package-title{
-  font-family: $raleway-bold;
-}
-
-.package-feature-title{
-  font-family: $raleway-bold;
-}
-
-.package-features{
-  list-style: none;
-  padding-left: 0;
-  & i{
-    margin-right: 10px;
-  }
-}
-
-.package-btn{
-  background-color: $primary;
-  border: none;
-  margin-top: 10px;
-  transition: background-color 0.2s ease;
-   & i{
-    color: $white;
-    margin-left: 10px;
-    opacity: 0;
-  }
-  &:hover{
-    background-color: $comp_1;
-    & i{
-      // @include slideInDown(
-      //   $duration: 0.3s,
-      //   $count: 1,
-      //   $delay: 0s,
-      //   $function: ease,
-      //   $fill: both
-      // );
-    }
-  }
-
-}
-
-.action-layout{
-  padding: 5rem 0;
-  background-color: $neutral1;
-  margin-bottom: 0;
-}
-
-.contact{
-  // width: 10rem;
-  // @include center-block;
-   text-align: center;
-  & i{
-    text-align: center;
-  }
-
-}
-
-
-/*======== Events Page layout ========*/
-
-
-.event-page-header{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  & h4{
-    font-family: $raleway-bold;
-  }
-  & hr{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.event-sidebar{
-  width: 100%;
-  height: auto;
-  border-left: thin solid rgba($black, 0.1);
-  border-right: thin solid rgba($black, 0.1);
-  border-top: thin solid rgba($black, 0.1);
-}
-
-.event-filter{
-  list-style: none;
-  padding-left: 0;
-  background-color: $white;
-  & li{
-    display: block;
-    padding: 10px 10px 10px 20px;
-    text-transform: uppercase;
-    border-bottom: thin solid rgba($black, 0.1);
-    vertical-align: middle;
-
-    & i{
-      // @include pull-right;
-      margin-top: 5px;
-      color: $comp_2;
-    }
-    &:first-of-type{
-      border-top: thin solid rgba($black, 0.1);
-    }
-    &:hover{
-      cursor: pointer;
-      background-color: #f7f7f7;
-    }
-  }
-}
-
-.event-card{
-
-  & img{
-    width: 100%;
-    height: 160px;
-    margin-bottom: 5px;
-  }
-
-  & h4{
-    color: rgba($black, 0.8);
-  }
-}
-
-.event-card-body{
-  & p{
-    font-size: 12px;
-    margin-bottom: 0;
-    color: rgba($black, 0.5);
-  }
-  & p.date{
-    text-transform: uppercase;
-    margin: 0 0 5px 0;
-    color: rgba($black, 0.6);
-  }
-  & h4.title{
-    font-family: $raleway-extra-bold;
-    font-size: 16px;
-    margin: 0;
-  }
-  & .event-excerpt{
-    & p{
-      font-size: 12px;
-    }
-  }
-}

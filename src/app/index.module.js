@@ -16,7 +16,8 @@
 		'firebase',
 		'LocalStorageModule',
 		'ngMap',
-		'ngWig'
+		'ngWig',
+		'ngImageAppear'
 	]);
 
 })();

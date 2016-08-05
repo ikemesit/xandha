@@ -43,7 +43,7 @@
       <h4>Showing destinations in Abuja</h4>
     </div>
     <div class="col-xs-offset-3 col-xs-5 clearfix">
-      <h4 class="pull-left">Filter By:</h4>
+      <h5 class="pull-left">Sort By:</h5>
       <form class="form-inline pull-right">
         <div class="form-group">
           <label for="">Price</label>
@@ -79,8 +79,16 @@
                 <div class="overlay">
                   <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
                 </div>
-                <img class="card-img-top" ng-src="{{ destination.himage }}" alt="#">
+                <img class="card-img-top" ng-src="{{ destination.himage }}"
+                                          ng-image-appear 
+                                          loader-img="assets/images/ring-alt.gif"
+                                          responsive
+                                          transition-duration="1s"
+                                          animation="fillIn"
+                                          animation-duration="1s"
+                                          easing="ease-out" alt="#">
                 <h4 class="card-title" ui-sref="destination-detail({ name: destination.name })"><a href="#">{{ destination.name }}</a></h4>
+                <!-- <small>{{ destination.address }}</small> -->
               </div>
           </div>
         </div>
