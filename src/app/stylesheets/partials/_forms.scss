@@ -1,10 +1,8 @@
 
 // Form Input
 input.form-control, textarea.form-control{
-	// border: 2px solid #e5e5e5;
-	// border: 2px solid $white;
-	background-color: #CED9DD; //darken($neutral1, 2%);	
-	// font-family: $raleway;
+	background-color: lighten(#CED9DD, 10%); //darken($neutral1, 2%);	
+	font-family: $raleway;
 }
 
 input, input.form-control{
@@ -17,7 +15,7 @@ input.form-control, select.form-control, textarea.form-control{
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
 	transition: all 0.3s;
 	&:focus{
-		// border: 2px solid #e6e6e6;
+		border: thin solid $primary;
 		outline: none;
 		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
 	}

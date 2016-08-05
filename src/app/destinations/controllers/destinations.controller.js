@@ -7,14 +7,16 @@
 
 
 
-	function DestinationsController($log, localStorageService){
+	function DestinationsController($log, localStorageService, destinationFactory){
 		var vm = this;
 			vm.destinations = {};
 
-		// Init
-		loadDestinations();
-
-		$log.info(vm.destinations);
+		// Init else if local data not present, populate
+		if(localStorageService.get("dst-data"))
+			loadDestinations();
+		else
+			destinationFactory.loadDest();
+			loadDestinations();
 
 
 

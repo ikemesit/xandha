@@ -285,7 +285,7 @@
 		margin-top: 10vh;
 		background-color: $white;
 		padding: 20px;
-		border-radius: 4px;
+		border-radius: 2px;
 		box-shadow: 0px 0px 10px rgba($black, 0.5);
 	}
 
@@ -298,12 +298,16 @@
 
 		legend{
 			font-size: 3rem;
-			font-family: $raleway-bold;
+			font-family: $raleway-bold, sans-serif;
 			padding: 10px;
 			color: $prime-blue;
 			margin: 0 0 20px 0;
 			display: block;
-			border-bottom: thin solid $prime-blue;
+			border-bottom: thin solid #e5e5e5;
+		}
+
+		label{
+			font-family: $raleway-bold, sans-serif;
 		}
 
 		a{
@@ -336,9 +340,12 @@
 			}
 			& button{
 				display: inline-block;
-				background-color: $comp_1;
-				border-color: $comp_1;
-				color: $white;
+				background-color: $white; //$comp_1;
+				border: thin solid $comp_1;
+				color: $comp_1;
+				&:hover{
+					border: thin solid $comp_1;
+				}
 			}
 			& button.reg{
 				margin-top: 15px;
@@ -353,10 +360,6 @@
 	position: absolute;
 	z-index: -1000;
 }
-
-// .context-switch-wrap.ng-enter.ng-enter-active{
-// 	opacity: 1;
-// }
 
 pre {
 	width: 500px;                          /* specify width  */

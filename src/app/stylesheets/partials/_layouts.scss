@@ -675,7 +675,7 @@ nav[role="alt-nav"]{
     padding-bottom: 20px;
     margin-bottom: 20px;
     // box-shadow: 0px 2px 5px #e5e5e5;
-    border-bottom: 3px solid $prime-blue;
+    border-bottom: 1px solid $prime-blue;
     & li{
       display: inline-block;
       margin-right: 20px;
@@ -702,7 +702,7 @@ nav[role="alt-nav"]{
       margin: 0;
       color: $primary;
       font-size: 4rem;
-      font-family: $opensans;
+      font-family: $raleway-bold;
     }
   }
   & .review-highlights{
@@ -718,7 +718,7 @@ nav[role="alt-nav"]{
       width: 100px;
       display: inline-block;
       float: left;
-      font-family: $opensans-light;
+      font-family: $raleway-light;
     }
     & .progress{
       width: 200px;
