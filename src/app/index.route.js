@@ -24,7 +24,7 @@
 
       .state('destination-detail', {
         url: '/destination/{name}',
-        templateUrl: 'app/destinations/destination-detail.html',
+        templateUrl: 'app/destinations/destinationDetail.html',
         controller: 'DestinationDetailController',
         controllerAs: 'dd'
       })
@@ -34,6 +34,13 @@
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
         controllerAs: 'login'
+      })
+
+      .state('user', {
+        url: '/user',
+        templateUrl: 'app/user/userProfile.html',
+        controller: 'UserAcctController',
+        controllerAs: 'user'
       })
 
       .state('admin', {
