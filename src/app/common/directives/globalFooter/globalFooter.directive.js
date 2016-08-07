@@ -10,7 +10,7 @@
 
 		var directive = {
 			restrict: 'AE',
-			templateUrl: 'app/common/directives/global-footer/global-footer.template.html',
+			templateUrl: 'app/common/directives/globalFooter/globalFooter.template.html',
 			controller: GlobalFooterController,
 			controllerAs: 'gbf'
 		};

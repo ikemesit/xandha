@@ -39,7 +39,7 @@
       .state('user', {
         url: '/user',
         templateUrl: 'app/user/userProfile.html',
-        controller: 'UserAcctController',
+        // controller: 'UserAcctController',
         controllerAs: 'user'
       })
 

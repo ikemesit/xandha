@@ -1,31 +1,4 @@
-<nav class="navbar navbar-default" role="alt-nav">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" ui-sref="home">
-        <!-- <img src="assets/images/xandha_logo.svg" alt=""> -->
-        Xandha
-      </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <button type="button" class="btn btn-primary navbar-btn navbar-right" ui-sref="login">Sign in</button>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="destinations">Destinations</a></li>
-        <li><a href="#">Packages</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Tourism Mart</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
-</nav><!-- / .navbar -->
+<div global-navbar></div>
 
 <div class="search-wrapper">
   <div class="container">
@@ -80,7 +53,7 @@
                   <a ui-sref="destination-detail({ name: destination.name })"><i class="fa fa-eye fa-3x"></i></a>
                 </div>
                 <img class="card-img-top" ng-src="{{ destination.himage }}"
-                                          ng-image-appear 
+                                          ng-image-appear
                                           loader-img="assets/images/ring-alt.gif"
                                           responsive
                                           transition-duration="1s"
