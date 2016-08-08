@@ -87,14 +87,26 @@ nav[role="main-nav"]{
 	}
 }
 
+
+
 // ALT NAV
 nav[role="alt-nav"]{
-  padding: 10px 20px;
+  padding: 10px 0;
   height: auto;
   background-color: $white;
   border-bottom: thin solid lighten($black, 90%);
   border-radius: 0;
   margin-bottom: 0;
+
+  // .container{
+  //   padding-left: 0;
+  //   padding-right: 0;
+  // }
+ 
+  .navbar-collapse{
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .navbar-brand{
     font-size: 4rem;
@@ -135,6 +147,45 @@ nav[role="alt-nav"]{
   button.navbar-toggle{
     color: $white;
     font-size: rem-calc(30);
+  }
+
+  button.btn-profile{
+    padding: 0;
+    background-color: $white;
+    margin: 0;
+    & img{
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  // TO REMOVE
+ ul[role="login-dropdown-menu"]{
+    padding-bottom: 0;
+    border: thin solid rgba($white, 0.1);
+    box-shadow: 0px 0px 4px rgba($black, 0.2);
+    border-radius: 4px;
+    & li.signout{
+      & a{
+        background-color: $primary;
+        color: $white;
+        font-family: $raleway-bold;
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all 0.4s;
+        &:hover{
+          background-color: $comp_1;
+          color: $white;
+          font-family: $raleway-bold;
+          display: block;
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
   }
 
   button.btn-primary{
@@ -902,7 +953,7 @@ nav[role="alt-nav"]{
     min-height: 400px;
     background-color: $white;
     margin-top: 20px;
-    padding-left: 25px;
+    padding-left: 10px;
     padding-top: 20px;
 
     & legend{

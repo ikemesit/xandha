@@ -6,14 +6,14 @@
     .directive('searchForm', searchForm);
 
 
-  function searchForm($timeout){
+  function searchForm($log, $timeout){
     var directive = {
       name: 'searchForm',
       restrict: 'AE',
       templateUrl: 'app/common/directives/searchForm/searchForm.template.html',
       controller: SearchFormController,
       controllerAs: 'sfc',
-      transclude: true,
+      // transclude: true,
       link: formFunc
     }
 

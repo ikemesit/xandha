@@ -6,23 +6,30 @@
     .directive('globalNavbar', globalNavbar);
 
   /** @ngInject */
-  function globalNavbar() {
+  function globalNavbar($log) {
     var directive = {
       restrict: 'AE',
       templateUrl: 'app/common/directives/globalNavbar/globalNavbar.template.html',
-      scope: {},
+      // scope: {},
       controller: GlobalNavbarController,
       controllerAs: 'gnb',
-      bindToController: true
+      link: globalNavbarLinkFunc
+      // bindToController: true
     };
 
     return directive;
 
-  }
+    function globalNavbarLinkFunc(){
+      
+    }
 
-  /** @ngInject */
-  function GlobalNavbarController() {
+    function GlobalNavbarController() {
+      var vm = this;
+        vm.loggedIn = true;
+    }
 
-  }
+  } // End
+
+  
 
 })();

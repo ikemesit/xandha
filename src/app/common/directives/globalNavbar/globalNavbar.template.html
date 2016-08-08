@@ -16,7 +16,8 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <button type="button" class="btn btn-primary navbar-btn navbar-right" ui-sref="login">Sign in</button>
+      <button type="button" class="btn btn-primary navbar-btn navbar-right" ui-sref="login" ng-hide="gnb.loggedIn">Sign in</button>
+      <user-profile-icon></user-profile-icon>
       <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="destinations">Destinations</a></li>
         <li><a href="#">Packages</a></li>
