@@ -7,7 +7,7 @@
 
 
 
-	function DestinationsController($log, localStorageService, destinationFactory){
+	function DestinationsController(localStorageService, destinationFactory){
 		var vm = this;
 			vm.destinations = {};
 

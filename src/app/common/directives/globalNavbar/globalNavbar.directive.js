@@ -39,7 +39,7 @@
 
     function GlobalNavbarController() {
       var vm = this;
-        vm.loggedIn = true;
+        vm.loggedIn = false;
     }
 
   } // End
