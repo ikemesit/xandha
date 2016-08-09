@@ -12,10 +12,14 @@ body {
 	color: $comp_2;
 }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 
 
 
-// Placeholders 
+
+// Placeholders
 
 %vertical-padding {
 	padding-top: rem-calc(50);
