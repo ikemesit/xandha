@@ -289,7 +289,7 @@
 		box-shadow: 0px 0px 10px rgba($black, 0.5);
 	}
 
-	.login-form{
+	form[role="signInUp"]{
 		.context-switch-wrap{
 			overflow: hidden;
 			display: block;
@@ -310,6 +310,20 @@
 			font-family: $raleway-bold, sans-serif;
 		}
 
+		i{
+			position: absolute;
+			margin-left: 35%;
+			margin-top: -2.5%;
+		}
+
+		i[class*="fa-check"]{
+			color: $primary;
+		}
+
+		i[class*="fa-close"]{
+			color: $comp_1;
+		}
+
 		a{
 			display: block;
 			font-size: 12px;
@@ -328,6 +342,10 @@
 				background-color: $comp_1;
 				border: 2px solid $comp_1;
 				color: $white;
+			}
+			& i{
+				color: $white;
+				display: inline;
 			}
 		}
 
@@ -361,13 +379,4 @@
 	z-index: -1000;
 }
 
-pre {
-	width: 500px;                          /* specify width  */
-	white-space: pre-wrap;                 /* CSS3 browsers  */
-	white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
-	white-space: -pre-wrap;                /* Opera 4 thru 6 */
-	white-space: -o-pre-wrap;              /* Opera 7 and up */
-	word-wrap: break-word;                 /* IE 5.5+ and up */
-	/* overflow-x: auto; */                /* Firefox 2 only */
-	/* width: 99%; */		       /* only if needed */
-}
+

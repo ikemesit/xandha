@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="form-wrap center-block">
-					<form role="form" class=" login-form">
+					<form role="signInUp" class="login-form">
 						<div class="context-switch-wrap" ng-hide="login.context == 'registration'">
 							<legend>Sign In</legend>
 						
@@ -22,30 +22,48 @@
 							<small><a class="pull-left" href="#" title="">Forgot your password?</a></small>
 							<small><button class="pull-right" type="button" ng-click="login.switchContext()">New here?  Create an account here</button></small>
 						</div>
+					</form>
+					<form role="signInUp" class="registration-form" valdr-type="newUser">
 						<div class="context-switch-wrap" ng-hide="login.context == 'login'">
 							<legend>Create An Account</legend>
 						
 							<div class="form-group">
 								<label for=""><small>Name</small></label>
-								<input type="text" class="form-control" id="" placeholder="Because Introductions are great!" ng-model="login.newUser.name" ng-required = "login.required">
+								<input type="text" class="form-control" 
+									placeholder="Because Introductions are great!" 
+									ng-model="login.newUser.name"
+									ng-keyup="login.validateName(login.newUser.name)">
+								<i class="fa fa-close fa-lg" ng-show="login.nameError"></i>
+								<i class="fa fa-check fa-lg" ng-hide="login.nameSuccess"></i>
 							</div>
 
 							<div class="form-group">
 								<label for="">Email</label>
-								<input type="text" class="form-control" id="" placeholder="Email" ng-model="login.newUser.email" ng-keyup="login.validateEntry(login.newUser.email)">
+								<input type="text" class="form-control" id="" placeholder="Email" ng-model="login.newUser.email" ng-keyup="login.validateEmailInput(login.newUser.email)">
+								<i class="fa fa-close fa-lg" ng-show="login.emailError"></i>
+								<i class="fa fa-check fa-lg" ng-hide="login.emailSuccess"></i>
 							</div>
 
 							<div class="form-group">
 								<label for="">Password</label>
-								<input type="text" class="form-control" id="" placeholder="Password" ng-model="login.newUser.password">
+								<input type="text" class="form-control" 
+									placeholder="Password" 
+									ng-model="login.newUser.password">
+								<i class="fa fa-close fa-lg" ng-show="login.passwordMatchError"></i>
+								<i class="fa fa-check fa-lg" ng-hide="login.passwordMatchSuccess"></i>
 							</div>
 
 							<div class="form-group">
 								<label for="">Confirm Password</label>
-								<input type="text" class="form-control" id="" placeholder="Confirm Password">
+								<input type="text" class="form-control" 
+									placeholder="Confirm Password"
+									ng-model="login.newUser.confirmPassword"
+									ng-keyup="login.validatePasswordMatch(login.newUser.confirmPassword)">
+								<i class="fa fa-close fa-lg" ng-show="login.passwordMatchError"></i>
+								<i class="fa fa-check fa-lg" ng-hide="login.passwordMatchSuccess"></i>
 							</div>
 
-							<button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+							<button type="button" class="btn btn-primary btn-block btn-lg" ng-click="login.submitForm()">Submit</button>
 
 							<small><button type="button" ng-click="login.switchContext()" class="reg">Have an account already?  Login Here</button></small>
 						</div>
