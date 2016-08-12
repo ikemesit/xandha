@@ -349,6 +349,34 @@
 			}
 		}
 
+    .auth-status{
+      padding: 5px;
+      background-color: $neutral1;
+      & i{
+        display: inline-block;
+        margin: 0;
+        margin-right: 20px;
+        color: $primary;
+      }
+      & p{
+        display: inline-block;
+        margin-left: 50px;
+        font-family: $raleway-bold;
+        margin-top: 5px;
+        color: $primary;
+      }
+
+    }
+
+    .error-messages{
+      background-color: $comp_1;
+      color: $white;
+      font-family: $raleway-bold;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 2px;
+    }
+
 		small{
 			display: inline-block;
 			margin-right: 20px;
@@ -377,6 +405,10 @@
 	opacity: 0;
 	position: absolute;
 	z-index: -1000;
+}
+
+button.deactivated{
+  display: none !important;
 }
 
 
