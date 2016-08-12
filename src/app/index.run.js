@@ -19,11 +19,11 @@
     });
 
 
-    // redirectScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
-    //   if(error === "AUTH_REQUIRED"){
-    //     $state.go("admin.login");
-    //     // $log.info(toState);
-    //   }
-    // })
+    redirectScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
+      if(error === "AUTH_REQUIRED"){
+        $state.go("login");
+        // $log.info(toState);
+      }
+    })
   }
 })();

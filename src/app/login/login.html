@@ -7,17 +7,36 @@
             <div class="context-switch-wrap" ng-hide="login.context == 'registration'">
               <legend>Sign In</legend>
 
+              <div class="error-messages" ng-if="login.signInError">
+                {{ login.signInError }}
+              </div>
+
               <div class="form-group">
                 <label for=""><small>Sign In with your Email</small></label>
-                <input type="text" class="form-control" id="" placeholder="Username">
+                <!-- <input type="text" class="form-control" id="" placeholder="Username" ng-model="login.existingUser.email"> -->
+                <input type="text" class="form-control" id="" placeholder="Email" ng-model="login.existingUser.email" ng-keyup="login.validateEmailInput(login.existingUser.email)">
+                <i class="fa fa-close fa-lg" ng-show="login.emailError"></i>
+                <i class="fa fa-check fa-lg" ng-hide="login.emailSuccess"></i>
               </div>
 
               <div class="form-group">
                 <label for="">Password</label>
-                <input type="text" class="form-control" id="" placeholder="Password">
+                <!-- <input type="text" class="form-control" id="" placeholder="Password" ng-model="login.existingUser.password"> -->
+                <input type="password" class="form-control" id="" placeholder="Password" ng-model="login.existingUser.password" ng-keyup="login.checkEmpty(login.existingUser.password)">
+                <i class="fa fa-close fa-lg" ng-show="login.valueError"></i>
+                <i class="fa fa-check fa-lg" ng-hide="login.valueSuccess"></i>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+              <!-- <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="login.signInWithEmailAndPassword()">Sign In</button> -->
+              <button type="button"
+                    class="btn btn-primary btn-block btn-lg"
+                    ng-click="login.signInWithEmailAndPassword()"
+                    ng-class="{deactivated:login.authActive}">Sign In</button>
+
+              <div class="auth-status" ng-show="login.authActive == true">
+                <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+                <p>Sigining In. Please wait ...</p>
+              </div>
 
               <small><a class="pull-left" href="#" title="">Forgot your password?</a></small>
               <small><button class="pull-right" type="button" ng-click="login.switchContext()">New here?  Create an account here</button></small>
@@ -30,15 +49,6 @@
               <div class="error-messages" ng-if="login.error">
                 {{ login.error }}
               </div>
-              <!-- <div class="form-group">
-                <label for=""><small>Name</small></label>
-                <input type="text" class="form-control"
-                  placeholder="Because Introductions are great!"
-                  ng-model="login.newUser.name"
-                  ng-keyup="login.validateName(login.newUser.name)">
-                <i class="fa fa-close fa-lg" ng-show="login.nameError"></i>
-                <i class="fa fa-check fa-lg" ng-hide="login.nameSuccess"></i>
-              </div> -->
 
               <div class="form-group">
                 <label for="">Email</label>
@@ -49,7 +59,7 @@
 
               <div class="form-group">
                 <label for="">Password</label>
-                <input type="text" class="form-control"
+                <input type="password" class="form-control"
                   placeholder="Password"
                   ng-model="login.newUser.password">
                 <i class="fa fa-close fa-lg" ng-show="login.passwordMatchError"></i>
@@ -58,7 +68,7 @@
 
               <div class="form-group">
                 <label for="">Confirm Password</label>
-                <input type="text" class="form-control"
+                <input type="password" class="form-control"
                   placeholder="Confirm Password"
                   ng-model="login.newUser.confirmPassword"
                   ng-keyup="login.validatePasswordMatch(login.newUser.confirmPassword)">

@@ -6,7 +6,7 @@
     .directive('globalNavbar', globalNavbar);
 
   /** @ngInject */
-  function globalNavbar() {
+  function globalNavbar($state, authService) {
     var directive = {
       restrict: 'AE',
       templateUrl: 'app/common/directives/globalNavbar/globalNavbar.template.html',
@@ -39,7 +39,24 @@
 
     function GlobalNavbarController() {
       var vm = this;
+        vm.userDetails = {
+          name : null,
+          uid : null
+        }
         vm.loggedIn = false;
+        vm.signOut = signOut;
+
+      authService.auth().$onAuthStateChanged(function(user){
+        if(user){
+          vm.loggedIn = true;
+          vm.userDetails = user.uid;
+        }
+      });
+
+      function signOut(){
+        authService.auth().$signOut();
+        vm.loggedIn = false;
+      }
     }
 
   } // End

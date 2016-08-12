@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($locationProvider, $stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -37,10 +37,15 @@
       })
 
       .state('user', {
-        url: '/user',
+        url: '/user/{uid}',
         templateUrl: 'app/user/userProfile.html',
         controller: 'UserAcctController',
-        controllerAs: 'user'
+        controllerAs: 'user',
+        resolve: {
+          "currentAuth": ["authService", function(authService){
+            return authService.auth().$requireSignIn();
+          }]
+        }
       })
 
       .state('admin', {
@@ -51,6 +56,7 @@
       });
 
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   }
 
 })();

@@ -22,11 +22,10 @@
           <img src="https://lh3.googleusercontent.com/-p9Qqcq0svuw/VekKi2TcQYI/AAAAAAAAAdE/iIBhbwxaDiw/w426-h425/Rick%252Band%252Bmorty%252Bfor%252Ba%252Bhundred%252Byears%252Brick%252Band%252Bmorty%252B_406a982d46ccc523799e6aef45080387.png" class="img-circle">
         </button>
         <ul class="dropdown-menu" role="login-dropdown-menu" aria-labelledby="single-button">
-          <li role="menuitem"><a href="#">Signed in as Ricktty Rick</a></li>
-          <li role="menuitem"><a href="#">Another action</a></li>
-          <li role="menuitem"><a href="#">Something else here</a></li>
+          <li role="menuitem"><a href="#">Signed in</a></li>
+          <li role="menuitem"><a ui-sref="user({uid : gnb.userDetails.uid})"><i class="fa fa-cog fa-lg"></i>&nbsp;Edit Profile</a></li>
           <!-- <li class="divider"></li> -->
-          <li role="menuitem" class="signout"><a href="#">Sign Out</a></li>
+          <li role="menuitem" class="signout"><a href="#" ng-click="gnb.signOut()">Sign Out</a></li>
         </ul>
       </div>
       <ul class="nav navbar-nav navbar-right">

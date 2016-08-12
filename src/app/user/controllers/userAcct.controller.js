@@ -6,8 +6,9 @@
 		.controller('UserAcctController', UserAcctController);
 
 
-	function UserAcctController(){
-		
+	function UserAcctController($log, currentAuth){
+		$log.info(currentAuth);
+
 	}
 	
 })();

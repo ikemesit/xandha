@@ -6,7 +6,7 @@
     .controller('LoginController', LoginController);
 
 
-  function LoginController($log, $timeout, $firebaseAuth, toastr, authService){
+  function LoginController($log, $timeout, $state, $firebaseAuth, toastr, authService){
     var vm = this;
       vm.newUser = {
         name: null,
@@ -15,19 +15,24 @@
         confirmPassword: null
       };
 
+      vm.existingUser = {
+		email: null,
+		password: null
+      };
+
       // DOM Manipulation Switches
       vm.required = true;
       vm.emailSuccess = true;
       vm.emailError = false;
-      vm.nameSuccess = true;
-      vm.nameError = false;
+      vm.valueSuccess = true;
+      vm.valueError = false;
       vm.passwordMatchSuccess = true;
       vm.passwordMatchError = false;
       vm.authActive = false;
 
       // Validation
       vm.validateEmailInput = validateEmailInput;
-      vm.validateName = validateName;
+      vm.checkEmpty = checkEmpty;
       vm.validatePasswordMatch = validatePasswordMatch;
 
 
@@ -37,6 +42,11 @@
 
       // Submit Form content
       vm.submitForm = submitForm;
+
+      // Sign In user
+      vm.signInWithEmailAndPassword = signInWithEmailAndPassword;
+
+    checkAuthState();
 
 
     function switchContext(){
@@ -61,13 +71,13 @@
       return pattern.test(email);
     }
 
-    function validateName(value){
+    function checkEmpty(value){
       if(value !== null && value.length >= 2){
-        vm.nameError = false;
-        vm.nameSuccess = false;
+        vm.valueError = false;
+        vm.valueSuccess = false;
       }else{
-        vm.nameError = true;
-        vm.nameSuccess = true;
+        vm.valueError = true;
+        vm.valueSuccess = true;
       }
     }
 
@@ -114,18 +124,46 @@
           }
         }
         vm.authActive = false;
+
+        authService.auth().$onAuthStateChanged(function(user){
+			if(user)
+				$state.go('user');
+		});
       }, 1000);
 
-
-      authService.auth().$onAuthStateChanged(function(user){
-        toastr.success("Account Created Successfully!");
-      });
-      // $timeout(function(){
-      //   if($firebaseAuth().$getAuth())
-      //     toastr.success("Account Created Successfully!");
-      //   else
-      //     toastr.error("An error occurred. Please try again");
-      // }, 1500);
+      $state.go('user');
     }
+	
+	function signInWithEmailAndPassword(){
+		vm.signInError = null;
+		
+		$timeout(function(){
+			vm.authActive = true;
+		},10);
+
+		$timeout(function(){
+			var err = authService.signInWithEmailAndPassword(vm.existingUser.email, vm.existingUser.password);
+
+			vm.authActive = false;
+
+			if(err){
+				vm.signInError = err.code;
+			}
+			else{
+				authService.auth().$onAuthStateChanged(function(user){
+					if(user)
+						$state.go('destinations');
+				});
+			}
+		}, 200);
+    }
+
+    function checkAuthState(){
+    	var user = null;
+    	user = authService.auth().$getAuth();
+    	if(user)
+    		$state.go('home');
+    }
+
   }//end
 })();
