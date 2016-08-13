@@ -159,10 +159,10 @@
     }
 
     function checkAuthState(){
-    	var user = null;
-    	user = authService.auth().$getAuth();
-    	if(user)
-    		$state.go('home');
+		var user = null;
+		user = authService.auth().$getAuth();
+		if(user)
+			$state.go('home');
     }
 
   }//end
