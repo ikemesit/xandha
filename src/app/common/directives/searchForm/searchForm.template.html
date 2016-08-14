@@ -6,7 +6,8 @@
     <i class="fa fa-caret-down pull-right" id="show-location-list"></i>
     <div class="location-list-container" style="display: none">
       <ul class="location-list">
-        <li class="location-list-data" ng-repeat="destination in sfc.destinations track by $index">{{ destination.state }}</li>
+        <li class="location-list-data">Osun</li>
+        <li class="location-list-data">Lagos</li>
       </ul>
     </div>
   </div>
@@ -17,8 +18,8 @@
     <i class="fa fa-cog fa-spin" style="display: none;"></i>
     <div class="destination-list-container" style="display: none">
       <ul class="destination-list" >
-        <li class="destination-list-data">La Campagne</li>
-        <!-- <li class="destination-list-data" ng-repeat="dest in viewDestinations | filter:searchText ">{{dest.dest_name}}</li> -->
+        <!-- <li class="destination-list-data">La Campagne</li> -->
+        <li class="destination-list-data" ng-repeat="dest in sfc.destinations | filter:searchText ">{{ dest.name }}</li>
       </ul>
     </div>
   </div>
