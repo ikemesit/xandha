@@ -15,25 +15,49 @@
     <div class="col-xs-12">
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Destination</a></li>
+        <li><a href="#">Destinations</a></li>
         <li class="active">Destination name</li>
       </ol>
     </div>
   </div>
   <div class="row destination-search-result">
     <div class="col-xs-6">
-      <img src="assets/images/destination_images/slide1.jpg" class="img-responsive" >
+      <div uib-carousel active="active" interval="dest.myInterval" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="slide in dest.slides track by slide.id" index="slide.id">
+          <img ng-src="{{slide.image}}" 
+                style="margin:auto;"
+                ng-image-appear
+                loader-img="assets/images/ring-alt.gif"
+                responsive
+                transition-duration="1s"
+                animation="fillIn"
+                animation-duration="1s"
+                easing="ease-out">
+        </div>
+      </div>
     </div>
     <div class="col-xs-6 description">
-      <h2>Destination Name</h2>
-      <small>State</small>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button type="button" class="btn btn-block btn-primary btn-lg">View Destination</button>
+      <div class="description-header">
+        <h2>Destination Name</h2>
+        <small>Destination Address</small>
+      </div>
+      <div class="activities-tags">
+        <span>Hiking</span>
+        <span>Canoeing</span>
+        <span>Trekking</span>
+        <span>Massages</span>
+        <span>Nature Walks</span>
+      </div>
+      <div class="content">
+        <h5>About Destination</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg">View Destination</button>
     </div>
   </div>
   <div class="row search-header">

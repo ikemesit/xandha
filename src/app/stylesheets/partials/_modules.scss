@@ -6,7 +6,7 @@
 .lookup-backdrop{
 	position: fixed;
 	z-index: 1;
-	background-color: rgba(#072967, 0.6);
+	background-color: rgba($prime-blue, 0.6);
 	left: 0;
 	right: 0;
 	top: 0;
@@ -36,6 +36,9 @@
 			margin-left: 5px;
 			margin-right: 5px;
 		}
+		& span.location-init{
+			font-family: $raleway-bold;
+		}
 		// &.fa-location-arrow{
 		// 	display: block;
 		// }
@@ -53,6 +56,11 @@
 				list-style: none;
 				padding: 10px 10px 10px 15px;
 				border-top: 1px solid #eee;
+				font-family: $raleway-bold;
+				transition: background-color 0.4s;
+				&:hover{
+					background-color: lighten($neutral2, 55%);
+				}
 			}
 		}
 	}
@@ -61,7 +69,7 @@
 		position: relative;
 		background-color: $white;
 		width: 65%;
-		padding: 10px;
+		padding: 10.5px;
 		float: left;
 		cursor: pointer;
 		z-index: 1;
@@ -74,6 +82,9 @@
 		& span{
 			float: left;
 		}
+		& span.destination-init{
+			font-family: $raleway-bold;
+		}
 		& input{
 			width: 100%;
 			display: none;
@@ -81,6 +92,7 @@
 			border: 0;
 			position: absolute;
 			height: auto;
+			font-family: $raleway-bold;
 		}
 		& .fa-cog{
 			position: absolute;
@@ -99,18 +111,19 @@
 			left: 0;
 			width: 100%;
 			& .destination-list-data{
-				//display: none;
+				display: none;
 				list-style: none;
 				padding: 10px 10px 10px 15px;
 				border-top: 1px solid #eee;
 				text-align: left;
+				font-family: $raleway-bold;
 			}
 		}
 	}
 	& button{
 		position: relative;
 		width: 10%;
-		height: 39px;
+		height: 40.5px;
 		border: none;
 		border-radius: 0;
 		border-top-right-radius: 2px;

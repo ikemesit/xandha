@@ -2,15 +2,11 @@
 <div class="destination-lookup-container">
   <div class="location-dropdown">
     <i class="fa fa-location-arrow"></i>
-    <span class="location-init">Abuja</span>
+    <span class="location-init">Location</span>
     <i class="fa fa-caret-down pull-right" id="show-location-list"></i>
     <div class="location-list-container" style="display: none">
       <ul class="location-list">
-        <li class="location-list-data">Abuja</li>
-        <li class="location-list-data">Lagos</li>
-        <li class="location-list-data">Cross River</li>
-        <li class="location-list-data">Port Harcourt</li>
-        <li class="location-list-data">Jos</li>
+        <li class="location-list-data" ng-repeat="destination in sfc.destinations track by $index">{{ destination.state }}</li>
       </ul>
     </div>
   </div>

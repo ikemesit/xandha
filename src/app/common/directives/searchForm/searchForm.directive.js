@@ -6,7 +6,7 @@
     .directive('searchForm', searchForm);
 
 
-  function searchForm($log, $timeout){
+  function searchForm($log, $timeout, localStorageService){
     var directive = {
       name: 'searchForm',
       restrict: 'AE',
@@ -20,9 +20,11 @@
     return directive;
 
 
-    function formFunc(){
-
+    function formFunc(scope, element){
+      var listDropDowns
       angular.element(".location-dropdown").on('click', function(e) {
+        listDropDowns = document.querySelectorAll(".location-list-data");
+        $log.info(listDropDowns);
         /* lock event to current DOM selector */
         e.stopPropagation();
         openBackdrop();
@@ -30,8 +32,9 @@
         angular.element(".location-list-data").css('display', 'block');
       });
 
-      angular.element(".location-list-data").on("click", function(e){
+      angular.element(element).find(".location-list-data").click(function(e){
         e.stopPropagation();
+        // $log.info(this);
         var text = angular.element(this).text();
         angular.element(".location-init").text(text);
         angular.element(".location-list-container").css('display', 'none');
@@ -70,8 +73,6 @@
         }
       });
 
-
-
       function closeAllDropdowns() {
         $timeout(function () {
           angular.element('.location-list-container').css('display', 'none');
@@ -91,7 +92,23 @@
 
 
     function SearchFormController(){
+      var vm = this;
+          // vm.states = null;
+          vm.state = null;
+          vm.destinations = null;
+          vm.getSelectedState = getSelectedState;
 
+      loadDestinations();
+      $log.info(vm.state);
+
+      function loadDestinations(){
+        var data = localStorageService.get('dst-data');
+        vm.destinations = data;
+      }
+
+      function getSelectedState(state){
+        vm.state = state;
+      }
 
     }
   }
