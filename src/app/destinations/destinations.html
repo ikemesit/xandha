@@ -16,11 +16,11 @@
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Destinations</a></li>
-        <li class="active">Destination name</li>
+        <li class="active" ng-bind="dest.searchResult.name"></li>
       </ol>
     </div>
   </div>
-  <div class="row destination-search-result">
+  <div class="row destination-search-result" ng-show="dest.searchResult">
     <div class="col-xs-6">
       <div uib-carousel active="active" interval="dest.myInterval" no-wrap="noWrapSlides">
         <div uib-slide ng-repeat="slide in dest.slides track by slide.id" index="slide.id">
@@ -38,8 +38,8 @@
     </div>
     <div class="col-xs-6 description">
       <div class="description-header">
-        <h2>Destination Name</h2>
-        <small>Destination Address</small>
+        <h2 ng-bind="dest.searchResult.name"></h2>
+        <small ng-bind="dest.searchResult.address">Destination Address</small>
       </div>
       <div class="activities-tags">
         <span>Hiking</span>
@@ -49,20 +49,16 @@
         <span>Nature Walks</span>
       </div>
       <div class="content">
-        <h5>About Destination</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h5>About {{ dest.searchResult.name }}</h5>
+        <p ng-bind-html="dest.searchResult.desc"></p>
       </div>
-      <button type="button" class="btn btn-primary btn-lg">View Destination</button>
+      <button type="button" class="btn btn-primary btn-lg" ui-sref="destination-detail({ name: dest.searchResult.name })">View Destination</button>
     </div>
   </div>
   <div class="row search-header">
     <div class="col-xs-4">
-      <h4>Showing other destinations in Abuja</h4>
+      <h4 ng-show="dest.searchResult">Showing other destinations in {{ dest.searchResult.state }}</h4>
+      <h4 ng-hide="dest.searchResult">Popular Destinations</h4>
     </div>
     <div class="col-xs-12">
       <hr>

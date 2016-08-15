@@ -26,7 +26,8 @@
     "angular-local-storage": "^0.2.7",
     "ngmap": "^1.17.3",
     "ngWig": "ng-wig#^3.0.4",
-    "ng-image-appear": "^1.11.3"
+    "ng-image-appear": "^1.11.3",
+    "angular-loading-overlay": "^1.1.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"

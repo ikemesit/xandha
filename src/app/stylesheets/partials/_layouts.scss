@@ -610,9 +610,11 @@ ul.dropdown-menu:after {
 .search-wrapper{
   background-color: $prime-blue;
   padding: 20px 0;
+  margin-bottom: 15px;
 }
+
 .search-header{
-  padding-top: 15px;
+  padding-top: 0;
   padding-bottom: 10px;
   margin-top: 0;
   margin-bottom: 0;
@@ -650,16 +652,17 @@ ul.dropdown-menu:after {
   padding-bottom: 20px;
  
   & .description{
-    // background-color: $neutral1;
-    // padding-top: 20px;
+    background-color: $white;
     padding-bottom: 20px;
+    // padding-left: 0px;
+    // padding-right: 0px;
   }
 
   & .description-header{
     margin-bottom: 10px;
      & h2{
       font-family: $raleway-bold;
-      margin-top: 0;
+      margin-top: 10px;
       margin-bottom: 5px;
       color: $prime-blue;
     }
@@ -698,25 +701,30 @@ ul.dropdown-menu:after {
     & h5{
       font-family: $raleway-bold;
     }
+    & p{
+      // font-family: $raleway;
+    }
   }
 
   button{
-    margin-top: 20px;
-    color: $primary;
+    margin-top: 10px;
+    color: $white; //$primary;
     padding: 5px 20px;
-    background-color: rgba($white, 0);
-    border: 2px solid $primary;
+    background-color: $comp_1; //rgba($white, 0);
+    border: 2px solid $comp_1; //$primary;
     transition: all 0.3s ease;
     font-family: $raleway-bold;
     &:hover{
       color:$white;
-      background-color: $comp_1;
-      border-color: $comp_1;
+      background-color: darken($comp_1, 10%);
+      border-color: darken($comp_1, 10%);
     }
   }
 }
 
 .destinations{
+  margin-top: 0;
+  padding-top: 0;
   padding-left: 0;
   padding-right:  0;
   padding-bottom: 100px;

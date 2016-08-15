@@ -14,14 +14,13 @@
   <div class="destination-dropdown">
     <i class="fa fa-search"></i>
     <span class="destination-init">Select a Destination</span>
-    <input type="text" id="destination-search" placeholder="Search For a Destination" ng-model="searchText">
+    <input type="text" id="destination-search" placeholder="Search For a Destination" ng-model="sfc.destinationFilterText">
     <i class="fa fa-cog fa-spin" style="display: none;"></i>
     <div class="destination-list-container" style="display: none">
       <ul class="destination-list" >
-        <!-- <li class="destination-list-data">La Campagne</li> -->
-        <li class="destination-list-data" ng-repeat="dest in sfc.destinations | filter:searchText ">{{ dest.name }}</li>
+        <li class="destination-list-data" ng-repeat="dest in sfc.destinations | filter: sfc.destinationFilterText" ng-model="sfc.searchText">{{ dest.name }}</li>
       </ul>
     </div>
   </div>
-  <button type="submit" class="btn btn-default btn-lg" ng-click="findDestination(destination)">Go</button>
+  <button type="submit" class="btn btn-default btn-lg" ng-click="sfc.goToSelectedLocation()">Go</button>
 </div>

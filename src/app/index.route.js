@@ -16,7 +16,7 @@
       })
 
       .state('destinations', {
-        url: '/destinations',
+        url: '/destinations/{name}',
         templateUrl: 'app/destinations/destinations.html',
         controller: 'DestinationsController',
         controllerAs: 'dest'

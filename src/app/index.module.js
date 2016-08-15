@@ -17,7 +17,8 @@
 		'LocalStorageModule',
 		'ngMap',
 		'ngWig',
-		'ngImageAppear'
+		'ngImageAppear',
+		'bsLoadingOverlay'
 	]);
 
 })();
