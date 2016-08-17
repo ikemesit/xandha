@@ -4,8 +4,8 @@
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
-  height: 100vh;
-  box-shadow: inset 0 100vh rgba(#072967, 0.7);
+  height: 70vh;
+  box-shadow: inset 0 70vh rgba(#072967, 0.7);
 
   & video{
     position: absolute;
@@ -28,18 +28,18 @@
 
 // MAIN NAV
 nav[role="main-nav"].navbar.navbar-default{
-    background-color: rgba(#eee, 0);
+    background-color: rgba($black, 0.4);
     border-color: rgba(#eee, 0);
 }
 
 nav[role="main-nav"]{
-	padding-top: 20px;
+	padding-top: 5px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: none;
 
 	.navbar-brand{
-		font-size: 4.5rem;
+		font-size: 3rem;
 		font-weight: bold;
 		font-family: $headings-font-family;
     color: $white;
@@ -238,10 +238,11 @@ ul.dropdown-menu:after {
 
 // ATF CONTENT
 .atf-content {
-  height: 100vh;
+  height: 70vh;
   margin-bottom: 0;
   display: table;
   width: 100%;
+  overflow-y: auto;
 
   & .inner{
     display: table-row;
@@ -257,7 +258,7 @@ ul.dropdown-menu:after {
   	font-family: $raleway-bold;
   	text-shadow: none;
     display: block;
-    margin-top: 25vh;
+    margin-top: 15vh;
     font-size: 7rem;
   }
 
@@ -268,14 +269,6 @@ ul.dropdown-menu:after {
     padding-right: 20%;
     margin-bottom:  40px;
   }
-
-  // & form{
-  //   input.form-control{
-  //     border: 2px solid $white;
-  //   }
-  //     @include center-block();
-  //     width: 600px;
-  // }
 }
 
 // COMMON CONTENT STYLES FOR LANDING PAGE
@@ -650,7 +643,7 @@ ul.dropdown-menu:after {
   // padding-left: 0;
   // padding-right: 0;
   padding-bottom: 20px;
- 
+
   & .description{
     background-color: $white;
     padding-bottom: 20px;
