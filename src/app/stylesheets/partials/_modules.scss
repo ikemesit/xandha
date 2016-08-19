@@ -1,12 +1,12 @@
 /*======== Destination Search module ========*/
 @keyframes animate-bg-fade{
-  from{ background-color: rgba($prime-blue, 0); }
-  to{ background-color: rgba($prime-blue, 0.6); }
+  from{ background-color: rgba($black, 0); }
+  to{ background-color: rgba($black, 0.6); }
 }
 .lookup-backdrop{
 	position: fixed;
-	z-index: 5;
-	background-color: rgba($prime-blue, 0.6);
+	z-index: 1;
+	background-color: rgba($black, 0.6);
 	left: 0;
 	right: 0;
 	top: 0;
@@ -20,7 +20,7 @@
 	display: block;
 	margin-top: 0;
 	border-radius: 2px;
-  // z-index: 5;
+  	z-index: 5;
 
 	& .location-dropdown{
 		position: relative;
@@ -32,7 +32,7 @@
 		float: left;
 		width: 25%;
 		cursor: pointer;
-		z-index: 1;
+		z-index: 5;
 		& span{
 			margin-left: 5px;
 			margin-right: 5px;
@@ -73,7 +73,7 @@
 		padding: 10.5px;
 		float: left;
 		cursor: pointer;
-		z-index: 1;
+		z-index: 5;
 		& .fa-search{
 			float: left;
 			margin-left: 0;
@@ -97,7 +97,7 @@
 		}
 		& .fa-cog{
 			position: absolute;
-			z-index: 1;
+			z-index: 5;
 			font-size: 20px;
 			right: 10px;
 		}
@@ -111,7 +111,6 @@
 			position: absolute;
 			left: 0;
 			width: 100%;
-      // z-index: 10;
 			& .destination-list-data{
 				display: none;
 				list-style: none;
@@ -119,7 +118,6 @@
 				border-top: 1px solid #eee;
 				text-align: left;
 				font-family: $raleway-bold;
-        // z-index: 5;
 			}
 		}
 	}
@@ -134,7 +132,7 @@
 		padding: auto 15px;
 		background-color: $primary;
 		color: $white;
-		z-index: 1;
+		z-index: 5;
 		transition: background-color 0.2s;
 		&:hover{
 			background-color: $comp_1;

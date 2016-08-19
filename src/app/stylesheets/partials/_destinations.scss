@@ -1,0 +1,425 @@
+/*======== Destination Page Layout ========*/
+.search-wrapper{
+  background-color: $comp_1; //$prime-blue;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 2px #d2d2d2;
+
+  // & .location-dropdown, .destination-dropdown{
+  //   border: thin solid darken($neutral1, 5%);
+  // }
+  & button.btn-default{
+    &:hover{
+      background-color: darken($primary, 5%);
+    }
+  }
+}
+
+.search-header{
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  // background-color: $neutral1;
+  & h4{
+    // text-align: center;
+    font-family: $raleway-bold;
+    padding: 0;
+    margin: 10px 0 0 0;
+    color: $prime-blue;
+  }
+
+  & hr{
+    border: thin solid darken($body-bg-color, 5%);
+    margin-top: 10px;
+  }
+
+  & ol.breadcrumb{
+    background-color: transparent;
+    border-radius: 2px;
+    padding-left: 0;
+    & li{
+      color: $comp_1;
+      font-family: $raleway-bold;
+    }
+    & a{
+      color: $prime-blue;
+      font-family: $raleway-bold;
+    }
+  }
+
+}
+
+.destination-search-result{
+  padding-bottom: 20px;
+  margin-right: 0;
+
+  & .search-result-carousel{
+    height: 370px;
+  }
+
+  & .description{
+    background-color: $white;
+    padding: 20px 0;
+    height: 370px;
+    box-shadow: 0px 0px 2px darken($neutral1, 8%);
+  }
+
+  & .description-header{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+     & h3{
+      font-family: $raleway-bold;
+      margin-bottom: 5px;
+      color: $prime-blue;
+    }
+    & small{
+      font-family: $raleway-bold;
+      color: lighten($neutral2, 20%);
+    }
+  }
+
+  & .activities-tags{
+    margin-left: 20px;
+    margin-right: 20px;
+    & span{
+      display: inline-block;
+      border-radius: 2px;
+      border: 2px solid $comp_1;
+      padding: 2px;
+      font-family: $raleway-bold;
+      color: $comp_1;
+      transition: all 0.4s;
+      font-size: 0.8em;
+      margin-right: 5px;
+      &:hover{
+        background-color: $comp_1;
+        color:$white;
+        border: 2px solid $comp_1;
+        cursor: pointer;
+        font-size: 0.8em;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  & .content{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    & h5{
+      font-family: $raleway-bold;
+    }
+  }
+
+  button{
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: $white; //$primary;
+    padding: 5px 20px;
+    background-color: $comp_1; //rgba($white, 0);
+    border: 2px solid $comp_1; //$primary;
+    transition: all 0.3s ease;
+    font-family: $opensans-bold;
+    &:hover{
+      color:$white;
+      background-color: darken($comp_1, 10%);
+      border-color: darken($comp_1, 10%);
+      font-family: $opensans-bold;
+    }
+    &:active{
+      color:$white;
+      background-color: darken($comp_1, 10%);
+      border-color: darken($comp_1, 10%);
+      font-family: $opensans-bold;
+    }
+    &:focus{
+      color:$white;
+      background-color: darken($comp_1, 10%);
+      border-color: darken($comp_1, 10%);
+      font-family: $opensans-bold;
+    }
+  }
+}
+
+.destinations{
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right:  0;
+  padding-bottom: 100px;
+
+  .card{
+    box-shadow: none;
+    position: relative;
+    background-color: transparent;
+    // TOCOMPLETE
+    & .overlay{
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($prime-blue, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s;
+      a{
+        overflow: auto;
+        color: $white;
+        @include center-block;
+        text-align: center;
+        margin-top: 80px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      &:hover{
+        opacity: 1;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    }
+
+    .card-img-top {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    .card-title{
+      font-size: 14px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 0;
+      &:after {
+        content: " ";//"\f004";
+        // font-family: "FontAwesome";
+        // float: right;
+        // color: $comp_1;
+        // padding-right: 10px;
+      }
+    }
+    small{
+      margin-top: 0;
+      font-family: $raleway-bold, sans-serif;
+      color: $comp_1; //lighten($neutral2, 20%);
+    }
+  }
+}
+
+/*======== Destination detail layout ========*/
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+.page-header-2{
+    height: 300px;
+    // background: url("http://hidroplay.com.au/wp-content/uploads/2012/09/Gold-Coast7.jpg");
+    //background-size: cover;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 300px rgba($black, 0.5);
+    // animation: animatedBackground 100s linear infinite;
+    transition: all 0.6s;
+    &:hover{
+      box-shadow: inset 0 300px rgba($black, 0.2);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    & h2{
+      color: $white;
+      padding: 0;
+      margin: 0;
+      margin-top: 200px;
+      font-family: $raleway-bold;
+      font-size: 4em;
+      // border-bottom: thin solid $white;
+      display: block;
+      // padding-bottom: 10px;
+    }
+    i{
+      display: inline-block;
+      color: $white;
+      margin-right: 5px;
+      transition: color 0.4s;
+      &:hover{
+        color: $comp_2;
+      }
+    }
+    address{
+      color: $white;
+      display: inline-block;
+    }
+
+    & .social-icons{
+      margin-top: 200px;
+      i {
+        color: $white;
+        margin-right: 20px;
+        display: inline-block;
+      }
+    }
+  }
+.destination-detail{
+  & .row{
+    margin: 0;
+  }
+
+  & .summary-title{
+    font-family: $opensans-bold;
+    margin-bottom: 20px;
+    color: $prime-blue;
+  }
+
+  & .details-nav{
+    background-color: $white;
+    padding-left: 0;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+    // line-height: 0;
+    & li{
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      & a{
+        margin: 0;
+        display: inline-block;
+        padding: 20px;
+        font-family: $raleway-bold;
+        font-size: 16px;
+        color: $prime-blue; 
+        border-bottom: 2px solid $white;
+        transition: all 0.4s;
+        &:hover{
+          background-color: $neutral1;
+          border-bottom: 2px solid $comp_1;
+          text-decoration: none;
+          color: $comp_1;
+        }
+
+        &:focus{
+          background-color: $neutral1;
+          border-bottom: 2px solid $comp_1;
+          text-decoration: none;
+          color: $comp_1;
+        }
+
+        // &.active{
+        //   background-color: $neutral1;
+        //   border-bottom: 2px solid $comp_1;
+        //   text-decoration: none;
+        //   color: $comp_1;
+        // }
+      }
+    }
+  }
+
+  & .ratings-reviews{
+    background-color: $white;
+    box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    & .rating-summary{
+      // border-right: 2px soild $neutral1;
+      & h3{
+        margin: 0;
+        color: $primary;
+        font-size: 3rem;
+        font-family: $opensans-bold;
+      } 
+    }
+
+    & .review-highlights{
+      padding-left: 0;
+      list-style: none;
+      line-height: 10px;
+      & li{
+        @include clearfix();
+        display: block;
+      }
+
+      & label{
+        width: 120px;
+        display: inline-block;
+        float: left;
+        font-family: $opensans-bold;
+        padding-right: 10px;
+      }
+      & .progress{
+        width: 200px;
+        height: 10px;
+        margin: 0;
+        margin-bottom: 15px;
+        display: inline-block;
+        float: left;
+      }
+      & .progress-bar{
+        background-color: $comp_1;
+        box-shadow: none;
+      }
+      & span{
+        display: inline;
+        float: left;
+        text-align: right;
+        margin-left: 20px;
+        color: $primary;
+        font-family: $opensans-bold;
+      }
+    }
+  }
+
+
+  & .destination-detail-content{
+    background-color: $white;
+    box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+    & h2{
+      font-family: $raleway-bold;
+      margin-top: 20px;
+      padding-top: 0;
+    }
+    & .section-title{
+      font-family: $raleway-bold;
+    }
+    & .carousel-inner{
+      height: 400px !important;
+    }
+  }
+  
+  & .location-map{
+    margin-top: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  & .angular-google-map-container { height: 400px; };
+}
+
+.book-dest{
+  background-color: $primary;
+  border: 2px solid $primary;
+  color: $white;
+  &:hover{
+    background-color: $comp_1;
+    color: $white;
+    border: 2px solid $comp_1;
+  }
+}
+
+.ad-space-wrap{
+  margin-left: 0;
+  margin-right: 0;
+}
+.ad-space{
+  background-color: darken($body-bg-color, 10%);
+  height: 300px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 20px;
+  & h4{
+    color: $white;
+    font-family: $raleway-bold;
+    display: block;
+    text-align: center;
+    margin-top: 120px;
+  }
+}

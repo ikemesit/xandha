@@ -20,7 +20,7 @@
     return directive;
 
 
-    function formFunc(scope, element){
+    function formFunc(scope){
 
       // $log.info(scope);
       

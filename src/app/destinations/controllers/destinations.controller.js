@@ -10,7 +10,7 @@
 	function DestinationsController($state, $log, localStorageService, destinationFactory){
 		var vm = this;
 			vm.destinations = [];
-			vm.myInterval = 5000;
+			vm.myInterval = 0;
 			vm.noWrapSlides = false;
 			vm.active = 0;
 			vm.slides = [

@@ -1,0 +1,38 @@
+/* FOOTER
+-------------------------------------------------- */
+.upper-footer, .bottom-footer{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: darken($white, 10%);
+
+  & a{
+    color: darken($white, 10%);
+    &:hover{
+      color: $comp_2;
+      text-decoration: none;
+    }
+  }
+
+  & h4{
+    font-family: $raleway-bold;
+  }
+  & ul{
+    list-style: none;
+    padding-left: 0;
+  }
+
+  & hr{
+    border-color: darken($prime-blue, 5%);//rgba($white, 0.3);
+  }
+}
+
+.upper-footer{
+  background-color: darken($prime-blue, 7%);
+}
+
+.bottom-footer{
+  padding-top: 1.2%;
+  padding-bottom: 0.8%;
+  // font-size: 0.8em;
+  background-color: darken($prime-blue, 8%);
+}
