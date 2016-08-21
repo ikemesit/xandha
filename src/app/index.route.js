@@ -29,6 +29,13 @@
         controllerAs: 'dd'
       })
 
+      .state('deals', {
+        url: '/deals',
+        templateUrl: 'app/deals/deals.html',
+        controller: 'DealsController',
+        controllerAs: 'dls'
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/login.html',

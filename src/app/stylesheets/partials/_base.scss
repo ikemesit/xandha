@@ -8,6 +8,11 @@ body {
   font-size: 14px;
   background-color: $body-bg-color; //lighten($prime-blue, 65%);
   overflow-x: hidden;
+
+  // Font smoothing experiment
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
 }
 
 .emphasis{
