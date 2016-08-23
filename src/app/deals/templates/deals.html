@@ -1,0 +1,70 @@
+<div global-navbar></div>
+<div class="search-wrapper">
+</div>
+<div class="container deals-wrap">
+	<div class="row header-row">
+		<div class="col-xs-5 col-xs-offset-2 title-header">
+			<h1>Grab the latest Deals</h1>
+		</div>
+		<div class="col-xs-2 clearfix">
+			<p class="pull-right">Filter By Location:</p>
+		</div>
+		<div class="col-xs-3">
+			<select name="" id="input" class="form-control" required="required">
+				<option value="">Abuja</option>
+				<option value="">Lagos</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="row dashboard-row">
+		<div class="col-xs-2 dashboard-sidebar">
+			<form>
+				<ul>
+					<li><h4>Filter by Category</h4></li>
+					<li><label><input type="checkbox"> All</label></li>
+					<li><label><input type="checkbox"> Food & Dining</label></li>
+					<li><label><input type="checkbox"> Getaways</label></li>
+				</ul>
+			</form>
+		</div>
+		<div class="col-xs-10 deals-dashboard">
+			<div class="row">
+				<div class="col-xs-4" ng-repeat="deal in dls.deals track by deal.id">
+					<a ui-sref="deal({key: deal.id})" title="">
+						<div class="card" ui-sref="deal">
+							<img class="card-img-top" 
+									ng-src="{{ deal.img }}"
+									style="margin:auto;"
+				                    ng-image-appear
+				                    no-loader
+				                    responsive
+	                                transition-duration="1s"
+	                                animation="fillIn"
+	                                animation-duration="1s"
+	                                easing="ease-out"
+	                                alt="{{ deal.caption }}">
+							<div class="deal-details">
+								<h5 ng-bind="deal.caption"></h5>
+								<span class="clearfix meta-data">
+									<small class="pull-left">234 Sold</small>
+									<small class="pull-left" ng-bind-html="deal.category"></small>
+								</span>
+								<span class="clearfix">
+									<p class="new-price pull-left" ng-bind="deal.discountPrice">2000</p>
+									<p class="old-price pull-right" ng-bind="deal.originalPrice">10,000</p>
+								</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3">
+					<button type="button" class="btn btn-lg btn-primary btn-block">Show More ...</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div global-footer></div>

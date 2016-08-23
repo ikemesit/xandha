@@ -8,31 +8,66 @@
 
 	function DealsController(){
 		var vm = this;
-			vm.myInterval = 5000;
-			vm.noWrapSlides = false;
-			vm.active = 0;
-			vm.images = [
-				{
-					id: 0,
-					image: 'https://hd.unsplash.com/photo-1468743428993-661b9309fa2c',
-					text: 'Awesome stuff'
-				},
-				{
-					id: 1,
-					image: 'https://images.unsplash.com/photo-1464695110811-dcf3903dc2f4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=34cc42f969e2f39d7a8af95d16c7dcca',
-					text: 'Awesome stuff again'
-				},
-				{
-					id: 2,
-					image: 'https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=29a9bb29bcbf19a5954d0110b19d5b51',
-					text: 'Awesome stuff again'
-				},
-				{
-					id: 3,
-					image: 'https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b734e103303c5965225682077ee72f86',
-					text: 'Awesome stuff again'
-				}
+			vm.deals = [
+			{
+				id: 0,
+				caption: "Sheraton Hotel: 20% off Western dishes",
+				img: "https://static.pexels.com/photos/2139/food-summer-party-dinner.jpg",
+				originalPrice: "10,000",
+				discountPrice: "2,000",
+				discount: "80%",
+				category: "<i class=\"fa fa-glass\"></i> food & drink"
+			},
+			{
+				id: 1,
+				caption: "Eko Hotel: 20% off Western dishes",
+				img: "https://static.pexels.com/photos/8544/food-dinner-grilled-shashlik.jpg",
+				originalPrice: "10,000",
+				discountPrice: "2,000",
+				discount: "80%",
+				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+			},
+			{
+				id: 2,
+				caption: "La Campagne Hotel: 20% off Western dishes",
+				img: "https://static.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg",
+				originalPrice: "10,000",
+				discountPrice: "2,000",
+				discount: "80%",
+				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+			},
+			{
+				id: 3,
+				caption: "Nixon Restaurant: 20% off All dishes",
+				img: "https://static.pexels.com/photos/6863/food-plate-toast-restaurant.jpg",
+				originalPrice: "10,000",
+				discountPrice: "5,000",
+				discount: "50%",
+				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+			},
+			{
+				id: 4,
+				caption: "Yonder Resort and Hotels: 20% off All dishes",
+				img: "https://static.pexels.com/photos/7782/food-plate-wood-restaurant.jpg",
+				originalPrice: "10,000",
+				discountPrice: "9,000",
+				discount: "10%",
+				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+			},
+			{
+				id: 5,
+				caption: "The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available",
+				img: "https://img.grouponcdn.com/deal/ayRhBntMDYrgxQAmoJsk/t620x376/F5-1000x600.jpg",
+				originalPrice: "10,000",
+				discountPrice: "9,000",
+				discount: "10%",
+				category: "<i class=\"fa fa-plane\"></i> getaways"	
+			}
 			];
+			
+			
+
+
 
 	}// End
 })();
