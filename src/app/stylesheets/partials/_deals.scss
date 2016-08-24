@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   line-height: $lineHeight;
-  max-height: $lineHeight * $lineCount; 
+  max-height: $lineHeight * $lineCount;
   // text-align: justify;
   // margin-right: -1em;
   // padding-right: 1em;
@@ -59,7 +59,7 @@
     padding-bottom: 20px;
     margin-bottom: 50px;
     box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
-  
+
     & a{
       overflow: auto;
       display: inline-block;
@@ -120,7 +120,7 @@
           }
         }
       }
-    } 
+    }
   }
 
   & .dashboard-sidebar{
@@ -171,7 +171,7 @@
   }
   & .deal-caption{
     & h3{
-      font-family: $raleway-bold;
+      font-family: $opensans-bold;
       margin: 0 20px 20px 0;
       border-left: thick solid $comp_1;
       padding-left: 20px;
@@ -184,5 +184,55 @@
   & .deal-sidebar{
     border-left: thin solid $body-bg-color;
     min-height: 100%;
+    & .btn-primary{
+      background-color: $primary;
+      border: thin solid $primary;
+      & i{
+        margin-left: 20px;
+      }
+    }
+    & h4{
+      font-family: $raleway-bold;
+    }
+    & ul.discount-details{
+      list-style: none;
+      padding-left: 0;
+      & li{
+        // display: inline;
+        margin-right: 10px;
+        & p{
+          font-family: $opensans-light;
+          display: inline;
+        }
+        & .emphasis{
+          font-family: $opensans-bold;
+        }
+      }
+
+      // &:before{
+      //   content: '\0020A6';
+      //   font-family: $opensans-bold;
+      //   float: left;
+      //   margin-right: 5px;
+      // }
+    }
+    & .social-sharing{
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px;
+      border-radius: 60px;
+      background-color: darken($body-bg-color, 40%);
+      color: $white;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      vertical-align: middle;
+      & i{
+        @include center-block;
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
   }
+
 }
