@@ -58,28 +58,30 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
-    box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+    box-shadow: 0px 0px 5px darken($body-bg-color, 10%);
 
     & a{
       overflow: auto;
       display: inline-block;
       margin: 0;
       padding: 0;
+      text-decoration: none;
       &:hover{
+        text-decoration: none;
+      }
+      &:active{
         text-decoration: none;
       }
     }
     & .card{
       width: 100%;
-      // min-width: 100%;
+      min-width: 100%;
       height: 280px;
-      border-radius: 0px;
-      box-shadow: none;
+      border-radius: 2px;
+      // box-shadow: none;
       background-color: $neutral1; //darken($body-bg-color, 10%);
       overflow: hidden;
-      position: relative;
       & img:not(.ngImageAppearLoader){
-        // width: auto;
         height: 180px;
       }
       & .deal-details{
@@ -92,12 +94,16 @@
           color: $prime-blue;
           word-wrap: break-word;
         }
-        & small{
+        & .badge{
           margin-top: 5px;
           margin-bottom: 5px;
-          margin-right: 20px;
-          font-family: $raleway-bold;
-          color: $comp_1; //darken($body-bg-color, 30%);
+          margin-right: 5px;
+          font-size: 0.7em;
+          font-family: $opensans-bold;
+          background-color: $primary; //darken($body-bg-color, 30%);
+          & i{
+            margin-right: 5px;
+          }
         }
         & .old-price{
           text-decoration: line-through;
@@ -195,8 +201,9 @@
       font-family: $raleway-bold;
     }
     & ul.discount-details{
-      list-style: none;
-      padding-left: 0;
+      list-style: circle;
+      margin-left: 0;
+      padding-left: 20px;
       & li{
         // display: inline;
         margin-right: 10px;
