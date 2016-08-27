@@ -56,9 +56,21 @@
     background-color: $white;
     min-height: 400px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     margin-bottom: 50px;
     box-shadow: 0px 0px 5px darken($body-bg-color, 10%);
+    & .default-content{
+      & h4{
+        font-family: $raleway-bold;
+        display: inline-block;
+        margin-right: 10px;
+        color: darken($body-bg-color, 10%);
+      }
+      & i{
+        color: $comp_1;
+        display: inline-block;
+      }
+    }
 
     & a{
       overflow: auto;
@@ -72,6 +84,14 @@
       &:active{
         text-decoration: none;
       }
+    }
+    & .row{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    & .col-xs-4{
+      padding-left: 10px;
+      padding-right: 10px;
     }
     & .card{
       width: 100%;
@@ -100,7 +120,7 @@
           margin-right: 5px;
           font-size: 0.7em;
           font-family: $opensans-bold;
-          background-color: $primary; //darken($body-bg-color, 30%);
+          background-color: $comp_1; //darken($body-bg-color, 30%);
           & i{
             margin-right: 5px;
           }
@@ -130,6 +150,14 @@
   }
 
   & .dashboard-sidebar{
+    & h5{
+      margin-bottom: 5px;
+      &:before{
+        content: '\f0b0';
+        font-family: 'FontAwesome';
+        margin-right: 5px;
+      }
+    }
     & ul{
       padding-left: 0;
       list-style: none;
@@ -163,6 +191,7 @@
   .btn-primary{
     background-color: $comp_1;
     border: thin solid $comp_1;
+    margin-bottom: 20px;
   }
 }
 
@@ -239,6 +268,43 @@
         text-align: center;
         margin-top: 5px;
       }
+    }
+  }
+
+  & .deal-details{
+    & .nav-tabs{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      & li{
+        border-color: transparent;
+        border-radius: 2px;
+        font-family: $opensans-bold;
+        transition: all 0.4s;
+        & a{
+          border-radius: 2px;
+          // background-color: $prime-blue;
+          color: $prime-blue;
+          font-size: 1.1em;
+          & i{
+            margin-right:  10px;
+          } 
+        }
+      }
+
+      & li.active{
+        border-color: transparent;
+        & a{
+          background-color: $comp_1;
+          color: $white;
+          border: thin solid $comp_1;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    & .tab-pane{
+      background-color: $body-bg-color;
+      padding: 20px;
     }
   }
 

@@ -1,19 +1,19 @@
 // Button Styles
 button, .btn{
   outline: none;
-  font-family: $raleway-bold;
+  font-family: $opensans-bold;
   border-radius: 2px;
   &:focus{
     outline: none !important;
-    font-family: $raleway-bold;
+    font-family: $opensans-bold;
   }
   &:active{
     outline: none !important;
-    font-family: $raleway-bold;
+    font-family: $opensans-bold;
   }
   &:hover{
     outline: none !important;
-    font-family: $raleway-bold;
+    font-family: $opensans-bold;
   }
 }
 

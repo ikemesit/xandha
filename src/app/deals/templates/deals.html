@@ -19,18 +19,22 @@
 
 	<div class="row dashboard-row">
 		<div class="col-xs-2 dashboard-sidebar">
-			<form>
-				<ul>
-					<li><h4>Filter by Category</h4></li>
-					<li><label><input type="checkbox"> All</label></li>
-					<li><label><input type="checkbox"> Food & Dining</label></li>
-					<li><label><input type="checkbox"> Getaways</label></li>
-				</ul>
-			</form>
+			<ul>
+				<li><h5>Filter by Category</h5></li>
+				<!-- <li><label><input type="checkbox"> All</label></li> -->
+				<li><label><input type="checkbox" ng-model="dls.categoryFilters.fd"> Food & Dining</label></li>
+				<li><label><input type="checkbox" ng-model="dls.categoryFilters.gt"> Getaways</label></li>
+				<li><label><input type="checkbox" ng-model="dls.categoryFilters.act"> Activities</label></li>
+			</ul>
 		</div>
 		<div class="col-xs-10 deals-dashboard">
 			<div class="row">
-				<div class="col-xs-4" ng-repeat="deal in dls.deals track by deal.id">
+				<div class="col-xs-4" 
+					ng-repeat="deal in filteredValues = (dls.deals | 
+					filter: (dls.categoryFilters.fd? {category: 'food & drink'} : undefined) | 
+					filter: (dls.categoryFilters.gt? {category: 'getaways'} : undefined) |
+					filter: (dls.categoryFilters.act? {category: 'activities'} : undefined))
+					track by deal.id">
 					<a ui-sref="deal({key: deal.id})" title="">
 						<div class="card" ui-sref="deal">
 							<img class="card-img-top" 
@@ -38,7 +42,7 @@
 				                    ng-image-appear
 				                    no-loader
 				                    responsive
-	                                transition-duration="1s"
+	                                transition-duration="0.5s"
 	                                animation="fillIn"
 	                                animation-duration="1s"
 	                                easing="ease-out"
@@ -50,15 +54,19 @@
 									<span class="pull-left badge" ng-bind-html="deal.category"></span>
 								</span>
 								<span class="clearfix">
-									<p class="new-price pull-left" ng-bind="deal.discountPrice">2000</p>
 									<p class="old-price pull-left" ng-bind="deal.originalPrice">10,000</p>
+									<p class="new-price pull-left" ng-bind="deal.discountPrice">2000</p>
 								</span>
 							</div>
 						</div>
 					</a>
 				</div>
+				<div class="col-xs-12 default-content" ng-show="!filteredValues.length">
+					<h4>Nothing to show here...</h4>
+					<i class="fa fa-frown-o fa-2x"></i>
+				</div>
 			</div>
-			<div class="row">
+			<div class="row" ng-if="filteredValues.length >= 6">
 				<div class="col-xs-6 col-xs-offset-3">
 					<button type="button" class="btn btn-lg btn-primary btn-block">Show More ...</button>
 				</div>

@@ -16,7 +16,8 @@
 				originalPrice: "10,000",
 				discountPrice: "2,000",
 				discount: "80%",
-				category: "<i class=\"fa fa-glass\"></i> food & drink"
+				category: "<i class=\"fa fa-glass\"></i> food & drink",
+				state: "Abuja"
 			},
 			{
 				id: 1,
@@ -25,7 +26,8 @@
 				originalPrice: "10,000",
 				discountPrice: "2,000",
 				discount: "80%",
-				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+				category: "<i class=\"fa fa-glass\"></i> food & drink",
+				state: "Lagos"	
 			},
 			{
 				id: 2,
@@ -34,7 +36,8 @@
 				originalPrice: "10,000",
 				discountPrice: "2,000",
 				discount: "80%",
-				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+				category: "<i class=\"fa fa-glass\"></i> food & drink",
+				state: "Akwa Ibom"	
 			},
 			{
 				id: 3,
@@ -43,7 +46,8 @@
 				originalPrice: "10,000",
 				discountPrice: "5,000",
 				discount: "50%",
-				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+				category: "<i class=\"fa fa-glass\"></i> food & drink",
+				state: "Lagos"	
 			},
 			{
 				id: 4,
@@ -52,7 +56,8 @@
 				originalPrice: "10,000",
 				discountPrice: "9,000",
 				discount: "10%",
-				category: "<i class=\"fa fa-glass\"></i> food & drink"	
+				category: "<i class=\"fa fa-glass\"></i> food & drink",
+				state: "Lagos"	
 			},
 			{
 				id: 5,
@@ -61,10 +66,15 @@
 				originalPrice: "10,000",
 				discountPrice: "9,000",
 				discount: "10%",
-				category: "<i class=\"fa fa-plane\"></i> getaways"	
+				category: "<i class=\"fa fa-plane\"></i> getaways",
+				state: "Ibadan"	
 			}
 			];
-			
+			vm.categoryFilters = {
+				fd: false, // "food & drink"
+				gt: false, // "getaways"
+				act: false // "activities"
+			};
 			
 
 
