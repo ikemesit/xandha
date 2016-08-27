@@ -1,5 +1,3 @@
-<div global-navbar></div>
-<div global-sub-nav></div>
 <div class="container deals-wrap">
 	<div class="row header-row">
 		<div class="col-xs-5 col-xs-offset-2 title-header">
@@ -21,18 +19,18 @@
 			<ul>
 				<li><h5>Filter by Category</h5></li>
 				<!-- <li><label><input type="checkbox"> All</label></li> -->
-				<li><label><input type="checkbox" ng-model="dls.categoryFilters.fd"> Food & Dining</label></li>
-				<li><label><input type="checkbox" ng-model="dls.categoryFilters.gt"> Getaways</label></li>
-				<li><label><input type="checkbox" ng-model="dls.categoryFilters.act"> Activities</label></li>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.fd"> Food & Dining</label></li>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.gt"> Getaways</label></li>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.act"> Activities</label></li>
 			</ul>
 		</div>
 		<div class="col-xs-10 deals-dashboard">
 			<div class="row">
 				<div class="col-xs-4" 
-					ng-repeat="deal in filteredValues = (dls.deals | 
-					filter: (dls.categoryFilters.fd? {category: 'food & drink'} : undefined) | 
-					filter: (dls.categoryFilters.gt? {category: 'getaways'} : undefined) |
-					filter: (dls.categoryFilters.act? {category: 'activities'} : undefined))
+					ng-repeat="deal in filteredValues = (add.deals | 
+					filter: (add.categoryFilters.fd? {category: 'food & drink'} : undefined) | 
+					filter: (add.categoryFilters.gt? {category: 'getaways'} : undefined) |
+					filter: (add.categoryFilters.act? {category: 'activities'} : undefined))
 					track by deal.id">
 					<a ui-sref="deal({key: deal.id})" title="">
 						<div class="card" ui-sref="deal">
@@ -73,4 +71,3 @@
 		</div>
 	</div>
 </div>
-<div global-footer></div>

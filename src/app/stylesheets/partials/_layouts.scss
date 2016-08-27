@@ -4,7 +4,7 @@
   overflow-x: hidden;
   overflow-y: visible;
   width: 100%;
-  height: 70vh;
+  // height: auto; /70vh;
   // box-shadow: inset 0 70vh rgba(#072967, 0.7);
 
   & video{
@@ -23,6 +23,13 @@
     &::-webkit-media-controls{
       display: none !important;
     }
+  }
+
+  & .mock-carousel{
+    height: 50vh;
+    width: 100%;
+    background: url('http://www.drawhome.com/wp-content/uploads/2015/11/interesting-the-most-beautiful-resort-with-nice-pool-plus-awesome-sleeper-sofa-and-wooden-dining-table-also-lounge-chairs-above-blue-canopy-and-wooden-floor-near-pool-idea.jpg') center center no-repeat;
+    background-size: cover;
   }
 }
 
@@ -84,7 +91,7 @@
 
 /*======== Content Wrap ========*/
 .content-wrap{
-  background-color: $white;
+  background-color: $body-bg-color; //$white;
   width: 100%;
   height: auto;
   padding: 0;
