@@ -2,7 +2,20 @@
 <div class="atf-wrap">
   <div global-navbar></div>
   <div global-sub-nav></div>
-  <div class="mock-carousel"></div>
+  <!-- <div class="container"> -->
+    <div bc-flickity="{{ home.carouselOptions }}" id="homeCarousel" class="carousel-container">
+      <div class="carousel-slide" data-ng-repeat="slide in home.carousel">
+          <img data-ng-src="{{ slide.image }}" alt="" />
+          <div class="carousel-caption"><h2>{{ slide.text }}</h2></div>
+      </div>
+    </div>
+    <!-- Define the previous button (optional): -->
+    <!-- <button bc-flickity-previous bc-flickity-id="homeCarousel" >Previous</button> -->
+    
+    <!-- Define the next button (optional): -->
+    <!-- <button bc-flickity-next bc-flickity-id="homeCarousel">Next</button> -->
+  <!-- </div> -->
+
 </div>
 
 

@@ -151,7 +151,10 @@
 
   & .dashboard-sidebar{
     & h5{
-      margin-bottom: 5px;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      font-family: $raleway-bold;
+      border-bottom: thin dashed darken($body-bg-color, 10%);
       &:before{
         content: '\f0b0';
         font-family: 'FontAwesome';
@@ -161,6 +164,7 @@
     & ul{
       padding-left: 0;
       list-style: none;
+      margin-bottom: 50px;
       & li{
         padding: 15px 0;
         display: block;

@@ -425,4 +425,36 @@ button.deactivated{
   display: none !important;
 }
 
+.carousel-container{
+	height: 400px;
+	width: 100%;
+	overflow-y: hidden;
+	border-bottom: thick solid $comp_1;
+}
+
+.carousel-caption{
+	background-color: rgba($black, 0.5);
+	color: $white;
+	font-family: $opensans-bold;
+	& h2{
+		color: $white;
+	}
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: 20px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
 

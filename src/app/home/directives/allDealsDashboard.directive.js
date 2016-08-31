@@ -80,11 +80,11 @@
           state: "Ibadan" 
         }
         ];
-        vm.categoryFilters = {
-          fd: false, // "food & drink"
-          gt: false, // "getaways"
-          act: false // "activities"
-        };
+        // vm.categoryFilters = {
+        //   fd: false, // "food & drink"
+        //   gt: false, // "getaways"
+        //   act: false // "activities"
+        // };
     }
 
   } // End

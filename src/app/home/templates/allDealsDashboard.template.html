@@ -1,28 +1,33 @@
 <div class="container deals-wrap">
 	<div class="row header-row">
-		<div class="col-xs-5 col-xs-offset-2 title-header">
+		<div class="col-xs-10 col-xs-offset-2 title-header">
 			<h1>Grab the latest Deals</h1>
 		</div>
-		<div class="col-xs-2 clearfix">
+		<!-- <div class="col-xs-2 clearfix">
 			<p class="pull-right">Filter By Location:</p>
-		</div>
-		<div class="col-xs-3">
+		</div> -->
+		<!-- <div class="col-xs-3">
 			<select name="" id="input" class="form-control" required="required">
 				<option value="">Abuja</option>
 				<option value="">Lagos</option>
 			</select>
-		</div>
+		</div> -->
 	</div>
 
 	<div class="row dashboard-row">
 		<div class="col-xs-2 dashboard-sidebar">
+			<h5>Filter by Category</h5>
 			<ul>
-				<li><h5>Filter by Category</h5></li>
-				<!-- <li><label><input type="checkbox"> All</label></li> -->
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.fd"> Food & Dining</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.gt"> Getaways</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.act"> Activities</label></li>
 			</ul>
+			<!-- <h5>Filter by Location</h5>
+			<ul>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.fd"> Food & Dining</label></li>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.gt"> Getaways</label></li>
+				<li><label><input type="checkbox" ng-model="add.categoryFilters.act"> Activities</label></li>
+			</ul> -->
 		</div>
 		<div class="col-xs-10 deals-dashboard">
 			<div class="row">

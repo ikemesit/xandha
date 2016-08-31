@@ -29,8 +29,22 @@
         controllerAs: 'dd'
       })
 
-      .state('deals', {
-        url: '/deals',
+      .state('getaways', {
+        url: '/deals/getaways',
+        templateUrl: 'app/deals/templates/deals.html',
+        controller: 'DealsController',
+        controllerAs: 'dls'
+      })
+
+      .state('winedine', {
+        url: '/deals/wine_dine',
+        templateUrl: 'app/deals/templates/deals.html',
+        controller: 'DealsController',
+        controllerAs: 'dls'
+      })
+
+      .state('activities', {
+        url: '/deals/activities',
         templateUrl: 'app/deals/templates/deals.html',
         controller: 'DealsController',
         controllerAs: 'dls'

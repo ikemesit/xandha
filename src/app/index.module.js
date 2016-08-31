@@ -18,7 +18,8 @@
 		'ngMap',
 		'ngWig',
 		'ngImageAppear',
-		'bsLoadingOverlay'
+		'bsLoadingOverlay',
+		'bc.Flickity'
 	]);
 
 })();

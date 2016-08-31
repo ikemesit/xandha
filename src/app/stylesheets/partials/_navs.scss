@@ -2,8 +2,8 @@
 nav[role="top-nav"]{
   padding-top: 5px;
   height: auto;
-  background-color: $white; //$prime-blue; 
-  border-bottom: thin solid $comp_1; //lighten($black, 90%);
+  background-color: $prime-blue; 
+  border-bottom: thin solid transparent; //lighten($black, 90%);
   border-radius: 0;
   margin-bottom: 0;
   // border: none;
@@ -16,12 +16,12 @@ nav[role="top-nav"]{
   .navbar-brand{
     font-size: 3rem;
     font-family: $headings-font-family;
-    color: $comp_1; //$prime-blue;
+    color: $white;
     & img{
       max-width: 10em;
     }
     &:hover{
-      color: $comp_1; //$prime-blue;
+      color: $white;
     }
     & span{
       font-size: 0.6em;
@@ -141,10 +141,10 @@ ul.dropdown-menu:after {
   }
 
   button.btn-primary{
-    color: $comp_1; //$prime-blue; //$white;
+    color: $white;
     background-color: transparent;
-    border: 2px solid $comp_1; //$prime-blue; //$white;
-    margin-right: 20px;
+    border: 2px solid $white;
+    margin-right: 5px;
     &:hover{
       color:$white;
       background-color: $comp_1;
@@ -153,9 +153,19 @@ ul.dropdown-menu:after {
   }
 
   button.btn-default{
-    color: $primary;
+    color: $white;
     background-color: transparent;
-    border: 2px solid $primary;
+    border: 2px solid transparent; //$primary;
+    &:focus{
+      background-color: transparent;
+      color: $primary;
+      border: 2px solid transparent;
+    }
+    &:hover{
+      background-color: transparent;
+      color: $primary;
+      border: 2px solid transparent;
+    }
   }
 }
 

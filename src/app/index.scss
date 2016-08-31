@@ -55,6 +55,14 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
   }
 }
 
+.bs-overlay-container{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	z-index: 1000000;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $rootScope, $window, $state) {
+  function runBlock($log, $rootScope, $window, $state, bsLoadingOverlayService) {
 
     $log.debug('runBlock end');
     var redirectScope = $rootScope;
@@ -24,6 +24,11 @@
         $state.go("login");
         // $log.info(toState);
       }
+    });
+
+    bsLoadingOverlayService.setGlobalConfig({
+      activeClass: 'loading-icon-visible',
+      templateUrl: 'app/common/templates/bsOverlayService.template.html'
     });
 
   }//End
