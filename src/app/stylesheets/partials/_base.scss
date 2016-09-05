@@ -15,12 +15,13 @@ body {
   font-smooth: always;
 }
 
+body.noscroll{
+  overflow-y: hidden;
+}
+
 h1,h2,h3,h4,h5,h6,a{
   color: $prime-blue;
 }
-// .emphasis{
-// 	color: $comp_2;
-// }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -28,23 +29,6 @@ h1,h2,h3,h4,h5,h6,a{
 
 
 
-
-// Placeholders
-
-%vertical-padding {
-	padding-top: rem-calc(50);
-	padding-bottom: rem-calc(50);
-
-}
-
-%horizontal-padding {
-	padding-left: rem-calc(200);
-	padding-right: rem-calc(200);
-}
-
-a .right .carousel-control{
-  
-}
 
 
 

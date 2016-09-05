@@ -24,7 +24,7 @@
     <div class="col-xs-6 search-result-carousel">
       <div uib-carousel active="active" interval="dest.myInterval" no-wrap="noWrapSlides">
         <div uib-slide ng-repeat="slide in dest.slides track by slide.id" index="slide.id">
-          <img ng-src="{{slide.image}}" 
+          <img ng-src="{{::slide.image}}" 
                 style="margin:auto;"
                 ng-image-appear
                 loader-img="assets/images/ring-alt.gif"

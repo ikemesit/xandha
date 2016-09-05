@@ -3,14 +3,27 @@ nav[role="top-nav"]{
   padding-top: 5px;
   height: auto;
   background-color: $prime-blue; 
+  border: none;
   border-bottom: thin solid transparent; //lighten($black, 90%);
   border-radius: 0;
   margin-bottom: 0;
-  // border: none;
+  display: block;
 
   .navbar-collapse{
     // padding-left: 0;
     // padding-right: 0;
+  }
+
+  .navbar-toggle{
+    border: transparent;
+    & span.icon-bar{
+      color: $white;
+      background-color: $white;
+      border-radius: 0;
+    }
+    &:focus{
+      background-color: transparent;
+    }
   }
 
   .navbar-brand{
@@ -168,6 +181,51 @@ ul.dropdown-menu:after {
     }
   }
 }
+
+// Mobile slide in nav overlay
+.mobile-menu{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba($comp_1, 0.95);
+  // top: 0;
+  left: 100%;
+  // transition: all 0.6;
+
+  & a{
+    display: block;
+    color: $white;
+    font-family: $raleway-bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: thin solid rgba($white, 0.04);
+  }
+
+}
+
+.mobile-menu.show-mobile-menu{
+    animation: menu-slidein 0.3s ease-in-out forwards;
+  }
+
+.mobile-menu.hide-mobile-menu{
+    animation: menu-slideout 0.3s ease-in-out forwards;
+}
+
+@keyframes menu-slidein {
+  from { left: 100%; }
+  to { left: 0; }
+}
+
+@keyframes menu-slideout {
+  from { left: 0; }
+  to { left: 100%; }
+}
+
+
+
 
 // Global Sub Nav
 nav[role="sub-nav"]{

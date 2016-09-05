@@ -29,30 +29,36 @@
         controllerAs: 'dd'
       })
 
-      .state('getaways', {
-        url: '/deals/getaways',
-        templateUrl: 'app/deals/templates/deals.html',
-        controller: 'DealsController',
-        controllerAs: 'dls'
+      .state('deals', {
+        abstract: true,
+        url: '/deals',
+        templateUrl: 'app/deals/templates/deals.template.html'
       })
 
-      .state('winedine', {
-        url: '/deals/wine_dine',
-        templateUrl: 'app/deals/templates/deals.html',
-        controller: 'DealsController',
-        controllerAs: 'dls'
+      .state('deals.getaways', {
+        url: '/getaways',
+        templateUrl: 'app/deals/templates/getaways.template.html',
+        controller: 'GetawaysController',
+        controllerAs: 'gw'
       })
 
-      .state('activities', {
-        url: '/deals/activities',
-        templateUrl: 'app/deals/templates/deals.html',
-        controller: 'DealsController',
-        controllerAs: 'dls'
+      .state('deals.winedine', {
+        url: '/wine_dine',
+        templateUrl: 'app/deals/templates/winedine.template.html',
+        controller: 'WineDineController',
+        controllerAs: 'wd'
+      })
+
+      .state('deals.activities', {
+        url: '/activities',
+        templateUrl: 'app/deals/templates/activities.template.html',
+        controller: 'ActivitiesController',
+        controllerAs: 'actv'
       })
 
       .state('deal', {
         url: '/deal/{key}',
-        templateUrl: 'app/deals/templates/deal.html',
+        templateUrl: 'app/deals/templates/deal.template.html',
         controller: 'DealController',
         controllerAs: 'dl'
       })

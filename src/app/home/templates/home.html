@@ -1,136 +1,15 @@
-<!-- ATF Content Begins -->
 <div class="atf-wrap">
   <div global-navbar></div>
   <div global-sub-nav></div>
-  <!-- <div class="container"> -->
-    <div bc-flickity="{{ home.carouselOptions }}" id="homeCarousel" class="carousel-container">
-      <div class="carousel-slide" data-ng-repeat="slide in home.carousel">
-          <img data-ng-src="{{ slide.image }}" alt="" />
-          <div class="carousel-caption"><h2>{{ slide.text }}</h2></div>
-      </div>
+  <div bc-flickity="{{ home.carouselOptions }}" id="homeCarousel" class="carousel-container">
+    <div class="carousel-slide" data-ng-repeat="slide in home.carousel">
+        <a ui-sref="getaways"><img data-ng-src="{{ slide.image }}" alt="" /></a>
     </div>
-    <!-- Define the previous button (optional): -->
-    <!-- <button bc-flickity-previous bc-flickity-id="homeCarousel" >Previous</button> -->
-    
-    <!-- Define the next button (optional): -->
-    <!-- <button bc-flickity-next bc-flickity-id="homeCarousel">Next</button> -->
-  <!-- </div> -->
-
+  </div>
 </div>
-
 
 <div class="content-wrap">
   <div all-deals-dashboard></div>
-  <!-- <div class="container">
-    <div class="row trending-destinations">
-
-      <div class="col-xs-12">
-        <h2 class="section-header">#Explore wonderful places across Nigeria</h2>
-      </div>
-
-      <div class="col-lg-4" ng-repeat="destination in home.popularDestinations | limitTo:6">
-        <div class="card">
-          <a href="#">
-            <img class="card-img-top" ng-src="{{ destination.himage }}" alt="#">
-            <div class="card-block">
-              <h4 class="card-title"><a href="#" ng-bind="destination.name"></a></h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="featurette-divider"></hr>
-    <div class="row deals">
-      <div class="col-xs-12">
-        <h2 class="section-header">#Grab amazing deals daily</h2>
-      </div>
-      <div class="col-lg-3" ng-repeat="destination in home.popularDestinations | limitTo:8">
-        <div class="card">
-          <a href="#">
-            <img class="card-img-top" ng-src="{{ destination.himage }}" alt="#">
-            <div class="card-block">
-              <h4 class="card-title"><a href="#" ng-bind="destination.name"></a></h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="featurette-divider"></hr>
-
-    <div class="row activities">
-
-      <div class="col-lg-12">
-        <h2 class="section-header">#Explore exciting activities</h2>
-        <p class="section-subtext">
-        Escape the hustle &amp; bustle of life, find pleasure in the simple things. From camping to beach massages, engage in fun activities of variety...your experience begins here.
-        </p>
-      </div>
-
-      <div class="col-xs-12 col-md-8 activity-card-container">
-        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg')">
-          <a ui-sref="#" title="">
-            <div class="content-wrap">
-              <div class="activity-content">
-                <h2>Horse Back riding</h2>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4 activity-card-container">
-        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg')">
-          <a ui-sref="#" title="">
-            <div class="content-wrap">
-              <div class="activity-content">
-                <h2>Canoeing</h2>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4 activity-card-container">
-        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg')">
-          <a ui-sref="#" title="">
-            <div class="content-wrap">
-              <div class="activity-content">
-                <h2>Water Skiing</h2>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4 activity-card-container">
-        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg')">
-          <a ui-sref="#" title="">
-            <div class="content-wrap">
-              <div class="activity-content">
-                <h2>Jet Surfing</h2>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4 activity-card-container">
-        <div class="activity-card" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg')">
-          <a ui-sref="#" title="">
-            <div class="content-wrap">
-              <div class="activity-content">
-                <h2>Exploring</h2>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-  </div> -->
 </div>
 
 <div global-footer></div>

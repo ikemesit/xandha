@@ -11,10 +11,10 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 ng-cloak>{{ dd.destination.name }}</h2>
+        <h2 ng-cloak>{{ ::dd.destination.name }}</h2>
         <address ng-cloak>
           <i class="fa fa-map-marker"></i>
-          {{ dd.destination.address }}
+          {{ ::dd.destination.address }}
         </address>
       </div>
     </div>
@@ -70,7 +70,7 @@
           <h4 class="section-title">Other Images</h4>
           <div uib-carousel active="active" interval="dd.myInterval" no-wrap="noWrapSlides">
             <div uib-slide ng-repeat="slide in dd.images track by slide.id" index="slide.id">
-              <img ng-src="{{slide.image}}" 
+              <img ng-src="{{::slide.image}}" 
                     style="margin:auto;"
                     ng-image-appear
                     no-loader
@@ -85,9 +85,9 @@
         <div class="col-xs-12">
           <div class="location-map">
             <!-- <h4 class="section-title">Map</h4> -->
-            <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{dd.googleMapsUrl}}">
-              <ng-map zoom="15" center="{{ dd.destination.cordinates }}" draggable="false" scrollwheel="false">
-                <marker position="{{ dd.destination.cordinates }}" title="Destination" animation="Animation.BOUNCE"></marker>
+            <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{::dd.googleMapsUrl}}">
+              <ng-map zoom="15" center="{{ ::dd.destination.cordinates }}" draggable="false" scrollwheel="false">
+                <marker position="{{ ::dd.destination.cordinates }}" title="Destination" animation="Animation.BOUNCE"></marker>
               </ng-map>
             </div>
           </div>

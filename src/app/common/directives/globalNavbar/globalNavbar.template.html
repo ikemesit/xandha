@@ -19,8 +19,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <!-- <button type="button" class="btn btn-primary navbar-btn navbar-right ng-hide" ui-sref="login" ng-hide="gnb.loggedIn">Or Register</button> -->
-          <button type="button" class="btn btn-default navbar-btn navbar-right ng-hide" ui-sref="login" ng-hide="gnb.loggedIn">Or Sign Up</button>
-          <button type="button" class="btn btn-primary navbar-btn navbar-right ng-hide" ui-sref="login" ng-hide="gnb.loggedIn">Sign in</button>
+          <!-- <button type="button" class="btn btn-default navbar-btn navbar-right ng-hide" ui-sref="login" ng-hide="gnb.loggedIn">Or Sign Up</button> -->
+          <!-- <button type="button" class="btn btn-primary navbar-btn navbar-right ng-hide" ui-sref="login" ng-hide="gnb.loggedIn">Sign in</button> -->
           
           <div class="btn-group pull-right">
             <button type="button" class="btn btn-profile navbar-btn navbar-right" ng-show="gnb.loggedIn">
@@ -33,13 +33,16 @@
               <li role="menuitem" class="signout"><a href="#" ng-click="gnb.signOut()">Sign Out</a></li>
             </ul>
           </div>
-          <!-- <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="destinations">Destinations</a></li>
-            <li><a ui-sref="deals">Xandha Deals</a></li>
-            <li><a href="#">Events</a></li>
-          </ul> -->
         </div><!-- /.navbar-collapse -->
       </div>
     </div>
   </div>
 </nav><!-- / .navbar -->
+
+<nav role="mobile-menu" class="mobile-menu">
+  <a ui-sref="home" title="Home">Home</a>
+  <a ui-sref="deals.getaways">Getaways</a>
+  <a ui-sref="deals.winedine">Wine & Dine</a>
+  <a ui-sref="deals.activities">Activities</a>
+</nav>
+

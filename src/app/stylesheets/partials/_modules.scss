@@ -430,6 +430,12 @@ button.deactivated{
 	width: 100%;
 	overflow-y: hidden;
 	border-bottom: thick solid $comp_1;
+	& a{
+		width: auto;
+		height: auto;
+		text-decoration: none;
+		background-color: transparent;
+	}
 }
 
 .carousel-caption{
@@ -458,3 +464,25 @@ button.deactivated{
   background: white;
 }
 
+
+/* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  transition: all 0.6s;
+}
+.flickity-prev-next-button:hover {
+  background: rgba($comp_1, 0.6);
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}

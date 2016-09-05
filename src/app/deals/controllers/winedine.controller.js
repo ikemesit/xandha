@@ -3,10 +3,10 @@
 
 	angular
 		.module('xandha')
-		.controller('DealsController', DealsController);
+		.controller('WineDineController', WineDineController);
 
 
-	function DealsController(){
+	function WineDineController(){
 		var vm = this;
 			vm.deals = [
 			{
