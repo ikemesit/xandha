@@ -25,15 +25,15 @@
 		</div>
 		<div class="col-xs-12 col-md-10 deals-dashboard">
 			<div class="row">
-				<div class="col-xs-12 col-md-4" 
-					ng-repeat="deal in filteredValues = (dashboard.deals | 
-					filter: (dashboard.categoryFilters.fd? {category: 'food & drink'} : undefined) | 
+				<div class="col-xs-12 col-md-4"
+					ng-repeat="deal in filteredValues = (dashboard.deals |
+					filter: (dashboard.categoryFilters.fd? {category: 'food & drink'} : undefined) |
 					filter: (dashboard.categoryFilters.gt? {category: 'getaways'} : undefined) |
 					filter: (dashboard.categoryFilters.act? {category: 'activities'} : undefined))
 					track by deal.id">
 					<a ui-sref="deal({key: deal.id})" title="">
 						<div class="card" ui-sref="deal">
-							<img class="card-img-top" 
+							<img class="card-img-top"
 									ng-src="{{ deal.img }}"
 				                    ng-image-appear
 				                    no-loader
@@ -70,4 +70,3 @@
 		</div>
 	</div>
 </div>
-

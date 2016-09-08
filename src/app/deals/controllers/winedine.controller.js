@@ -27,7 +27,7 @@
 				discountPrice: "2,000",
 				discount: "80%",
 				category: "<i class=\"fa fa-glass\"></i> food & drink",
-				state: "Lagos"	
+				state: "Lagos"
 			},
 			{
 				id: 2,
@@ -37,7 +37,7 @@
 				discountPrice: "2,000",
 				discount: "80%",
 				category: "<i class=\"fa fa-glass\"></i> food & drink",
-				state: "Akwa Ibom"	
+				state: "Akwa Ibom"
 			},
 			{
 				id: 3,
@@ -47,7 +47,7 @@
 				discountPrice: "5,000",
 				discount: "50%",
 				category: "<i class=\"fa fa-glass\"></i> food & drink",
-				state: "Lagos"	
+				state: "Lagos"
 			},
 			{
 				id: 4,
@@ -57,17 +57,7 @@
 				discountPrice: "9,000",
 				discount: "10%",
 				category: "<i class=\"fa fa-glass\"></i> food & drink",
-				state: "Lagos"	
-			},
-			{
-				id: 5,
-				caption: "The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available",
-				img: "https://img.grouponcdn.com/deal/ayRhBntMDYrgxQAmoJsk/t620x376/F5-1000x600.jpg",
-				originalPrice: "10,000",
-				discountPrice: "9,000",
-				discount: "10%",
-				category: "<i class=\"fa fa-plane\"></i> getaways",
-				state: "Ibadan"	
+				state: "Lagos"
 			}
 			];
 			vm.categoryFilters = {
@@ -75,7 +65,7 @@
 				gt: false, // "getaways"
 				act: false // "activities"
 			};
-			
+
 
 
 

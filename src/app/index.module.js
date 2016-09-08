@@ -18,7 +18,7 @@
 		'ngMap',
 		'ngWig',
 		'ngImageAppear',
-		'bsLoadingOverlay',
+		'angular-spinkit',
 		'bc.Flickity'
 	]);
 

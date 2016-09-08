@@ -12,23 +12,27 @@
       vm.carousel = [
         {
           id: 0,
-          image: 'http://mybeautyboxreview.com/wp-content/uploads/2015/04/Loccitane-Pink-Box.jpg',
+          image: 'assets/images/xandha slides1.png',
           text: 'Awesome stuff'
+          //http://mybeautyboxreview.com/wp-content/uploads/2015/04/Loccitane-Pink-Box.jpg
         },
         {
           id: 1,
-          image: 'http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg',
+          image: 'assets/images/xandha slides2.png',
           text: 'Awesome stuff again'
+          //http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg
         },
         {
           id: 2,
-          image: 'http://linde-deals.com/themes/green/images/banner_1.png',
+          image: 'assets/images/xandha slides3.png',
           text: 'Awesome stuff again'
+          //http://linde-deals.com/themes/green/images/banner_1.png
         },
         {
           id: 3,
-          image: 'http://2.bp.blogspot.com/-IOxjwEs7vAg/UwqUmlOFTzI/AAAAAAAAEjo/Gb3Bp39m-_8/s1600/%23Food.jpg',
+          image: 'assets/images/xandha slides4.png',
           text: 'Awesome stuff again'
+          //http://2.bp.blogspot.com/-IOxjwEs7vAg/UwqUmlOFTzI/AAAAAAAAEjo/Gb3Bp39m-_8/s1600/%23Food.jpg
         }
     ];
     vm.carouselOptions = {
