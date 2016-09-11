@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController(destinationFactory) {
+  function HomeController($log, $document, destinationFactory) {
     var vm = this;
       vm.popularDestinations = null;
       vm.carousel = [
@@ -43,15 +43,34 @@
       selectedAttraction: 0.01,
       friction: 0.2,
       pageDots: true
+      // watchCss: true,
+      // cellSelector: 'carousel-slide'
     }
 
+    vm.carouselInstanceId = Math.round(Math.random() * 10000);
+
+    // const carouselElem = angular.element($document[0].getElementById('homeCarousel'));
+    // const carouselInstanceId =  carouselElem[0].id;
+
+    // angular.element($document[0]).ready(() => {
+    //   FlickityService.create(carouselElem[0], carouselInstanceId, vm.carouselOptions);
+    // });
+
+    // Destroy Carousel Instance on Scope Change
+    //var scope = $scope; // To make sure it is destroyed on scope $destroy
+    // scope.$on('$destroy', () => {
+    //   FlickityService.destroy(carouselInstanceId);
+    // });
+
+    // $log.info(vm);
+    
     // Init
     destinationFactory.loadDest();
     getPopularDestinations();
 
     function getPopularDestinations(){
       // To filter by popularity
-      destinationFactory.getAllDest().then(function(data){ 
+      destinationFactory.getAllDest().then( function(data){ 
         vm.popularDestinations = data; 
       });
     }

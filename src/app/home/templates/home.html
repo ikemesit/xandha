@@ -1,9 +1,9 @@
 <div class="atf-wrap">
   <div global-navbar></div>
   <div global-sub-nav></div>
-  <div bc-flickity="{{ home.carouselOptions }}" id="homeCarousel" class="carousel-container">
-    <div class="carousel-slide" data-ng-repeat="slide in home.carousel">
-        <a ui-sref="getaways"><img data-ng-src="{{ slide.image }}" alt="" /></a>
+  <div bc-flickity = "{{ home.carouselOptions }}" bc-flickity-id="{{ home.carouselInstanceId }}" class="carousel-container home-carousel">
+    <div class="carousel-slide" data-ng-repeat="slide in home.carousel track by $index">
+        <a ui-sref="deals.getaways"><img data-ng-src="{{ slide.image }}" /></a>
     </div>
   </div>
 </div>

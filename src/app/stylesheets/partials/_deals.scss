@@ -212,14 +212,14 @@
     & h3{
       font-family: $opensans-bold;
       margin: 0 20px 20px 0;
-      border-left: thick solid $comp_1;
-      padding-left: 20px;
+      // border-left: thick solid $comp_1;
+      // padding-left: 20px;
     }
   }
-  & .deal-carousel{
-    max-height: 400px;
-    overflow-y: hidden;
-  }
+  // & .deal-carousel{
+  //   max-height: 400px;
+  //   overflow-y: hidden;
+  // }
   & .deal-sidebar{
     border-left: thin solid $body-bg-color;
     min-height: 100%;

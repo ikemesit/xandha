@@ -425,27 +425,7 @@ button.deactivated{
   display: none !important;
 }
 
-.carousel-container{
-	height: 400px;
-	width: 100%;
-	overflow-y: hidden;
-	border-bottom: thick solid $comp_1;
-	& a{
-		width: auto;
-		height: auto;
-		text-decoration: none;
-		background-color: transparent;
-	}
-}
-
-.carousel-caption{
-	background-color: rgba($black, 0.5);
-	color: $white;
-	font-family: $opensans-bold;
-	& h2{
-		color: $white;
-	}
-}
+// Carousel Styles
 
 /* position dots in carousel */
 .flickity-page-dots {
@@ -485,4 +465,67 @@ button.deactivated{
 /* hide disabled button */
 .flickity-prev-next-button:disabled {
   display: none;
+}
+
+.carousel-container{
+	height: 400px;
+	width: 100%;
+	& a{
+		width: auto;
+		height: auto;
+		text-decoration: none;
+		background-color: transparent;
+	}
+}
+
+.carousel-caption{
+	background-color: rgba($black, 0.5);
+	color: $white;
+	font-family: $opensans-bold;
+	& h2{
+		color: $white;
+	}
+}
+
+.home-carousel{
+	border-bottom: thick solid $comp_1;
+}
+
+.deal-carousel-wrap{
+	width: auto;
+	height: auto;
+	background-color: $body-bg-color;
+	padding: 10px;
+}
+.deal-carousel-container{
+	height: 300px;
+	overflow-y: hidden;
+	border-bottom: none;
+	// margin-bottom: 20px;
+}
+
+.deal-carousel-nav-container{
+	height: 100px;
+	margin-top: 20px;
+}
+
+
+
+// Loading Indicator
+.loading-indicator{
+	width: 100%;
+	height: 100%;
+
+	& .loading-indicator-body{
+		display: block;
+		margin: 45% auto;
+		width: 300px;
+		background-color: $comp_1;
+	}
+
+	& .loading-title{
+		font-family: $opensans-bold;
+		color: $white;
+		text-align: center;
+	}
 }
