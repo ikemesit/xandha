@@ -468,8 +468,10 @@ button.deactivated{
 }
 
 .carousel-container{
-	height: 400px;
-	width: 100%;
+	height: 300px; //400px
+	width: 1160px; // 100%
+	margin: 10px auto 0px auto;
+	box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
 	& a{
 		width: auto;
 		height: auto;
@@ -488,7 +490,7 @@ button.deactivated{
 }
 
 .home-carousel{
-	border-bottom: thick solid $comp_1;
+	border: thick solid $white; //border-bottom: thick solid $comp_1
 }
 
 .deal-carousel-wrap{
@@ -513,14 +515,20 @@ button.deactivated{
 
 // Loading Indicator
 .loading-indicator{
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	z-index: 100000;
+	display: block;
+	background-color: rgba($prime-blue, 0.3);
 
 	& .loading-indicator-body{
+		@include center-block;
+		margin-top: 35vh;
 		display: block;
-		margin: 45% auto;
-		width: 300px;
-		background-color: $comp_1;
+		width: 400px;
+		// background-color: $comp_1;
 	}
 
 	& .loading-title{
@@ -528,4 +536,24 @@ button.deactivated{
 		color: $white;
 		text-align: center;
 	}
+
+	& .three-bounce-spinner{
+		& .bounce1, .bounce2, .bounce3{
+			background-color: $white;
+		}
+	}
+
+	& .double-bounce-spinner{
+		& .double-bounce1, .double-bounce2{
+			background-color: $white;
+		}
+	}
+}
+
+.loading-indicator.ng-hide-add, .loading-indicator.ng-hide-remove{
+	transition: all 0.4s linear;
+}
+
+.loading-indicator.ng-hide{
+	opacity: 0;
 }

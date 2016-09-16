@@ -6,7 +6,7 @@
     .controller('DealController', DealController);
 
 
-  function DealController($uibModal, $log, $document, $stateParams){
+  function DealController($log, $stateParams, ngDialog){
     var vm = this;
       vm.deal = null;
       vm.selectedDeal = null;
@@ -47,47 +47,16 @@
       percentPosition: false
     }
 
-    // vm.carouselInstanceId = Math.round(Math.random() * 1000);
-
-    // vm.carouselElem = angular.element($document[0].getElementById('dealCarousel'));
-    // vm.carouselInstanceId = Math.round(Math.random() * 1000); //carouselElem[0].id;
-
-    // // Initialize Flickity Carousel on document ready
-    // angular.element($document[0]).ready(function(){
-    //   FlickityService.create(vm.carouselElem[0], vm.carouselInstanceId, vm.carouselOptions);
-    // });
-
-    // // Destroy carousel Instance on scope change
-    // var scope = $scope; // To make sure it is destroyed on scope $destroy
-    // scope.$on('destroy', function(){
-    //   FlickityService.destroy(vm.carouselInstanceId);
-    // });
-
-
-    // $log.info($stateParams.key);
-    // $log.info(vm.carouselElem[0]);
-    // $log.info(vm);
+    
+    $log.info($stateParams.key);
+    
     function openModal(){
-      var modalInstance = $uibModal.open({
-        ariaLabelledBy: 'modal-title',
-        ariaDescribedBy: 'modal-body',
-        // backdropClass: 'custom-modal',
-        windowClass: 'modal fadeInDown in',
-        templateUrl: 'app/deals/templates/dealsModal.html',
-        controller: 'ModalInstanceController',
-        controllerAs: '$ctrl',
-        size: 'lg',
-        resolve: {
-          deal: function () {
-            return vm.selectedDeal;
-          }
-        }
-      });
-
-      modalInstance.result.then(function () {
-        // $ctrl.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
+      ngDialog.open({
+        template: 'app/deals/templates/dealPurchaseModal.template.html',
+        className: 'ngdialog-theme-default',
+        appendClassName: 'ngDialog-custom',
+        width: '90%',
+        height: '80%'
       });
     }
 

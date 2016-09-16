@@ -1,6 +1,6 @@
+<!-- <div loading-indicator></div> -->
 <div global-navbar></div>
 <div global-sub-nav></div>
-
 <div class="container deal-page-wrap">
 	<div class="row wrap-row">
 		<div class="col-xs-12 col-md-9">
@@ -10,6 +10,24 @@
 			<!-- Deal Carousel Directive -->
 			<div class="deal-carousel-wrap">
 				<div data ="dl.carousel" deal-carousel></div>
+			</div>
+
+			<div class="action-panel">
+				<ul class="stats">
+					<li>
+						287 Bought!
+					</li>
+					<li>
+						<i class="fa fa-eye fa-lg"></i> 287 Views
+					</li>
+					<li>
+						Discount: <span class="big-text">50%</span>
+					</li>
+					<li>
+						You save: <span class="big-text">N2,000</span>
+					</li>
+				</ul>
+				<button type="button" class="btn btn-lg btn-primary" ng-click="dl.openModal()">Grab this deal! <i class="fa fa-shopping-bag fa-lg"></i></button>
 			</div>
 
 			<div class="deal-details">
@@ -48,45 +66,56 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></uib-tab>
 				    <uib-tab index="2" heading="Other Details">Long Labeled Justified content</uib-tab>
 				  </uib-tabset>
-				
-				
-				
 			</div>
 		</div>
 		<div class="hidden-xs col-md-3 deal-sidebar">
-			<button type="button" class="btn btn-block btn-lg btn-primary">Grab this deal! <i class="fa fa-shopping-bag fa-lg"></i></button>
+			<h4>Related Deals</h4>
 			<hr>
-			<h4>Discount Details</h4>
-			<ul class="discount-details">
-			    <li>
-			      <p>Discount Offered:</p>
-			      <p class="emphasis">80%</p>
-			    </li>
-			    <li>
-			      <p>Original Price:</p>
-			      <p class="emphasis">N 10,000</p>
-			    </li>
-			    <li>
-			      <p>Discount Price:</p>
-			      <p class="emphasis">N 4, 000</p>
-			    </li>
-			    <li>
-			      <p>You save:</p>
-			      <p class="emphasis">N 6, 000</p>
-			    </li>
-			</ul>
-			<hr>
-			<h4>Share this deal</h4>
-			<span class="social-sharing">
-			   	<i class="fa fa-facebook fa-lg"></i>
-			</span>
-			<span class="social-sharing">
-			    <i class="fa fa-twitter fa-lg"></i>
-			</span>
-			<span class="social-sharing">
-			    <i class="fa fa-google-plus fa-lg"></i>
-			</span>
-			<hr>
+			<a href="#" class="related-deal-wrap">
+				<div class="related-deal"
+					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
+						   background-size: cover;">
+					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
+					<div class="related-deal-caption">
+					<p>The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</p>
+					<!-- <div class="divider"></div> -->
+					<ul class="stats">
+						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
+						<li>2,000 Bought!</li>
+					</ul>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="related-deal-wrap">
+				<div class="related-deal"
+					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
+						   background-size: cover;">
+					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
+					<div class="related-deal-caption">
+					<p>Nixon Restaurant: 20% off All dishes</p>
+					<!-- <div class="divider"></div> -->
+					<ul class="stats">
+						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
+						<li>2,000 Bought!</li>
+					</ul>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="related-deal-wrap">
+				<div class="related-deal"
+					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
+						   background-size: cover;">
+					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
+					<div class="related-deal-caption">
+					<p>Bungee Jumping off Stratham Towers, Ikoyi</p>
+					<!-- <div class="divider"></div> -->
+					<ul class="stats">
+						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
+						<li>2,000 Bought!</li>
+					</ul>
+					</div>
+				</div>
+			</a>	
 		</div>
 	</div>
 </div>

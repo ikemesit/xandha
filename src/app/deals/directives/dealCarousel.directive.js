@@ -62,7 +62,7 @@
 				contain: true,
 				asNavFor: '#dealCarousel',
 				percentPosition: false,
-				prevNextButtons: false,
+				prevNextButtons: false
 			}
 
 			// Initialize Flickity Carousel on document ready

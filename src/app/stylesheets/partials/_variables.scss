@@ -10,7 +10,7 @@ $primary				:	#33B67C; //#009145; //#38C1C1;
 $comp_1					:	#ff4a4a; //#FF6345;
 $comp_2					:	#FE8F24; //#FFAE4D; //#FFC34A;
 $neutral1				:	#f4f4f4;
-$neutral2				:	#5a5a5a;
+$neutral2				:	darken($neutral1, 50%);
 $prime-blue				: 	#10294A; //#194174; //#072967;
 
 /*

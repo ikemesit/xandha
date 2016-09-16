@@ -11,7 +11,7 @@
 			vm.deals = [
 			{
 				id: 0,
-				caption: "Sheraton Hotel: 20% off Western dishes",
+				caption: "Seratone Hotel: 20% off Western dishes",
 				img: "https://static.pexels.com/photos/2139/food-summer-party-dinner.jpg",
 				originalPrice: "10,000",
 				discountPrice: "2,000",
@@ -21,7 +21,7 @@
 			},
 			{
 				id: 1,
-				caption: "Eko Hotel: 20% off Western dishes",
+				caption: "Echo Hotel: 20% off Western dishes",
 				img: "https://static.pexels.com/photos/8544/food-dinner-grilled-shashlik.jpg",
 				originalPrice: "10,000",
 				discountPrice: "2,000",
@@ -31,7 +31,7 @@
 			},
 			{
 				id: 2,
-				caption: "La Campagne Hotel: 20% off Western dishes",
+				caption: "Champagne Hotel: 20% off Western dishes",
 				img: "https://static.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg",
 				originalPrice: "10,000",
 				discountPrice: "2,000",

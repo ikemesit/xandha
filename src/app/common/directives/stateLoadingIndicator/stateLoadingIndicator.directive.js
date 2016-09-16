@@ -5,12 +5,11 @@
     .module('xandha')
     .directive('loadingIndicator', loadingIndicator);
 
-    function loadingIndicator($rootScope){
+    function loadingIndicator($rootScope, $timeout){
       var directive = {
         restrict: 'A',
         templateUrl: 'app/common/directives/stateLoadingIndicator/stateLoadingIndicator.template.html',
-        link: linkFunc,
-        replace: true
+        link: linkFunc
       }
 
       return directive;
@@ -26,7 +25,9 @@
         });
         
         rootScope.$on('$stateChangeSuccess', function() {
-          scope.isStateLoading = false;
+          $timeout(function(){
+            scope.isStateLoading = false;
+          }, 1000);  
         });
       }
     }// End
