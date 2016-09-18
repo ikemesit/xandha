@@ -55,8 +55,7 @@
         template: 'app/deals/templates/dealPurchaseModal.template.html',
         className: 'ngdialog-theme-default',
         appendClassName: 'ngDialog-custom',
-        width: '90%',
-        height: '80%'
+        width: '90%'
       });
     }
 

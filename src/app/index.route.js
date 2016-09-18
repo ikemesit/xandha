@@ -84,9 +84,29 @@
 
       .state('admin', {
         url: '/admin',
-        templateUrl: 'app/admin/dashboard.html',
-        controller: 'AdminController',
-        controllerAs: 'admin'
+        abstract: true,
+        templateUrl: 'app/admin/templates/admin.template.html'
+      })
+
+      .state('admin.dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/admin/templates/dashboard.template.html',
+        controller: 'AdminDashboardController',
+        controllerAs: 'admindash'
+      })
+
+      .state('admin.destinations', {
+        url: '/manage/destinations',
+        templateUrl: 'app/admin/templates/destinations.template.html',
+        controller: 'ManageDestinationsController',
+        controllerAs: 'managedest'
+      })
+
+      .state('admin.deals', {
+        url: '/manage/deals',
+        templateUrl: 'app/admin/templates/deals.template.html',
+        controller: 'ManageDealsController',
+        controllerAs: 'managedeal'
       });
 
     $urlRouterProvider.otherwise('/');

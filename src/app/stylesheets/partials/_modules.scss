@@ -468,10 +468,9 @@ button.deactivated{
 }
 
 .carousel-container{
-	height: 300px; //400px
-	width: 1160px; // 100%
-	margin: 10px auto 0px auto;
-	box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+	height: 400px; 
+	width: 100%;
+	// box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
 	& a{
 		width: auto;
 		height: auto;
@@ -490,7 +489,7 @@ button.deactivated{
 }
 
 .home-carousel{
-	border: thick solid $white; //border-bottom: thick solid $comp_1
+	border-bottom: thick solid $comp_1;
 }
 
 .deal-carousel-wrap{

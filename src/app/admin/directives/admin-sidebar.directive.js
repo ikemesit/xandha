@@ -9,7 +9,7 @@
 	function adminSideBar(){
 		var directive = {
 			restrict: 'AE',
-			templateUrl: 'app/admin/admin-sidebar.html',
+			templateUrl: 'app/admin/templates/admin-sidebar.template.html',
 			controller: AdminSidebarController,
 			controllerAs: 'asdbr'
 		};
