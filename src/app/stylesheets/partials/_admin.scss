@@ -34,6 +34,11 @@
 				height: 50px;
 			}
 		}
+
+		& #categories{
+			height: 50px;
+		}
+
 		& .row{
 			transition: all 0.6s;
 		}
@@ -172,7 +177,14 @@ div.tab-pane.active{
 	border-bottom-left-radius: 4px;
 	background-color: #ddd;
 	& .panel{
-		// margin: 20px;
+		// Date Picker Styling
+		& .dropdown-menu{
+			padding: 10px;
+			min-width: 360px;
+			& table[role="grid"]{
+				width: 340px;
+			}
+		}
 	}
 }
 

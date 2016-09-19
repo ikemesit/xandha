@@ -51,7 +51,7 @@
 						    			placeholder="Start Date">
 						    		<span class="input-group-btn">
 							            <button type="button" class="btn btn-default" ng-click="managedeal.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-							         </span>
+							        </span>
 						         </p>
 						    </div>
 						    <div class="col-xs-12 col-md-4">
@@ -66,8 +66,18 @@
 							    		placeholder="End Date">
 						    		<span class="input-group-btn">
 							            <button type="button" class="btn btn-default" ng-click="managedeal.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-							         </span>
+							        </span>
 						         </p>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						    	<div class="form-group">
+						    		<label for="categories">Category</label>
+						    		<select id="categories" class="form-control" ng-model="managedeal.deal.category">
+						    			<option value="food & drinks">Food & Drinks</option>
+						    			<option value="activities">Activities</option>
+						    			<option value="getaways">getaways</option>
+						    		</select>
+						    	</div>
 						    </div>
 						    <div class="col-xs-12">
 						    	<div class="form-group">
@@ -96,7 +106,74 @@
 				  <div class="panel-footer">Panel footer</div>
 				</div>
 			</uib-tab>
-			<uib-tab index="1" heading="Edit Existing Deals">Edit Deals</uib-tab>
+			<uib-tab index="1" heading="Edit Existing Deals">
+				<div class="row">
+		    		<div class="col-xs-4">
+		    			<div class="available-destinations-list" ng-repeat="data in managedeal.dealEdit track by $index">
+		    				<p class="pull-left">{{ data.caption }}</p>
+		    				<div class="pull-right">
+		    					<button type="button" class="btn btn-default btn-sm" ng-click="managedeal.editDeal($index)">Edit</button>
+		    					<button type="button" class="btn btn-warning btn-sm" ng-click="managedeal.deleteDeal($index)">Delete</button>
+		    				</div>
+		    			</div>
+		    		</div>
+		    		<div class="col-xs-8">
+		    			<div class="row">
+		    				<form ng-hide="managedeal.editFormHidden">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="caption">Deal Caption</label>
+											<input type="text" class="form-control" id="dest-name" placeholder="Name" ng-model="managedeal.dealEdit.caption">
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<div class="form-group">
+											<label for="price">Price</label>
+											<input type="text" class="form-control" id="price" placeholder="Address" ng-model="managedeal.dealEdit.price">
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-4">
+								    	<div class="form-group">
+								    		<label for="discount">Discount</label>
+								    		<input type="text" class="form-control" id="discount" 
+								    		ng-model="managedeal.dealEdit.discount" placeholder="Discount">
+								    	</div>
+								    </div>
+								    <div class="col-xs-12 col-md-4">
+								    	<div class="form-group">
+								    		<label for="discounted-price">Discounted Price</label>
+								    		<input type="text" class="form-control" id="discounted-price"
+								    		 ng-model="managedeal.dealEdit.discountedPrice" placeholder="Discounted Price" disabled>
+								    	</div>
+								    </div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="details">Details</label>
+											<ng-wig placeholder="Details" ng-model="managedeal.dealEdit.details" source-mode-allowed></ng-wig>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="company">Company</label>
+											<ng-wig placeholder="Company" ng-model="managedeal.dealEdit.company" source-mode-allowed></ng-wig>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="others">Others</label>
+											<ng-wig placeholder="othes" ng-model="managedeal.dealEdit.others" source-mode-allowed></ng-wig>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="managedeal.saveEdit()">Submit</button>
+									</div>
+								</div>
+							</form>
+		    			</div>
+		    		</div>
+	    		</div>
+			</uib-tab>
 		</uib-tabset>
 	</div>
 </div>

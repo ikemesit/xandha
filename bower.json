@@ -27,10 +27,10 @@
     "ngmap": "^1.17.3",
     "ngWig": "ng-wig#^3.0.4",
     "ng-image-appear": "^1.11.3",
-    "angular-lodash": "^0.1.2",
     "angular-flickity": "^1.1.6",
     "angular-spinkit": "^0.3.4",
-    "ng-dialog": "^0.6.4"
+    "ng-dialog": "^0.6.4",
+    "ng-lodash": "^0.5.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"
