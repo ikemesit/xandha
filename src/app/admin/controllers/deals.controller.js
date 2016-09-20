@@ -6,7 +6,7 @@
 		.controller('ManageDealsController', ManageDealsController);
 
 
-	function ManageDealsController($log, dealFactory){
+	function ManageDealsController($log, dealFactory, toastr){
 		var vm = this;
 		// Deal models
 		vm.deal = {
@@ -19,25 +19,33 @@
 			category: null,
 			details: null,
 			company: null,
-			other: null
+			other: null,
+			relatedImages: 'Image not available'
 		};
-		vm. dealEdit = null;
+		vm.dealEdit = null;
+		vm.dealDataStore = null; // Firebase data store reference
+		vm.progress = 0;
+		vm.dataEntryKey = null;
 
 
 		// Deal Methods
 		vm.submitDealEntry = submitDealEntry;
 		vm.calculateDiscountedPrice = calculateDiscountedPrice;
+		vm.editDeal = editDeal;
+		vm.saveEdit = saveEdit;
+		vm.deleteDeal = deleteDeal;
+		vm.uploadDealImages = uploadDealImages;
+
+		// Show/Hide
+		vm.showUpper = true;
+		vm.showNext = showNext;
 
 		
 		// Date Picker Settings
 		vm.dt = new Date();
 		vm.format = 'dd-MMMM-yyyy';
-		vm.popup1 = {
-			opened: false
-		};
-		vm.popup2 = {
-			opened: false
-		};
+		vm.popup1 = { opened: false};
+		vm.popup2 = { opened: false };
 		vm.dateOptions = {
 			formatYear: 'yy',
 			showWeeks: false,
@@ -51,12 +59,8 @@
 		vm.open1 = open1;
 		vm.open2 = open2;
 
-		// Populate editable deal model
+		// Populate dealDataStore model
 		loadAllDeals();
-		var returnedData = dealFactory.getAllDeals();
-		// var testData = [];
-		// returnedData.forEach(function(data){ testData.push(data); });
-		$log.info(returnedData);
 
 
 		function open1(){
@@ -84,17 +88,47 @@
 				vm.deal.company !== null &&
 				vm.deal.other !== null
 			){
-				vm.deal.startDate = vm.deal.startDate.toDateString();
-				vm.deal.endDate = vm.deal.endDate.toDateString();
-				dealFactory.addDeal(vm.deal);
-				// $log.info(vm.deal);
+				vm.deal.startDate = vm.deal.startDate.toDateString(); // Change to date string for firebase storage
+				vm.deal.endDate = vm.deal.endDate.toDateString(); // Change to date string for firebase storage
+				vm.dataEntryKey = dealFactory.addDeal(vm.deal);
+				$log.info(vm.dataEntryKey);
 			}
 		}
 
 		function loadAllDeals(){
-			vm.dealEdit = dealFactory.getAllDeals();
+			vm.dealDataStore = dealFactory.getAllDeals();
 		}
 
-		
+		function editDeal(data){
+			vm.dealEdit = data;
+			vm.dealEdit.startDate = new Date(vm.dealEdit.startDate); // create date object from stored date string
+			vm.dealEdit.endDate = new Date(vm.dealEdit.endDate); // create date object from stored date string
+		}
+
+		function saveEdit(){
+			vm.dealEdit.startDate = vm.dealEdit.startDate.toDateString(); // Change to date string for firebase storage
+			vm.dealEdit.endDate = vm.dealEdit.endDate.toDateString(); // Change to date string for firebase storage
+			vm.dealDataStore.$save(vm.dealEdit);
+			toastr.success("Deal Successfully Edited !");
+		}
+
+		function deleteDeal(data){
+			vm.dealDataStore.$remove(data).then(function(ref){
+				toastr.success(ref + ' removed!');
+			});
+		}
+
+		function showNext(){
+			vm.showUpper = false;
+		}
+
+		function uploadDealImages(){
+			if( vm.dataEntryKey !== null){
+				var data = document.querySelector("#deal-images-upload").files;
+				dealFactory.uploadDealImages(vm.dataEntryKey, data);
+				vm.showUpper = true;
+			}
+		}
+	
 	}
 })();

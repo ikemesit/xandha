@@ -31,7 +31,7 @@
 					filter: (dashboard.categoryFilters.gt? {category: 'getaways'} : undefined) |
 					filter: (dashboard.categoryFilters.act? {category: 'activities'} : undefined))
 					track by deal.id">
-					<a ui-sref="deal({key: deal.id})" title="">
+					<a ui-sref="deal({key: deal.$id})" title="">
 						<div class="card" ui-sref="deal">
 							<img class="card-img-top"
 									ng-src="{{ deal.img }}"
@@ -50,8 +50,8 @@
 									<span class="pull-left badge" ng-bind-html="deal.category"></span>
 								</span>
 								<span class="clearfix">
-									<p class="old-price pull-left" ng-bind="deal.originalPrice">10,000</p>
-									<p class="new-price pull-left" ng-bind="deal.discountPrice">2000</p>
+									<p class="old-price pull-left" ng-bind="deal.price"></p>
+									<p class="new-price pull-left" ng-bind="deal.discountedPrice"></p>
 								</span>
 							</div>
 						</div>
