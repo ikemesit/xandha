@@ -30,11 +30,11 @@
 					filter: (dashboard.categoryFilters.fd? {category: 'food & drink'} : undefined) |
 					filter: (dashboard.categoryFilters.gt? {category: 'getaways'} : undefined) |
 					filter: (dashboard.categoryFilters.act? {category: 'activities'} : undefined))
-					track by deal.id">
+					track by deal.$id">
 					<a ui-sref="deal({key: deal.$id})" title="">
 						<div class="card" ui-sref="deal">
 							<img class="card-img-top"
-									ng-src="{{ deal.img }}"
+									ng-src="{{ deal.relatedImages[0] }}"
 				                    ng-image-appear
 				                    no-loader
 				                    responsive

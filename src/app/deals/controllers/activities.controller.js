@@ -6,7 +6,7 @@
 		.controller('ActivitiesController', ActivitiesController);
 
 
-	function ActivitiesController($log, dataAPI, lodash){
+	function ActivitiesController(dataAPI){
 		var vm = this;
 			vm.deals = [
 			// {
@@ -57,10 +57,8 @@
 			};
 
 			loadDeals();
-			$log.info(vm.deals);
 
 			function loadDeals(){
-				var data = [];
 				dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
 					snapshot.filter(function(obj){
 						return obj.category == "activities";
@@ -68,7 +66,6 @@
 						vm.deals.push(data);
 					});
 				})
-				// vm.deals = data;
 			}
 
 	}// End

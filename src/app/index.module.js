@@ -20,8 +20,7 @@
 		'ngImageAppear',
 		'angular-spinkit',
 		'bc.Flickity',
-		'ngDialog',
-		'ngLodash'
+		'ngDialog'
 	]);
 
 })();

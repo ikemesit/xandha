@@ -17,11 +17,11 @@
 			bindToController: { data: "=" },
 			link: linkFunc,
 			template: "<div id='dealCarousel' class='deal-carousel-container'>" +
-					"<div data-ng-repeat='data in ::dlcarousel.slides'>" +
+					"<div data-ng-repeat='data in dlcarousel.slides track by $index'>" +
 					"<img data-ng-src='{{ data.image }}' alt='{{ data.caption }}' />" +
 					"</div></div>"+
 					"<div id='dealCarouselNav' class='deal-carousel-nav-container'>"+
-					"<div class='carousel-nav-slide' data-ng-repeat='data in dlcarousel.slides'>"+
+					"<div class='carousel-nav-slide' data-ng-repeat='data in dlcarousel.slides track by $index'>"+
 					"<img data-ng-src='{{ data.image }}' alt='{{ data.caption }}' style='height: 100px; margin-right: 10px;' />"+
 					"</div>"
 		}

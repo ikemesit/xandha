@@ -90,8 +90,10 @@
 			){
 				vm.deal.startDate = vm.deal.startDate.toDateString(); // Change to date string for firebase storage
 				vm.deal.endDate = vm.deal.endDate.toDateString(); // Change to date string for firebase storage
-				vm.dataEntryKey = dealFactory.addDeal(vm.deal);
-				$log.info(vm.dataEntryKey);
+				dealFactory.addDeal(vm.deal).then(function(value){
+					vm.dataEntryKey = value;
+				});
+				
 			}
 		}
 

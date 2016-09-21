@@ -5,7 +5,7 @@
 	<div class="row wrap-row">
 		<div class="col-xs-12 col-md-9">
 			<div class="deal-caption">
-				<h3>The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</h3>
+				<h3 ng-bind="dl.deal.caption"></h3>
 			</div>
 			<!-- Deal Carousel Directive -->
 			<div class="deal-carousel-wrap">
@@ -21,10 +21,10 @@
 						<i class="fa fa-eye fa-lg"></i> 287 Views
 					</li>
 					<li>
-						Discount: <span class="big-text">50%</span>
+						Discount: <span class="big-text">{{ ::dl.deal.discount }}%</span>
 					</li>
 					<li>
-						You save: <span class="big-text">N2,000</span>
+						You save: <span class="big-text">N{{ ::dl.deal.discountedPrice }}</span>
 					</li>
 				</ul>
 				<button type="button" class="btn btn-lg btn-primary" ng-click="dl.openModal()">Grab this deal! <i class="fa fa-shopping-bag fa-lg"></i></button>
@@ -36,35 +36,14 @@
 				    	<uib-tab-heading>
 				    		<i class="fa fa-info fa-lg"></i> Details
 				    	</uib-tab-heading>
-						<h4>Meal includes</h4>
-						<p>Meal for 3 people</p>
-						<ul>
-							<li>Sea cucumber soup</li>
-							<li>Butter chicken ball</li>
-							<li>Fried kai lan</li>
-							<li>Deep fried beancurd</li>
-							<li>Thai-style fish fillet</li>
-							<li>Fruits</li>
-						</ul>
-
-						<p>Meal for 5 people</p>
-						<ul>
-							<li>Sea cucumber and enoki soup</li>
-							<li>Thai-style chicken chop</li>
-							<li>Fried kai lan</li>
-							<li>Deep fried beancurd</li>
-							<li>Thai-style fish fillet</li>
-							<li>Fruits</li>
-						</ul>
+						{{ ::dl.deal.details}}
 				    </uib-tab>
 				    <uib-tab index="1" heading="About Company">
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></uib-tab>
-				    <uib-tab index="2" heading="Other Details">Long Labeled Justified content</uib-tab>
+				    	{{ ::dl.deal.company }}
+				    </uib-tab>
+				    <uib-tab index="2" heading="Other Details">
+				    	{{ ::dl.deal.other}}
+				    </uib-tab>
 				  </uib-tabset>
 			</div>
 		</div>

@@ -126,9 +126,9 @@
         vm.authActive = false;
 
         authService.auth().$onAuthStateChanged(function(user){
-    			if(user)
-    				$state.go('user');
-    		});
+          if(user)
+            $state.go('user');
+          });
       }, 1000);
 
       $state.go('user');

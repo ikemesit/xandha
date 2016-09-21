@@ -6,34 +6,37 @@
     .controller('DealController', DealController);
 
 
-  function DealController($log, $stateParams, ngDialog){
+  function DealController($log, $stateParams, ngDialog, dataAPI){
     var vm = this;
       vm.deal = null;
       vm.selectedDeal = null;
       vm.openModal = openModal;
-      vm.carousel = [
-      {
-        id: 0,
-        image: 'http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2015/12/Bridge-in-Ice-by-Eindhoven-University-of-Technology-1.jpg',
-        caption: 'Awesome stuff'
-      },
-      {
-        id: 1,
-        image: 'http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg',
-        caption: 'Awesome stuff again'
-      },
-      {
-        id: 2,
-        image: 'http://linde-deals.com/themes/green/images/banner_1.png',
-        caption: 'Awesome stuff again'
-      },
-      {
-        id: 3,
-        image: 'http://www.smalleleganthotels.com/upload/pre2_file_747_71195.jpg',
-        caption: 'Awesome stuff again'
-      }
-    ];
+      vm.carousel = [];
+
+    // [
+    //   {
+    //     id: 0,
+    //     image: 'http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2015/12/Bridge-in-Ice-by-Eindhoven-University-of-Technology-1.jpg',
+    //     caption: 'Awesome stuff'
+    //   },
+    //   {
+    //     id: 1,
+    //     image: 'http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg',
+    //     caption: 'Awesome stuff again'
+    //   },
+    //   {
+    //     id: 2,
+    //     image: 'http://linde-deals.com/themes/green/images/banner_1.png',
+    //     caption: 'Awesome stuff again'
+    //   },
+    //   {
+    //     id: 3,
+    //     image: 'http://www.smalleleganthotels.com/upload/pre2_file_747_71195.jpg',
+    //     caption: 'Awesome stuff again'
+    //   }
+    // ];
     
+    // Carousel Options
     vm.carouselNavOptions = {
       setGallerySize: false,
       imagesLoaded: true,
@@ -47,8 +50,8 @@
       percentPosition: false
     }
 
-    
-    $log.info($stateParams.key);
+    getDealByKey();
+
     
     function openModal(){
       ngDialog.open({
@@ -57,6 +60,25 @@
         appendClassName: 'ngDialog-custom',
         width: '90%'
       });
+    }
+
+    function getDealByKey(){
+      dataAPI.dbObjRef("/deals/" + $stateParams.key)
+        .$loaded()
+        .then(function(snapshot){
+          vm.deal = snapshot;
+          // $log.info(snapshot);
+          snapshot.relatedImages.map(function(data, key){
+            vm.carousel.push({
+              id:key, 
+              image: data, 
+              caption: 'hello'
+            });
+            $log.info(vm.carousel);
+          })
+          // $log.info(vm.deal);
+          
+        });
     }
 
 

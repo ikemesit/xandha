@@ -27,7 +27,7 @@
         rootScope.$on('$stateChangeSuccess', function() {
           $timeout(function(){
             scope.isStateLoading = false;
-          }, 1000);  
+          }, 2000);  
         });
       }
     }// End
