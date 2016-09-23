@@ -105,9 +105,9 @@
 							<div class="col-xs-12">
 								<div class="form-group">
 									<label for="deal-images-upload">Add Images</label>
-									<input type="file" class="form-control" id="deal-images-upload" placeholder="Upload Images" multiple>
+									<input type="file" class="form-control" id="deal-images-upload" placeholder="Upload Image" multiple="multiple">
 								</div>
-								<uib-progressbar max="max" value="managedeal.progress" ng-show="managedeal.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
+								<uib-progressbar max="managedeal.max" value="managedeal.progress" ng-show="managedeal.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
 							</div>
 							<div class="col-xs-12">
 								<button type="button" class="btn btn-primary btn-lg " ng-click="managedeal.uploadDealImages()">Add Images</button>

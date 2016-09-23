@@ -520,7 +520,7 @@ button.deactivated{
 	overflow: hidden;
 	z-index: 100000;
 	display: block;
-	background-color: rgba($prime-blue, 0.3);
+	background-color: rgba($black, 0.5);
 
 	& .loading-indicator-body{
 		@include center-block;

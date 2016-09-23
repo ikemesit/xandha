@@ -6,25 +6,37 @@
 		.controller('GetawaysController', GetawaysController);
 
 
-	function GetawaysController(){
+	function GetawaysController(dataAPI){
 		var vm = this;
 			vm.deals = [
-			{
-				id: 5,
-				caption: "The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available",
-				img: "https://img.grouponcdn.com/deal/ayRhBntMDYrgxQAmoJsk/t620x376/F5-1000x600.jpg",
-				originalPrice: "10,000",
-				discountPrice: "9,000",
-				discount: "10%",
-				category: "<i class=\"fa fa-plane\"></i> getaways",
-				state: "Ibadan"
-			}
+			// {
+			// 	id: 5,
+			// 	caption: "The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available",
+			// 	img: "https://img.grouponcdn.com/deal/ayRhBntMDYrgxQAmoJsk/t620x376/F5-1000x600.jpg",
+			// 	originalPrice: "10,000",
+			// 	discountPrice: "9,000",
+			// 	discount: "10%",
+			// 	category: "<i class=\"fa fa-plane\"></i> getaways",
+			// 	state: "Ibadan"
+			// }
 			];
 			vm.categoryFilters = {
 				fd: false, // "food & drink"
 				gt: false, // "getaways"
 				act: false // "activities"
 			};
+
+			loadDeals();
+
+			function loadDeals(){
+				dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
+					snapshot.filter(function(obj){
+						return obj.category == "getaways";
+					}).forEach(function(data){
+						vm.deals.push(data);
+					});
+				})
+			}
 
 
 

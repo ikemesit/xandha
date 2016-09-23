@@ -62,10 +62,10 @@
 					}, function() {
 							// Upload completed successfully, now we can get the download URL
 							downloadURLs.push(uploadTask.snapshot.downloadURL);
-							firebase.database().ref("/deals/" + key).update({ relatedImages:downloadURLs });
+							// firebase.database().ref("/deals/" + key).update({ relatedImages:downloadURLs });
 							toastr.success("Images Uploaded");
 				});
 			}
 		}
 	}// End
-})()
+})();

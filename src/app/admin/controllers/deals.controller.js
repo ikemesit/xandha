@@ -6,7 +6,7 @@
 		.controller('ManageDealsController', ManageDealsController);
 
 
-	function ManageDealsController($log, dealFactory, toastr){
+	function ManageDealsController($log, $timeout, dealFactory, dataAPI, toastr, _){
 		var vm = this;
 		// Deal models
 		vm.deal = {
@@ -26,6 +26,8 @@
 		vm.dealDataStore = null; // Firebase data store reference
 		vm.progress = 0;
 		vm.dataEntryKey = null;
+		vm.max = 100;
+		vm.progress = 0;
 
 
 		// Deal Methods
@@ -39,6 +41,7 @@
 		// Show/Hide
 		vm.showUpper = true;
 		vm.showNext = showNext;
+
 
 		
 		// Date Picker Settings
@@ -127,8 +130,29 @@
 		function uploadDealImages(){
 			if( vm.dataEntryKey !== null){
 				var data = document.querySelector("#deal-images-upload").files;
+				var images = []; 
 				dealFactory.uploadDealImages(vm.dataEntryKey, data);
-				vm.showUpper = true;
+				// grab image storage URls on upload completion
+				$timeout(function(){
+					for(var i = 0; i < data.length; i++){
+						firebase.storage()
+							.ref()
+							.child("deals/" + vm.dataEntryKey + "/" + data[i].name)
+							.getDownloadURL()
+							.then(function(url){
+								images.push(url);
+							});
+					}
+
+				}, 10000);
+				// Update database records once URLs are retrieved
+				$timeout(function(){
+					var updates = {};
+					updates['/deals/' + vm.dataEntryKey + '/relatedImages'] = _.toPlainObject(images)
+					firebase.database().ref().update(updates);
+					vm.progress = 100;
+					vm.showUpper = true;
+				},20000);
 			}
 		}
 	

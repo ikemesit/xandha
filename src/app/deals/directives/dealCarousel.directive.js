@@ -18,7 +18,7 @@
 			link: linkFunc,
 			template: "<div id='dealCarousel' class='deal-carousel-container'>" +
 					"<div data-ng-repeat='data in dlcarousel.slides track by $index'>" +
-					"<img data-ng-src='{{ data.image }}' alt='{{ data.caption }}' />" +
+					"<img data-ng-src='{{ data.image }}' alt='{{ data.caption }}' style='margin-right: 10px;'/>" +
 					"</div></div>"+
 					"<div id='dealCarouselNav' class='deal-carousel-nav-container'>"+
 					"<div class='carousel-nav-slide' data-ng-repeat='data in dlcarousel.slides track by $index'>"+

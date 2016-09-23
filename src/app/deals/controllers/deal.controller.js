@@ -67,17 +67,13 @@
         .$loaded()
         .then(function(snapshot){
           vm.deal = snapshot;
-          // $log.info(snapshot);
-          snapshot.relatedImages.map(function(data, key){
+          snapshot.relatedImages.forEach(function(data, key){
             vm.carousel.push({
               id:key, 
               image: data, 
               caption: 'hello'
             });
-            $log.info(vm.carousel);
-          })
-          // $log.info(vm.deal);
-          
+          });  
         });
     }
 
