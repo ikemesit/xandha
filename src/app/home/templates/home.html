@@ -3,15 +3,26 @@
   <div global-sub-nav></div>
   <div bc-flickity = "{{ home.carouselOptions }}" bc-flickity-id="{{ home.carouselInstanceId }}" class="carousel-container home-carousel">
     <div class="carousel-slide" data-ng-repeat="slide in home.carousel track by $index">
-        <a ui-sref="deals.getaways"><img data-ng-src="{{ slide.image }}" /></a>
+        <a ui-sref="deals.getaways" style="margin-right: 10px;"><img data-ng-src="{{ slide.image }}" /></a>
     </div>
   </div>
   <div class="intro">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-2 col-md-8">
+        <div class="col-xs-12 col-md-4">
+          <object type="image/svg+xml" data="assets/images/piggy-bank.svg" width="290" height="45"></object>
           <h2>Enjoy Budget Friendly Fun</h2>
-          <p>Having a blast with friends and family doesn't have to cost you a lot. Find amazing deals on top spots & destinations to relax. With Xandha leisure just got better, Xandha provides you with the best information on amazing deals that will fit within your budget.</p>
+          <p>Having a blast with friends and family doesn't have to cost you a lot. Xandha provides you with the best information on amazing deals that will fit within your budget.</p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <object type="image/svg+xml" data="assets/images/cocktail.svg" width="290" height="45"></object>
+          <h2>Discover Amazing Places</h2>
+          <p>Find amazing deals on top spots & destinations to relax. From fine dining to breath-taking resorts ... with Xandha leisure just got better</p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <object type="image/svg+xml" data="assets/images/bicycle.svg" width="290" height="45"></object>
+          <h2>Try Something New</h2>
+          <p>Break free from the boredom of routine and discover new and exciting activities around you. Expand your boundaries and maybe learn something new along the way.</p>
         </div>
       </div>
     </div>
@@ -19,7 +30,105 @@
 </div>
 
 <div class="content-wrap">
-  <div all-deals-dashboard></div>
+  <div class="container">
+    <div class="row grid-row">
+      <div class="col-xs-12">
+        <object type="image/svg+xml" data="assets/images/sunbed.svg" width="50" height="45" class="grid-header-icon">
+          <style type="text/css">
+            .grid-header-icon{
+              display: inline-block;
+              float: left;
+              text-align: left;
+              margin-right: 20px;
+            }
+          </style>
+        </object>
+        <h1 class="grid-header">Awesome Vacation Spots</h1>
+        <div class="grid-layout">
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2FTRO-690x380-Resort-Pool-01.jpg?alt=media&token=40ac9d64-6f2d-4212-9e58-c93ae89ddddc'); background-size: cover;">
+            <div class="body">
+              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2Faiprst-omni-amelia-island-plantation-resort-pool-3.jpg?alt=media&token=443b552e-d8c0-4380-a6fa-c93941ea4e2f'); background-size: cover;">
+            <div class="body">
+              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2FRoyal-Island-Resort-Spa.jpg?alt=media&token=f8adcb69-f4d9-4222-934a-3bb5eda9596b'); background-size: cover;">
+            <div class="body">
+              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row grid-row">
+      <div class="col-xs-12">
+        <object type="image/svg+xml" data="assets/images/bell-covering-hot-dish.svg" width="50" height="45" class="grid-header-icon">
+          <style type="text/css">
+            .grid-header-icon{
+              display: inline-block;
+              float: left;
+              text-align: left;
+              margin-right: 20px;
+            }
+          </style>
+        </object>
+        <h1 class="grid-header">Luxury Dining Experiences</h1>
+        <div class="grid-layout">
+          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/8544/food-dinner-grilled-shashlik.jpg'); background-size: cover;">
+            <div class="body">
+              <a>Nixon Restaurant: 10% off All native dishes</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/7782/food-plate-wood-restaurant.jpg'); background-size: cover;">
+            <div class="body">
+              <a>Yonder Resort and Hotels: 20% off All dishes</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg'); background-size: cover;">
+            <div class="body">
+              <a>Super Luxury Resort: 20% off Buffet Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row grid-row">
+      <div class="col-xs-12">
+        <object type="image/svg+xml" data="assets/images/moustache.svg" width="50" height="45" class="grid-header-icon">
+          <style type="text/css">
+            .grid-header-icon{
+              display: inline-block;
+              float: left;
+              text-align: left;
+              margin-right: 20px;
+            }
+          </style>
+        </object>
+        <h1 class="grid-header">Wholesome Fun for Everyone</h1>
+        <div class="grid-layout">
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FSky%20Zone.jpg?alt=media&token=af4be9be-4c93-412e-afc2-c07e51747055'); background-size: cover;">
+            <div class="body">
+              <a>Fun at Jump Ninja Indoor children trampoline park</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FCroppedFocusedImage128072050-50-Bungy4.jpg?alt=media&token=5531b60e-cd9e-48f6-9d93-cb82b9398ec6'); background-size: cover;">
+            <div class="body">
+              <a>Bungee Jumping Experience</a>
+            </div>
+          </div>
+          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FLearn-To-Skydive.jpg?alt=media&token=ab68dff2-ba3e-40f1-8a58-22fc3d7dfc56'); background-size: cover;">
+            <div class="body">
+              <a>Sky Divers club</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div all-deals-dashboard></div> -->
 </div>
 
 <div global-footer></div>

@@ -37,20 +37,25 @@
 .intro{
   background-color: $white;
   text-align: center;
-  box-shadow: 0px -2px 5px darken($body-bg-color, 10%);
+  box-shadow: 0px 0px 5px darken($body-bg-color, 10%);
+  padding: 50px 0;
+  .col-md-4{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   & h2{
     font-family: $raleway-extra-bold;
     text-align: center;
-    margin-top: 40px;
+    // margin-top: 50px;
     margin-bottom: 20px;
     color: $comp_1;
-    font-size: 2em;
+    font-size: 1.8em;
   }
   & p{
     font-family: $opensans;
     text-align: center;
     font-size: 1.1em;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
   }
 }
 
@@ -59,8 +64,58 @@
   background-color: $body-bg-color; //$white;
   width: 100%;
   height: auto;
-  padding: 0;
+  padding: 50px 0;
   margin: 0;
+  & .grid-row{
+    padding: 40px 0;
+  }
+  & .grid-header{
+    font-family: $raleway-bold;
+    margin-bottom: 20px;
+    color: $comp_1;
+  }
+  & .grid-layout{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    & .grid-content{
+      width: 33%;
+      height: 300px;
+      // border: thin solid $prime-blue;
+      &:after{
+        content: ' ';
+        position: absolute;
+        width: 96.5%;
+        left: 15px;
+        top: 255px;
+        display: block;
+        height: 100px;
+        z-index: 1;
+        background:linear-gradient( to bottom, rgba($black, 0), rgba($black, 0.4) 50%);
+      }
+      & .body{
+        top: 250px;
+        width: 30%;
+        padding: 10px;
+        position: absolute;
+        z-index: 5;
+        & a{
+          color: $white;
+          font-family: $raleway-bold;
+          font-size: 1.2em;
+          line-height: 0.98em;
+          text-decoration: none;
+          transition: color 0.4s;
+          &:hover{
+            text-decoration: none;
+            color: $comp_1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 
@@ -182,28 +237,6 @@
 
 }
 
-
-
-
-// .custom-modal{
-  // background-color: $prime-blue;
-// }
-// .modal-backdrop.in{
-//   background-color: $prime-blue;
-//   opacity: 0.8;
-// }
-
-// .modal-lg{
-//   width: 72vw;
-//   margin-top: 10px;
-// }
-// .modal-open {
-//     overflow: scroll;
-// }
-
-// .modal-content{
-//   border-radius: 2px;
-// }
 
 
 
