@@ -12,25 +12,25 @@
       vm.carousel = [
         {
           id: 0,
-          image: 'assets/images/xandha slides1.png',
+          image: 'http://cdn.sandals.com/grandpineapple/v11/site-elements/inclusions/GP-Inclusions_Hm.jpg',
           text: 'Awesome stuff'
           //http://mybeautyboxreview.com/wp-content/uploads/2015/04/Loccitane-Pink-Box.jpg
         },
         {
           id: 1,
-          image: 'assets/images/xandha slides2.png',
+          image: 'http://www.bavarianinn.com/files/4314/1392/4760/dinemain.jpg',
           text: 'Awesome stuff again'
           //http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg
         },
         {
           id: 2,
-          image: 'assets/images/xandha slides3.png',
+          image: 'http://www.expo2015.org/archive/cs/Expo/1392233228176/Explora-1280X400.jpg%3Bfilename_%3DUTF-8\'\'Explora-1280X400.jpg',
           text: 'Awesome stuff again'
           //http://linde-deals.com/themes/green/images/banner_1.png
         },
         {
           id: 3,
-          image: 'assets/images/xandha slides4.png',
+          image: 'https://talkbox.gecu.com/wp-content/uploads/2016/06/MUTSSmashMouthHeader-1280x400.jpg',
           text: 'Awesome stuff again'
           //http://2.bp.blogspot.com/-IOxjwEs7vAg/UwqUmlOFTzI/AAAAAAAAEjo/Gb3Bp39m-_8/s1600/%23Food.jpg
         }
@@ -63,18 +63,18 @@
     // });
 
     // $log.info(vm);
-    
+
     // Init
     destinationFactory.loadDest();
     getPopularDestinations();
 
     function getPopularDestinations(){
       // To filter by popularity
-      destinationFactory.getAllDest().then( function(data){ 
-        vm.popularDestinations = data; 
+      destinationFactory.getAllDest().then( function(data){
+        vm.popularDestinations = data;
       });
     }
 
-    
+
   }
 })();

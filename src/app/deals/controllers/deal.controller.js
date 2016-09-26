@@ -35,7 +35,7 @@
     //     caption: 'Awesome stuff again'
     //   }
     // ];
-    
+
     // Carousel Options
     vm.carouselNavOptions = {
       setGallerySize: false,
@@ -52,7 +52,7 @@
 
     getDealByKey();
 
-    
+
     function openModal(){
       ngDialog.open({
         template: 'app/deals/templates/dealPurchaseModal.template.html',
@@ -69,11 +69,11 @@
           vm.deal = snapshot;
           snapshot.relatedImages.forEach(function(data, key){
             vm.carousel.push({
-              id:key, 
-              image: data, 
+              id:key,
+              image: data,
               caption: 'hello'
             });
-          });  
+          });
         });
     }
 

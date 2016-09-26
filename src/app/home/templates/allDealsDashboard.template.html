@@ -1,7 +1,7 @@
 <div class="container deals-wrap">
 	<div class="row header-row">
-		<div class="col-xs-12 col-md-10 col-md-offset-2 title-header">
-			<h1 class="center-block">Grab the latest Deals</h1>
+		<div class="col-xs-12 col-md-10 col-md-offset-1 title-header">
+			<h1>Awesome Vacation Spots</h1>
 		</div>
 		<!-- <div class="col-xs-2 clearfix">
 			<p class="pull-right">Filter By Location:</p>
@@ -15,31 +15,31 @@
 	</div>
 
 	<div class="row dashboard-row">
-		<div class="hidden-xs col-md-2 dashboard-sidebar">
-			<h5>Filter by Category</h5>
+		<!-- <div class="hidden-xs col-md-2 dashboard-sidebar"> -->
+		<!-- 	<h5>Filter by Category</h5>
 			<ul>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.fd"> Wine & Dine</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.gt"> Getaways</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.act"> Activities</label></li>
-			</ul>
+			</ul> -->
 			<!-- <h5>Filter by Location</h5>
 			<ul>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.fd"> Food & Dining</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.gt"> Getaways</label></li>
 				<li><label><input type="checkbox" ng-model="add.categoryFilters.act"> Activities</label></li>
 			</ul> -->
-		</div>
-		<div class="col-xs-12 col-md-10 deals-dashboard">
+		<!-- </div> -->
+		<div class="col-xs-12 col-md-offset-1 col-md-10 deals-dashboard">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4" 
-					ng-repeat="deal in filteredValues = (add.deals | 
-					filter: (add.categoryFilters.fd? {category: 'food & drink'} : undefined) | 
+				<div class="col-xs-12 col-sm-6 col-md-4"
+					ng-repeat="deal in filteredValues = (add.deals |
+					filter: (add.categoryFilters.fd? {category: 'food & drink'} : undefined) |
 					filter: (add.categoryFilters.gt? {category: 'getaways'} : undefined) |
 					filter: (add.categoryFilters.act? {category: 'activities'} : undefined))
 					track by deal.id">
 					<a ui-sref="deal({key: deal.id})" title="">
 						<div class="card" ui-sref="deal">
-							<img class="card-img-top" 
+							<img class="card-img-top"
 									ng-src="{{ ::deal.img }}"
 				                    ng-image-appear
 				                    no-loader
