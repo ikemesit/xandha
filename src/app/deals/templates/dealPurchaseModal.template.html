@@ -13,9 +13,9 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td style="width: 50%" ng-bind="deal.caption"></td>
+				<td style="width: 50%">{{ purchase.order.dealCaption }}</td>
 				<td style="width: 10%">
-					<select class="form-control">
+					<select class="form-control" ng-model="purchase.order.amount" ng-change="purchase.calculateTotal()">
 					  <option>1</option>
 					  <option>2</option>
 					  <option>3</option>
@@ -23,8 +23,8 @@
 					  <option>5</option>
 					</select>
 				</td>
-				<td style="width: 20%">2,000</td>
-				<td style="width: 10%">2,000</td>
+				<td style="width: 20%">{{ purchase.order.price }}</td>
+				<td style="width: 10%">{{ purchase.order.total }}</td>
 			</tr>
 		</tbody>
 		<tfoot>
@@ -33,7 +33,7 @@
 					<h2>Total:</h2>
 				</td>
 				<td>
-					<h2>2,000</h2>
+					<h2>{{ purchase.order.total }}</h2>
 				</td>
 			</tr>
 		</tfoot>
@@ -47,13 +47,13 @@
 			<div class="col-xs-12 col-md-6">
 				<div class="form-group form-group-sm">
 					<label for="">First Name</label>
-					<input type="text" class="form-control" id="" placeholder="First Name">
+					<input type="text" class="form-control" ng-model="purchase.order.firstName" placeholder="First Name">
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-6">
 				<div class="form-group form-group-sm">
 					<label for="">Last Name</label>
-					<input type="text" class="form-control" id="" placeholder="Last Name">
+					<input type="text" class="form-control" ng-model="purchase.order.lastName" placeholder="Last Name">
 				</div>
 			</div>
 		</div>
@@ -61,20 +61,20 @@
 			<div class="col-xs-12 col-md-6">
 				<div class="form-group form-group-sm">
 					<label for="">Email</label>
-					<input type="email" class="form-control" id="" placeholder="Email">
+					<input type="email" class="form-control" ng-model="purchase.order.email" placeholder="Email">
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-6">
 				<div class="form-group form-group-sm">
 					<label for="">Phone Number</label>
-					<input type="text" class="form-control" id="" placeholder="Phone Number">
+					<input type="text" class="form-control" ng-model="purchase.order.phone" placeholder="Phone Number">
 				</div>
 			</div>
 		</div>
 		<div class="form-group form-group-sm">
 			<label for="">Address</label>
-			<textarea class="form-control" rows="8" placeholder="Address"></textarea>
+			<textarea class="form-control" rows="8" ng-model="purchase.order.address" placeholder="Address"></textarea>
 		</div>
-		<button type="submit" class="btn btn-success btn-lg">Next <i class="fa fa-angle-right fa-lg"></i></button>
+		<button type="button" class="btn btn-success btn-lg" ng-click="purchase.getOrderData()">Next <i class="fa fa-angle-right fa-lg"></i></button>
 	</form>
 </div>

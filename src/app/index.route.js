@@ -63,6 +63,13 @@
         controllerAs: 'dl'
       })
 
+      .state('order', {
+        url: '/order/{order}',
+        templateUrl: 'app/order/templates/order.html',
+        controller: 'OrderController',
+        controllerAs: 'order'
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/templates/login.html',

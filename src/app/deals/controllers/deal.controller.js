@@ -6,7 +6,7 @@
     .controller('DealController', DealController);
 
 
-  function DealController($log, $stateParams, ngDialog, dataAPI){
+  function DealController($log, $timeout, $stateParams, ngDialog, dataAPI){
     var vm = this;
       vm.deal = null;
       vm.selectedDeal = null;
@@ -51,6 +51,7 @@
     }
 
     getDealByKey();
+    
 
 
     function openModal(){
@@ -58,10 +59,15 @@
         template: 'app/deals/templates/dealPurchaseModal.template.html',
         className: 'ngdialog-theme-default',
         appendClassName: 'ngDialog-custom',
-        width: '90%'
+        width: '90%',
+        controller: 'PurchaseModalController',
+        controllerAs: 'purchase',
+        data: vm.deal,
+        closeByNavigation: true
       });
     }
 
+    //TODO - use REST API instead
     function getDealByKey(){
       dataAPI.dbObjRef("/deals/" + $stateParams.key)
         .$loaded()
@@ -76,9 +82,6 @@
           });
         });
     }
-
-
-
 
   }// End
 })();
