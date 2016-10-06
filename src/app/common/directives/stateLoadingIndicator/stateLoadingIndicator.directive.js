@@ -20,14 +20,14 @@
 
         scope.isStateLoading = false;
 
-        rootScope.$on('$stateChangeStart', function() {
+        rootScope.$on('$viewContentLoading', function() {
           scope.isStateLoading = true;
         });
-        
+
         rootScope.$on('$stateChangeSuccess', function() {
           $timeout(function(){
             scope.isStateLoading = false;
-          }, 1500);  
+          }, 500);
         });
       }
     }// End

@@ -64,10 +64,13 @@
       })
 
       .state('order', {
-        url: '/order/{order}',
+        url: '/order',
         templateUrl: 'app/order/templates/order.html',
         controller: 'OrderController',
-        controllerAs: 'order'
+        controllerAs: 'order',
+        params: {
+          order: null
+        }
       })
 
       .state('login', {

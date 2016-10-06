@@ -32,17 +32,14 @@
 
 			<div class="deal-details">
 				<uib-tabset active="activeJustified" justified="true">
-				    <uib-tab index="0">
-				    	<uib-tab-heading>
-				    		<i class="fa fa-info fa-lg"></i> Details
-				    	</uib-tab-heading>
-						{{ ::dl.deal.details}}
+				    <uib-tab index="0" heading="Details">
+							<div ng-bind-html="::dl.deal.details"></div>
 				    </uib-tab>
 				    <uib-tab index="1" heading="About Company">
-				    	{{ ::dl.deal.company }}
+							<div ng-bind-html="::dl.deal.company"></div>
 				    </uib-tab>
 				    <uib-tab index="2" heading="Other Details">
-				    	{{ ::dl.deal.other}}
+				    	<div ng-bind-html="::dl.deal.other"></div>
 				    </uib-tab>
 				  </uib-tabset>
 			</div>
@@ -94,7 +91,7 @@
 					</ul>
 					</div>
 				</div>
-			</a>	
+			</a>
 		</div>
 	</div>
 </div>

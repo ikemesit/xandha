@@ -1,4 +1,41 @@
 <div global-navbar></div>
 <div global-sub-nav></div>
-
+<div class="container order-page-wrap">
+	<div class="row wrap-row">
+		<div class="col-xs-12">
+      <h1>Please Confirm your Order</h1>
+      <hr>
+		</div>
+    <div class="col-xs-12">
+      <h4 class="block-sub-header with-bg">Order #: {{::order.data.dealId}}</h4>
+      <h4 class="block-sub-header">Order Summary</h4>
+      <table class="table-bordered">
+        <thead>
+          <tr>
+            <td>Item</td>
+            <td>Price</td>
+            <td>Amount</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td ng-bind="::order.data.dealCaption"></td>
+            <td ng-bind="::order.data.price"></td>
+            <td ng-bind="::order.data.amount"></td>
+            <td ng-bind="::order.data.total"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 class="block-sub-header">Personal Details</h4>
+      <ul>
+        <li><h4>Name:</h4> {{::order.data.firstName}} {{::order.data.lastName}}</li>
+        <li><h4>Email:</h4> {{::order.data.email}}</li>
+        <li><h4>Phone:</h4> {{::order.data.phone}}</li>
+        <li><h4>Address:</h4> {{::order.data.address}}</li>
+      </ul>
+      <button type="button" class="btn btn-lg btn-success">Place order</button>
+    </div>
+  </div>
+</div>
 <div global-footer></div>

@@ -6,7 +6,7 @@
     .controller('DealController', DealController);
 
 
-  function DealController($log, $timeout, $stateParams, ngDialog, dataAPI){
+  function DealController($log, $scope, $timeout, $stateParams, ngDialog, dataAPI){
     var vm = this;
       vm.deal = null;
       vm.selectedDeal = null;
@@ -35,6 +35,9 @@
     //     caption: 'Awesome stuff again'
     //   }
     // ];
+    // $scope.$on('$viewContentLoading', function() {
+    //   scope.isStateLoading = true;
+    // });
 
     // Carousel Options
     vm.carouselNavOptions = {
@@ -49,9 +52,12 @@
       asNavFor: '#dealCarousel',
       percentPosition: false
     }
+    $scope.$on('$viewContentLoaded', function () {
+      getDealByKey();
+    });
 
-    getDealByKey();
-    
+
+
 
 
     function openModal(){

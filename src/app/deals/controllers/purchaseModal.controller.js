@@ -49,14 +49,13 @@
       for (var field in vm.order) {
         if (vm.order[field] === null) {
           vm.error.push("Please fill out all fields");
-        } 
+        }
       }
 
       // TODO - Improve on error detection
       if (vm.error.length === 0 ){
         dataAPI.saveOrder(vm.order).then(function () {
-          // $scope.closeThisDialog();
-          $state.go('order');
+          $state.go('order', {order: vm.order});
         }, function () {
           $log.info('error');
         });

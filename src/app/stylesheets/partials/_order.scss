@@ -1,0 +1,70 @@
+.order-page-wrap{
+  padding-top: 20px;
+  & .wrap-row{
+    background-color: $white;
+    box-shadow: 0px 2px 5px darken($body-bg-color, 10%);
+    margin: 0 0 50px 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-height: 500px;
+  }
+  & h1{
+    font-family: $raleway-bold;
+    font-size: 2.5em;
+  }
+  & hr{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & .block-sub-header{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: $opensans-bold;
+    margin-bottom: 5px;
+  }
+
+  .block-sub-header.with-bg{
+    background-color: #eee;
+    border-left: thick solid $comp_1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  & table{
+    width: 100%;
+    & thead{
+      background-color: $prime-blue;
+      color: $white;
+      border: none;
+      font-size: 1.5rem;
+      & td{
+        padding: 10px;
+        font-family: $opensans;
+        border-right: thin solid $white;
+      }
+    }
+
+    & tbody{
+      & td{
+        background-color: #eee;
+        padding: 20px;
+        font-family: $raleway-bold;
+      }
+    }
+  }
+  & ul{
+    padding: 10px;
+    background-color: #eee;
+    border-left: thick solid $comp_1;
+    & li{
+      list-style-type: none;
+      border-bottom: thin solid darken(#eee, 5%);
+      & h4{
+        font-family: $raleway-bold;
+        display: inline-block;
+        margin-right: 20px;
+      }
+    }
+  }
+}
