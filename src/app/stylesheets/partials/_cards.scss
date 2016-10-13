@@ -1,5 +1,6 @@
 .card{
   background-color: $white;
+  overflow-x: hidden;
   overflow-y: auto;
   border-radius: 2px;
   box-shadow: 0px 0px 4px darken($neutral1, 20%);

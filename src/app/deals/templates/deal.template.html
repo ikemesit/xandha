@@ -47,51 +47,22 @@
 		<div class="hidden-xs col-md-3 deal-sidebar">
 			<h4>Related Deals</h4>
 			<hr>
-			<a href="#" class="related-deal-wrap">
-				<div class="related-deal"
-					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
-						   background-size: cover;">
-					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
-					<div class="related-deal-caption">
-					<p>The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</p>
-					<!-- <div class="divider"></div> -->
-					<ul class="stats">
-						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
-						<li>2,000 Bought!</li>
-					</ul>
+			<div ng-repeat="deal in dl.dealsRef | filter:dl.category | limitTo: 4">
+				<a ui-sref="deal({key: deal.$id})" class="related-deal-wrap">
+					<div class="related-deal"
+						style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat;
+							   background-size: cover;">
+						<div class="related-deal-caption">
+						<p>{{ ::deal.caption }}</p>
+						<!-- <div class="divider"></div> -->
+						<ul class="stats">
+							<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
+							<li>2,000 Bought!</li>
+						</ul>
+						</div>
 					</div>
-				</div>
-			</a>
-			<a href="#" class="related-deal-wrap">
-				<div class="related-deal"
-					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
-						   background-size: cover;">
-					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
-					<div class="related-deal-caption">
-					<p>Nixon Restaurant: 20% off All dishes</p>
-					<!-- <div class="divider"></div> -->
-					<ul class="stats">
-						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
-						<li>2,000 Bought!</li>
-					</ul>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="related-deal-wrap">
-				<div class="related-deal"
-					style="background: url('{{ ::dl.carousel[0].image }}') no-repeat;
-						   background-size: cover;">
-					<!-- <img src="{{ ::dl.carousel[0].image }}" alt=""> -->
-					<div class="related-deal-caption">
-					<p>Bungee Jumping off Stratham Towers, Ikoyi</p>
-					<!-- <div class="divider"></div> -->
-					<ul class="stats">
-						<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
-						<li>2,000 Bought!</li>
-					</ul>
-					</div>
-				</div>
-			</a>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

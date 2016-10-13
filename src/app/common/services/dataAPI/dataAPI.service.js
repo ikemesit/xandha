@@ -6,8 +6,8 @@
 		.factory('dataAPI', dataAPI);
 
 
-	function dataAPI($http, $firebaseObject, $firebaseArray){
-		
+	function dataAPI($http, $sce, $firebaseObject, $firebaseArray){
+
 		var database = firebase.database();
 		var storage = firebase.storage();
 
@@ -16,9 +16,10 @@
 			dbObjRef: dbObjRef,
 			dbArrRef: dbArrRef,
 			storage: storage,
+	
 			// REST API methods
 			getDealByKey: getDealByKey,
-			saveOrder: saveOrder 
+			saveOrder: saveOrder
 		};
 
 		return service;
@@ -57,6 +58,8 @@
 				return error;
 			});
 		}
+
+
 
 	}
 })();

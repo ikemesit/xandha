@@ -45,19 +45,9 @@
         </object>
         <h1 class="grid-header">Awesome Vacation Spots</h1>
         <div class="grid-layout">
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2FTRO-690x380-Resort-Pool-01.jpg?alt=media&token=40ac9d64-6f2d-4212-9e58-c93ae89ddddc'); background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.getawayDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
             <div class="body">
-              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2Faiprst-omni-amelia-island-plantation-resort-pool-3.jpg?alt=media&token=443b552e-d8c0-4380-a6fa-c93941ea4e2f'); background-size: cover;">
-            <div class="body">
-              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSIILld84AJozi6O053%2FRoyal-Island-Resort-Spa.jpg?alt=media&token=f8adcb69-f4d9-4222-934a-3bb5eda9596b'); background-size: cover;">
-            <div class="body">
-              <a ui-sref="deals.getaways">The Pines Melaka: Up to 3D2N Stay for 2 People in Deluxe Room / Poolside Suite with Breakfast. River Cruise Available</a>
+              <a ui-sref="deals.getaways">{{ ::deal.caption }}</a>
             </div>
           </div>
         </div>
@@ -77,19 +67,9 @@
         </object>
         <h1 class="grid-header">Luxury Dining Experiences</h1>
         <div class="grid-layout">
-          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/8544/food-dinner-grilled-shashlik.jpg'); background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.foodDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
             <div class="body">
-              <a>Nixon Restaurant: 10% off All native dishes</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/7782/food-plate-wood-restaurant.jpg'); background-size: cover;">
-            <div class="body">
-              <a>Yonder Resort and Hotels: 20% off All dishes</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://static.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg'); background-size: cover;">
-            <div class="body">
-              <a>Super Luxury Resort: 20% off Buffet Sales</a>
+              <a ui-sref="deals.winedine">{{ ::deal.caption }}</a>
             </div>
           </div>
         </div>
@@ -109,19 +89,9 @@
         </object>
         <h1 class="grid-header">Wholesome Fun for Everyone</h1>
         <div class="grid-layout">
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FSky%20Zone.jpg?alt=media&token=af4be9be-4c93-412e-afc2-c07e51747055'); background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.activitiesDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
             <div class="body">
-              <a>Fun at Jump Ninja Indoor children trampoline park</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FCroppedFocusedImage128072050-50-Bungy4.jpg?alt=media&token=5531b60e-cd9e-48f6-9d93-cb82b9398ec6'); background-size: cover;">
-            <div class="body">
-              <a>Bungee Jumping Experience</a>
-            </div>
-          </div>
-          <div class="grid-content" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/corded-pivot-126105.appspot.com/o/deals%2F-KSHqmoLftb0aVaAJPtB%2FLearn-To-Skydive.jpg?alt=media&token=ab68dff2-ba3e-40f1-8a58-22fc3d7dfc56'); background-size: cover;">
-            <div class="body">
-              <a>Sky Divers club</a>
+              <a ui-sref="deals.activities">{{ ::deal.caption }}</a>
             </div>
           </div>
         </div>

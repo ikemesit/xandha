@@ -42,8 +42,6 @@
 		vm.showUpper = true;
 		vm.showNext = showNext;
 
-
-		
 		// Date Picker Settings
 		vm.dt = new Date();
 		vm.format = 'dd-MMMM-yyyy';
@@ -96,7 +94,7 @@
 				dealFactory.addDeal(vm.deal).then(function(value){
 					vm.dataEntryKey = value;
 				});
-				
+
 			}
 		}
 
@@ -118,8 +116,38 @@
 		}
 
 		function deleteDeal(data){
+			var imageUrls = data.relatedImages;
+			var images = [];
+			var temp;
+			// Retrieve Image names from firebase storage reference url
+			if(angular.isArray(imageUrls)){
+				images = imageUrls.map(function(url){
+					var image = url.split('%2F');
+					image = image[image.length - 1].split('?');
+					return image;
+				});
+			}else{
+				temp = imageUrls.split('%2F');
+				temp = temp[temp.length - 1].split('?');
+				images.push(temp[0]);
+			}
+
+
 			vm.dealDataStore.$remove(data).then(function(ref){
-				toastr.success(ref + ' removed!');
+				toastr.success('deal data deleted successfully!');
+				var key = ref.key;
+				images.forEach(function(image){
+					var url = key + "/" + image;
+					var storageRef = dataAPI.storage.ref('deals');
+					var imageRef = storageRef.child(url);
+					imageRef.delete().then(function(){
+						toastr.success('deal image deleted successfully');
+					}).catch(function(error){
+						toastr.error(error);
+					});
+				})
+
+
 			});
 		}
 
@@ -130,7 +158,7 @@
 		function uploadDealImages(){
 			if( vm.dataEntryKey !== null){
 				var data = document.querySelector("#deal-images-upload").files;
-				var images = []; 
+				var images = [];
 				dealFactory.uploadDealImages(vm.dataEntryKey, data);
 				// grab image storage URls on upload completion
 				$timeout(function(){
@@ -155,6 +183,6 @@
 				},20000);
 			}
 		}
-	
+
 	}
 })();

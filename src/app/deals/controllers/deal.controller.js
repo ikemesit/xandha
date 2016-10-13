@@ -12,6 +12,8 @@
       vm.selectedDeal = null;
       vm.openModal = openModal;
       vm.carousel = [];
+      vm.dealsRef = dataAPI.dbArrRef("deals/");
+      vm.category = null;
 
     // [
     //   {
@@ -79,6 +81,7 @@
         .$loaded()
         .then(function(snapshot){
           vm.deal = snapshot;
+          vm.category = snapshot.category;
           snapshot.relatedImages.forEach(function(data, key){
             vm.carousel.push({
               id:key,

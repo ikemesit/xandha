@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController($log, $document, destinationFactory) {
+  function HomeController($log, $document, destinationFactory, dataAPI, dealsDataService) {
     var vm = this;
       vm.popularDestinations = null;
       vm.carousel = [
@@ -45,9 +45,18 @@
       pageDots: true
       // watchCss: true,
       // cellSelector: 'carousel-slide'
-    }
+    };
+    vm.getawayDeals = [];
+    vm.activitiesDeals = [];
+    vm.foodDeals = [];
+
 
     vm.carouselInstanceId = Math.round(Math.random() * 10000);
+
+    loadGetawayDeals();
+    loadFoodDeals();
+    loadActivitiesDeals();
+
 
     // const carouselElem = angular.element($document[0].getElementById('homeCarousel'));
     // const carouselInstanceId =  carouselElem[0].id;
@@ -65,14 +74,48 @@
     // $log.info(vm);
 
     // Init
-    destinationFactory.loadDest();
-    getPopularDestinations();
+    // destinationFactory.loadDest();
+    // getPopularDestinations();
 
-    function getPopularDestinations(){
-      // To filter by popularity
-      destinationFactory.getAllDest().then( function(data){
-        vm.popularDestinations = data;
-      });
+    // function getPopularDestinations(){
+    //   // To filter by popularity
+    //   destinationFactory.getAllDest().then( function(data){
+    //     vm.popularDestinations = data;
+    //   });
+    // }
+
+    // function getAllDeals(){
+    //   vm.getawayDeals = dealsDataService.loadDeals('getaways');
+    //   vm.activitiesDeals = dealsDataService.loadDeals('activities');
+    //   vm.foodDeals = dealsDataService.loadDeals('food & drinks');
+    // }
+
+    function loadGetawayDeals(){
+      dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
+        snapshot.filter(function(obj){
+          return obj.category == "getaways";
+        }).forEach(function(data){
+          vm.getawayDeals.push(data);
+        });
+      })
+    }
+    function loadFoodDeals(){
+      dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
+        snapshot.filter(function(obj){
+          return obj.category == "food & drinks";
+        }).forEach(function(data){
+          vm.foodDeals.push(data);
+        });
+      })
+    }
+    function loadActivitiesDeals(){
+      dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
+        snapshot.filter(function(obj){
+          return obj.category == "activities";
+        }).forEach(function(data){
+          vm.activitiesDeals.push(data);
+        });
+      })
     }
 
 
