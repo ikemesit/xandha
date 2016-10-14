@@ -210,9 +210,15 @@
     padding-bottom: 15px;
   }
   & .deal-caption{
+    & object{
+      display: inline-block;
+      margin-right: 10px;
+      // color: $prime-blue;
+    }
     & h3{
       font-family: $opensans-bold;
       margin: 0 20px 20px 0;
+      display: inline-block;
     }
   }
 
@@ -223,13 +229,14 @@
     justify-content: flex-end; //space-between;
     width: 100%;
     padding: 10px 0;
-    border-bottom: thin solid $body-bg-color;
+    border-bottom: none; //thin solid $body-bg-color;
     & .btn-primary{
       background-color: $primary;
       border: thin solid $primary;
       transition: all 0.4s;
+      border-radius: 60px;
       & i{
-        margin-left: 20px;
+        margin-left: 10px;
       }
       &:hover{
         background-color: $comp_1;
@@ -241,7 +248,7 @@
       list-style: none;
       margin-left: 0;
       & li{
-        display: inline; 
+        display: inline;
         margin-right: 20px;
         padding: 10px 0;
         font-family: $opensans-bold;
@@ -282,10 +289,11 @@
       margin-bottom: 0;
       padding: 10px;
       display: block;
-      background-color: rgba($black, 0.4);
-      transition: margin-top 0.4s;
+      background-color: rgba($prime-blue, 0.4);
+      transition: all 0.4s;
       &:hover{
         margin-top: 0px;
+        background-color: rgba($prime-blue, 0.9);
       }
       & .divider{
         height: 0.8px;
@@ -362,7 +370,7 @@
 
   & .deal-details{
     & .nav-tabs{
-      margin-top: 10px;
+      margin-top: 50px;
       margin-bottom: 10px;
       & li{
         border-color: transparent;
@@ -376,7 +384,7 @@
           font-size: 1.1em;
           & i{
             margin-right:  10px;
-          } 
+          }
         }
       }
 
@@ -392,8 +400,9 @@
     }
 
     & .tab-pane{
-      background-color: $body-bg-color;
+      background-color: $white; //$body-bg-color;
       padding: 20px;
+      border: none;
     }
   }
 

@@ -6,8 +6,8 @@
       <h1>Please Confirm your Order</h1>
       <hr>
 		</div>
-    <div class="col-xs-12">
-      <h4 class="block-sub-header with-bg">Order #: {{::order.data.dealId}}</h4>
+    <div class="col-xs-8" id="exportCanvas">
+      <h4 class="block-sub-header with-bg">Order #: {{::order.data.orderId}}</h4>
       <h4 class="block-sub-header">Order Summary</h4>
       <table class="table-bordered">
         <thead>
@@ -29,12 +29,12 @@
       </table>
       <h4 class="block-sub-header">Personal Details</h4>
       <ul>
-        <li><h4>Name:</h4> {{::order.data.firstName}} {{::order.data.lastName}}</li>
-        <li><h4>Email:</h4> {{::order.data.email}}</li>
-        <li><h4>Phone:</h4> {{::order.data.phone}}</li>
-        <li><h4>Address:</h4> {{::order.data.address}}</li>
+        <li><h5>Name:</h5> {{::order.data.firstName}} {{::order.data.lastName}}</li>
+        <li><h5>Email:</h5> {{::order.data.email}}</li>
+        <li><h5>Phone:</h5> {{::order.data.phone}}</li>
+        <li><h5>Address:</h5> {{::order.data.address}}</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-success">Place order</button>
+      <button type="button" class="btn btn-lg btn-success" ng-click="order.generateCoupon()">Get Coupon</button>
     </div>
   </div>
 </div>

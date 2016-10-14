@@ -6,7 +6,7 @@
     .controller('PurchaseModalController', PurchaseModalController);
 
 
-  function PurchaseModalController($log, $state, $scope, dataAPI){
+  function PurchaseModalController($log, $state, $scope, dataAPI, randomString){
     var vm = this;
         vm.deal = null;
         vm.order = {
@@ -20,6 +20,7 @@
           amount: null,
           price: null,
           total: null,
+          orderId: null,
           orderComplete: false,
           time: {'.sv': 'timestamp'}
         };
@@ -39,8 +40,8 @@
       vm.order.dealCaption = vm.deal.caption;
       vm.order.dealId = vm.deal.$id;
       vm.order.price = vm.deal.discountedPrice;
+      vm.order.orderId = randomString();
       calculateTotal();
-      // $log.info(vm.order);
     }
 
     function getOrderData(){

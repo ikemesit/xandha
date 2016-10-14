@@ -15,32 +15,6 @@
       vm.dealsRef = dataAPI.dbArrRef("deals/");
       vm.category = null;
 
-    // [
-    //   {
-    //     id: 0,
-    //     image: 'http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2015/12/Bridge-in-Ice-by-Eindhoven-University-of-Technology-1.jpg',
-    //     caption: 'Awesome stuff'
-    //   },
-    //   {
-    //     id: 1,
-    //     image: 'http://www.co-operativetravel.co.uk/assets/img/generics/dlp25hero-coop.jpg',
-    //     caption: 'Awesome stuff again'
-    //   },
-    //   {
-    //     id: 2,
-    //     image: 'http://linde-deals.com/themes/green/images/banner_1.png',
-    //     caption: 'Awesome stuff again'
-    //   },
-    //   {
-    //     id: 3,
-    //     image: 'http://www.smalleleganthotels.com/upload/pre2_file_747_71195.jpg',
-    //     caption: 'Awesome stuff again'
-    //   }
-    // ];
-    // $scope.$on('$viewContentLoading', function() {
-    //   scope.isStateLoading = true;
-    // });
-
     // Carousel Options
     vm.carouselNavOptions = {
       setGallerySize: false,
