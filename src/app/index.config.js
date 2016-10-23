@@ -6,9 +6,12 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, localStorageServiceProvider, toastrConfig) {
+  function config($logProvider, $compileProvider, localStorageServiceProvider, toastrConfig) {
+    // Disable Debug Data for Production
+    $compileProvider.debugInfoEnabled(false);
+
     // Enable log
-    $logProvider.debugEnabled(true);
+    $logProvider.debugEnabled(false);
 
     // Set options third-party lib
     toastrConfig.allowHtml = true;

@@ -17,9 +17,9 @@
           address: null,
           dealCaption: null,
           dealId: null,
-          amount: null,
-          price: null,
-          total: null,
+          amount: 0,
+          price: 0,
+          total: 0,
           orderId: null,
           orderComplete: false,
           time: {'.sv': 'timestamp'}
