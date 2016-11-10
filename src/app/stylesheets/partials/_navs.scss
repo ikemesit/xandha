@@ -2,7 +2,7 @@
 nav[role="top-nav"]{
   padding-top: 5px;
   height: auto;
-  background-color: $prime-blue; 
+  background-color: $white;// $prime-blue;
   border: none;
   border-bottom: thin solid transparent; //lighten($black, 90%);
   border-radius: 0;
@@ -27,14 +27,15 @@ nav[role="top-nav"]{
   }
 
   .navbar-brand{
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: $headings-font-family;
-    color: $white;
+    color: $prime-blue;//$white;
+    // font-weight: bold;
     & img{
       max-width: 10em;
     }
     &:hover{
-      color: $white;
+      color: $prime-blue; //$white;
     }
     & span{
       font-size: 0.6em;
@@ -73,7 +74,7 @@ nav[role="top-nav"]{
     font-size: rem-calc(30);
   }
 
-  
+
 
   button.btn-profile{
     padding: 0;
@@ -232,7 +233,7 @@ nav[role="sub-nav"]{
   // padding-top: 5px;
   min-height: auto;
   height: auto;
-  background-color: $comp_1; 
+  background-color: $comp_1;
   margin-bottom: 0;
   border: none;
   padding-bottom: 0;
@@ -245,26 +246,29 @@ nav[role="sub-nav"]{
 
   .navbar-nav{
     & a{
-      padding-top: 10px;
-      padding-bottom: 10px;
+      // margin-top: 5px;
+      // margin-bottom: 5px;
       color: $white;
       font-family: $opensans-bold;
-      transition: color 0.4s;
-      padding-left: 0;
-      margin-right: 20px;
-      // font-size: 16px;
-      border-bottom: thick solid transparent;
+      transition: all 0.4s;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-left: thin solid rgba($white, 0.2);
+      // border-right: thin solid rgba($white, 0.5);
+      // border-bottom: thick solid transparent;
       &:hover{
         color: $white;
-        border-bottom: thick solid $white;
+        cursor: pointer;
+        background-color: rgba($black, 0.2);
+        border-left: thin solid transparent;
       }
       &:active{
         color: $white;
-        border-bottom: thick solid $white;
+        // border-bottom: thick solid $white;
       }
       &:focus{
         color: $white;
-        border-bottom: thick solid $white;
+        // border-bottom: thick solid $white;
       }
     }
   }

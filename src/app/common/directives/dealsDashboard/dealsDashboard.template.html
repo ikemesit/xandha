@@ -1,8 +1,8 @@
 <div class="container deals-wrap">
 	<div class="row header-row">
-		<div class="col-xs-12 col-md-5 col-md-offset-2 title-header">
+		<!-- <div class="col-xs-12 col-md-5 col-md-offset-2 title-header">
 			<h1>Grab the latest Deals</h1>
-		</div>
+		</div> -->
 		<!-- <div class="col-xs-5 col-md-2 clearfix">
 			<p class="pull-right">Filter By Location:</p>
 		</div>
@@ -30,28 +30,19 @@
 					track by deal.$id">
 					<a ui-sref="deal({key: deal.$id})" title="">
 						<div class="card" ui-sref="deal">
-							<div class="deal-image" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat;
-								   background-size: cover; min-height: 180px; width: 100%"></div>
-							<!-- <img class="card-img-top"
-									ng-src="{{ deal.relatedImages[0] }}"
-				                    ng-image-appear
-				                    no-loader
-				                    responsive
-                            transition-duration="0.5s"
-                            animation="fillIn"
-                            animation-duration="1s"
-                            easing="ease-out"
-                            alt="{{ deal.caption }}"> -->
+							<div class="deal-image"
+									 style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat;
+								   background-size: cover; min-height: 180px; width: 100%">
+							</div>
 							<div class="deal-details">
 								<h5 ng-bind="deal.caption"></h5>
-								<span class="clearfix meta-data">
-									<!-- <span class="pull-left badge">234 Sold</span> -->
-									<span class="pull-left badge" ng-bind-html="deal.category"></span>
-								</span>
-								<span class="clearfix">
-									<p class="old-price pull-left" ng-bind="deal.price"></p>
-									<p class="new-price pull-left" ng-bind="deal.discountedPrice"></p>
-								</span>
+							</div>
+							<div class="deal-card-footer">
+								<p class="category" ng-bind-html="deal.category"></p>
+								<div class="price-diff">
+									<!-- <p class="old-price" ng-bind="deal.price"></p> -->
+									<p class="new-price" ng-bind="deal.discountedPrice"></p>
+								</div>
 							</div>
 						</div>
 					</a>

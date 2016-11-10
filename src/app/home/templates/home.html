@@ -1,9 +1,19 @@
 <div class="atf-wrap">
   <div global-navbar></div>
   <div global-sub-nav></div>
-  <div bc-flickity = "{{ home.carouselOptions }}" bc-flickity-id="{{ home.carouselInstanceId }}" class="carousel-container home-carousel">
+  <!-- <div bc-flickity = "{{ home.carouselOptions }}" bc-flickity-id="{{ home.carouselInstanceId }}" class="carousel-container home-carousel">
     <div class="carousel-slide" data-ng-repeat="slide in home.carousel track by $index">
         <a ui-sref="deals.getaways" style="margin-right: 10px;"><img data-ng-src="{{ slide.image }}" /></a>
+    </div>
+  </div> -->
+  <div class="jumbotron landing">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Discover <span class="naija">Naija</span><br> like never before!</h1>
+      <p class="sub-text">
+        Find amazing deals on top spots & destinations to relax. We provide you with information on the best spots to chill and relax across Nigeria as well as deals on getaways, luxury dining and fun activities
+      </p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
     </div>
   </div>
   <div class="intro">
@@ -45,7 +55,7 @@
         </object>
         <h1 class="grid-header">Awesome Vacation Spots</h1>
         <div class="grid-layout">
-          <div class="grid-content" ng-repeat="deal in home.getawayDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.getawayDeals | limitTo: 4" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
             <div class="body">
               <a ui-sref="deals.getaways">{{ ::deal.caption }}</a>
             </div>
@@ -67,7 +77,7 @@
         </object>
         <h1 class="grid-header">Luxury Dining Experiences</h1>
         <div class="grid-layout">
-          <div class="grid-content" ng-repeat="deal in home.foodDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.foodDeals | limitTo: 4" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;" ui-sref="deals.winedine">
             <div class="body">
               <a ui-sref="deals.winedine">{{ ::deal.caption }}</a>
             </div>
@@ -89,7 +99,7 @@
         </object>
         <h1 class="grid-header">Wholesome Fun for Everyone</h1>
         <div class="grid-layout">
-          <div class="grid-content" ng-repeat="deal in home.activitiesDeals | limitTo: 3" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
+          <div class="grid-content" ng-repeat="deal in home.activitiesDeals | limitTo: 4" style="background: url('{{ ::deal.relatedImages[0] }}') center center no-repeat; background-size: cover;">
             <div class="body">
               <a ui-sref="deals.activities">{{ ::deal.caption }}</a>
             </div>

@@ -1,10 +1,9 @@
 // ATF WRAP
 .atf-wrap{
-  // position: relative;
   overflow-x: hidden;
   overflow-y: visible;
   width: 100%;
-  // height: auto; /70vh;
+  height: auto;
   // box-shadow: inset 0 70vh rgba(#072967, 0.7);
 
   & video{
@@ -31,14 +30,57 @@
     background: url('http://www.drawhome.com/wp-content/uploads/2015/11/interesting-the-most-beautiful-resort-with-nice-pool-plus-awesome-sleeper-sofa-and-wooden-dining-table-also-lounge-chairs-above-blue-canopy-and-wooden-floor-near-pool-idea.jpg') center center no-repeat;
     background-size: cover;
   }
+
+  & .jumbotron{
+    padding-top: 0;
+  }
+
+  & .landing{
+    height: 60vh;
+    margin-bottom: 0;
+    background: url('../assets/images/atf-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    & .overlay{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background:linear-gradient( to bottom, rgba($black, 0), rgba($black, 0.45) 60%);
+      height: 60vh;
+    }
+    & h1{
+      font-family: $raleway-extra-bold;
+      color: $white;
+      margin-top: 20vh;
+      line-height: 0.9em;
+      // margin-bottom: 20px;
+      position: absolute;
+      & .naija{
+        color: $comp_1;
+        font-style: italic;
+      }
+    }
+    & .sub-text{
+      font-family: $raleway-light;
+      color: $white;
+      padding-right: 40vw;
+      line-height: 1.2em;
+      font-size: 18px;
+      margin-top: 38vh;
+      position: absolute;
+    }
+  }
 }
+
 
 /*======== Intro ========*/
 .intro{
   background-color: $white;
   text-align: center;
-  box-shadow: 0px 0px 5px darken($body-bg-color, 10%);
-  padding: 50px 0;
+  // box-shadow: 0px 0px 5px darken($body-bg-color, 10%);
+  padding: 50px 0 60px 0;
+  min-height: 40vh;
   .col-md-4{
     padding-left: 20px;
     padding-right: 20px;
@@ -67,7 +109,7 @@
   padding: 50px 0;
   margin: 0;
   & .grid-row{
-    padding: 40px 0;
+    padding: 20px 0;
   }
   & .grid-header{
     font-family: $raleway-bold;
@@ -78,37 +120,57 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
+    // box-shadow: 0px 0px 8px darken($neutral1, 10%);
     & .grid-content{
-      width: 33%;
-      height: 300px;
-      // border: thin solid $prime-blue;
+      width: 25%;
+      height: 250px;
       &:after{
         content: ' ';
         position: absolute;
-        width: 96.5%;
+        width: 97.5%;
         left: 15px;
-        top: 255px;
+        top: 205px;
         display: block;
         height: 100px;
         z-index: 1;
-        background:linear-gradient( to bottom, rgba($black, 0), rgba($black, 0.45) 60%);
+        background:linear-gradient( to bottom, rgba($black, 0), rgba($black, 0.3) 80%);
+      }
+      &:hover{
+        cursor: pointer;
+        // &:after{
+        //   content: ' ';
+        //   position: absolute;
+        //   width: 97.5%;
+        //   left: 15px;
+        //   top: 205px;
+        //   display: block;
+        //   height: 100px;
+        //   z-index: 1;
+        //   background:rgba($comp_1, 0.5);
+        // }
+        & .body{
+          & a{
+            color: $comp_1;
+          }
+        }
       }
       & .body{
-        top: 250px;
-        width: 30%;
+        top: 210px;
+        width: 20%;
         padding: 10px;
         position: absolute;
         z-index: 5;
         & a{
           color: $white;
-          font-family: $raleway-bold;
+          font-family: $opensans-bold;
           font-size: 1.2em;
           line-height: 0.98em;
           text-decoration: none;
           transition: color 0.4s;
+          text-transform: capitalize;
           &:hover{
             text-decoration: none;
-            color: $comp_1;
+            color: $white;
             cursor: pointer;
           }
         }

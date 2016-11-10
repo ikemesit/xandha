@@ -1,3 +1,14 @@
+.deal-page-header{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  & h2{
+    @include center-block();
+    text-align: center;
+    font-family: $raleway-bold;
+    color: $white;
+  }
+}
+
 // TO MOVE OR ADJUST
 @mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 2, $bgColor: transparent){
   overflow: hidden;
@@ -98,51 +109,60 @@
       height: 280px;
       display: block;
       border-radius: 2px;
-      // box-shadow: none;
       background-color: $neutral1; //darken($body-bg-color, 10%);
       overflow: hidden;
       & img:not(.ngImageAppearLoader){
         height: 180px;
       }
       & .deal-details{
+        padding-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
+        height: 50px;
         & h5{
           @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 2, $bgColor: transparent);
+          margin-top: 0;
           margin-bottom: 0;
           font-family: $opensans-bold;
           color: $prime-blue;
           word-wrap: break-word;
         }
-        & .badge{
-          margin-top: 5px;
-          margin-bottom: 5px;
-          margin-right: 5px;
-          font-size: 0.7em;
-          font-family: $opensans-bold;
-          background-color: $comp_1; //darken($body-bg-color, 30%);
-          & i{
-            margin-right: 5px;
-          }
+      }
+      & .deal-card-footer{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+        justify-content: space-between;
+        height: 50px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-top: thin solid darken($neutral1, 5%);
+        // overflow-y: hidden;
+        & .category{
+          font-size: 1em;
+          font-family: $opensans;
+          color: $comp_1;
         }
         & .old-price{
           text-decoration: line-through;
           margin-right: 10px;
           color: darken($body-bg-color, 30%);
+          font-size: 1em;
         }
         & .new-price{
           color: $primary;
+          font-size: 2em;
         }
         & .new-price, .old-price{
-          margin-bottom: 5px;
-          padding: 0;
-          font-size: 1.2em;
-          font-family: $opensans-bold;
+          display: inline-block;
+          font-family: $opensans;
           &:before{
             content: '\0020A6';
             font-family: sans-serif;
             float: left;
-            margin-right: 5px;
+            margin-right: 1px;
+            font-size: 0.7em;
           }
         }
       }
