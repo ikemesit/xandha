@@ -1,41 +1,31 @@
 <div global-navbar></div>
-<div global-sub-nav></div>
+<!--<div global-sub-nav></div>-->
 <div class="container order-page-wrap">
 	<div class="row wrap-row">
 		<div class="col-xs-12">
-      <h1>Please Confirm your Order</h1>
-      <hr>
+      <h1 class="custom-page-header">Please Confirm your Order</h1>
 		</div>
-    <div class="col-xs-8" id="exportCanvas">
-      <h4 class="block-sub-header with-bg">Order #: {{::order.data.orderId}}</h4>
-      <h4 class="block-sub-header">Order Summary</h4>
-      <table class="table-bordered">
-        <thead>
-          <tr>
-            <td>Item</td>
-            <td>Price</td>
-            <td>Amount</td>
-            <td>Total</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td ng-bind="::order.data.dealCaption"></td>
-            <td ng-bind="::order.data.price"></td>
-            <td ng-bind="::order.data.amount"></td>
-            <td ng-bind="::order.data.total"></td>
-          </tr>
-        </tbody>
-      </table>
-      <h4 class="block-sub-header">Personal Details</h4>
-      <ul>
-        <li><h5>Name:</h5> {{::order.data.firstName}} {{::order.data.lastName}}</li>
-        <li><h5>Email:</h5> {{::order.data.email}}</li>
-        <li><h5>Phone:</h5> {{::order.data.phone}}</li>
-        <li><h5>Address:</h5> {{::order.data.address}}</li>
-      </ul>
-      <button type="button" class="btn btn-lg btn-success" ng-click="order.generateCoupon()">Get Coupon</button>
-    </div>
-  </div>
+    <div class="col-xs-12 order-panel">
+      <div class="row">
+        <div class="col-xs-2">
+          <div class="order-image"
+            style="background: url('{{ ::order.data.image }}') center center no-repeat;
+                  background-size: cover;">
+          </div>  
+        </div>
+        <div class="col-xs-10">
+          <ul>
+            <li>{{ ::order.data.dealCaption }}</li>
+            <li>{{ ::order.data.amount }} @ {{ ::order.data.price }}</li>
+          </ul>
+          <p class="total">Total : {{ ::order.data.total }}</p>
+          
+        </div>
+      </div>
+     </div>
+     <div class="col-xs-6 guest-checkout">
+       <button type="button" class="btn btn-lg btn-success">Check Out as Guest</button>
+     </div>
+  </div>   
 </div>
-<div global-footer></div>
+<!--<div global-footer></div>-->
