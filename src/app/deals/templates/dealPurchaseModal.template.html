@@ -1,80 +1,49 @@
-<div class="modal-header deal-purchase-modal-header">
-    <h1 class="modal-title" id="modal-title">Your Order</h1>
-</div>
-<div class="deal-purchase-modal-wrap">
-	<table class="table deal-purchase-details-table">
-		<thead>
-			<tr>
-				<th>Your Chosen Deal</th>
-				<th>Amount</th>
-				<th>Price(&#x20A6)</th>
-				<th>Total(&#x20A6)</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td style="width: 50%">{{ purchase.order.dealCaption }}</td>
-				<td style="width: 10%">
-					<select class="form-control" ng-model="purchase.order.amount" ng-change="purchase.calculateTotal()">
-					  <option>1</option>
-					  <option>2</option>
-					  <option>3</option>
-					  <option>4</option>
-					  <option>5</option>
-					</select>
-				</td>
-				<td style="width: 20%">{{ purchase.order.price }}</td>
-				<td style="width: 10%">{{ purchase.order.total }}</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="3" style="text-align: right">
-					<h2>Total:</h2>
-				</td>
-				<td>
-					<h2>{{ purchase.order.total }}</h2>
-				</td>
-			</tr>
-		</tfoot>
-	</table>
-</div>
-<div class="deal-purchase-modal-wrap">
-	<h4>Personal Details</h4>
-	<hr>
-	<form role="form">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<div class="form-group form-group-md">
-					<label for="">First Name</label>
-					<input type="text" class="form-control" ng-model="purchase.order.firstName" placeholder="First Name">
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="form-group form-group-md">
-					<label for="">Last Name</label>
-					<input type="text" class="form-control" ng-model="purchase.order.lastName" placeholder="Last Name">
-				</div>
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-header deal-purchase-modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+		</div>
+		<div class="modal-content">
+			<div class="modal-body">
+				<table class="table deal-purchase-details-table">
+					<thead>
+						<tr>
+							<th>Your Chosen Deal</th>
+							<th>Amount</th>
+							<th>Price(&#x20A6)</th>
+							<th>Total(&#x20A6)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="width: 50%">{{ purchase.order.dealCaption }}</td>
+							<td style="width: 10%">
+								<select class="form-control" ng-model="purchase.order.amount" ng-change="purchase.calculateTotal()">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								</select>
+							</td>
+							<td style="width: 20%">{{ purchase.order.price }}</td>
+							<td style="width: 10%">{{ purchase.order.total }}</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" style="text-align: right">
+								<h2>Total:</h2>
+							</td>
+							<td>
+								<h2>{{ purchase.order.total | currency: "&#x20a6" }}</h2>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				<button type="button" class="btn btn-success btn-lg" ng-click="purchase.getOrderData()">Next <i class="fa fa-angle-right fa-lg"></i></button>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<div class="form-group form-group-md">
-					<label for="">Email</label>
-					<input type="text" class="form-control" ng-model="purchase.order.email" placeholder="Email">
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="form-group form-group-md">
-					<label for="">Phone Number</label>
-					<input type="text" class="form-control" ng-model="purchase.order.phone" placeholder="Phone Number">
-				</div>
-			</div>
-		</div>
-		<div class="form-group form-group-md">
-			<label for="">Address</label>
-			<textarea class="form-control" rows="8" ng-model="purchase.order.address" placeholder="Address"></textarea>
-		</div>
-		<button type="button" class="btn btn-success btn-lg" ng-click="purchase.getOrderData()">Next <i class="fa fa-angle-right fa-lg"></i></button>
-	</form>
+	</div>
 </div>
+

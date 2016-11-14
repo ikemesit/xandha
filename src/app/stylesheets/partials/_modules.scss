@@ -520,7 +520,7 @@ button.deactivated{
 	overflow: hidden;
 	z-index: 100000;
 	display: block;
-	background-color: rgba($black, 0.5);
+	background-color: rgba($black, 0.1);
 
 	& .loading-indicator-body{
 		@include center-block;
@@ -550,9 +550,55 @@ button.deactivated{
 }
 
 .loading-indicator.ng-hide-add, .loading-indicator.ng-hide-remove{
-	transition: all 0.4s linear;
+	transition: all 0.2s linear;
 }
 
 .loading-indicator.ng-hide{
 	opacity: 0;
+}
+
+
+//Angular strap modal backdrop hack
+.modal-backdrop.am-fade {
+  opacity: 1;
+  background-color: rgba($black, 0.8);
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .9;
+    }
+  }
+  &.ng-leave {
+    opacity: .9;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+//Deal Purchase Modal
+.deal-purchase-modal-header{
+  font-family: $raleway-bold;
+  color: $prime-blue;
+  border: none;
+  & .close{
+    opacity: 0.5;
+    transition: opacity 0.15s linear;
+    & span{
+      color: $white;
+      font-size: 40px;
+    }
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.deal-purchase-details-table{
+  width: 100%;
+}
+
+.modal-open {
+    overflow: scroll;
 }

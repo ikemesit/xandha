@@ -15,20 +15,20 @@
 
 			<div class="action-panel">
 				<ul class="stats">
-					<li>
+					<!--<li>
 						287 Bought!
 					</li>
 					<li>
 						<i class="fa fa-eye fa-lg"></i> 287 Views
-					</li>
+					</li>-->
 					<li>
 						Discount: <span class="big-text">{{ ::dl.deal.discount }}%</span>
 					</li>
 					<li>
-						You save: <span class="big-text">N{{ ::dl.deal.discountedPrice }}</span>
+						You save: <span class="big-text">{{ ::dl.deal.discountedPrice | currency: "&#x20a6"}}</span>
 					</li>
 				</ul>
-				<button type="button" class="btn btn-lg btn-primary" ng-click="dl.openModal()">Grab this deal! <i class="fa fa-shopping-bag fa-lg"></i></button>
+				<button type="button" class="btn btn-lg btn-primary" ng-click="dl.showPurchaseModal()">Grab this deal! <i class="fa fa-shopping-bag fa-lg"></i></button>
 			</div>
 
 			<div class="deal-details">
@@ -56,10 +56,10 @@
 						<div class="related-deal-caption">
 						<p>{{ ::deal.caption }}</p>
 						<!-- <div class="divider"></div> -->
-						<ul class="stats">
+						<!--<ul class="stats">
 							<li><i class="fa fa-eye fa-lg>"></i> 2,000</li>
 							<li>2,000 Bought!</li>
-						</ul>
+						</ul>-->
 						</div>
 					</div>
 				</a>

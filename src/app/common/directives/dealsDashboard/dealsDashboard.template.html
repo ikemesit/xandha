@@ -41,7 +41,7 @@
 								<p class="category" ng-bind-html="deal.category"></p>
 								<div class="price-diff">
 									<!-- <p class="old-price" ng-bind="deal.price"></p> -->
-									<p class="new-price" ng-bind="deal.discountedPrice"></p>
+									<p class="new-price">{{ ::deal.discountedPrice | currency: "&#x20a6"}}</p>
 								</div>
 							</div>
 						</div>

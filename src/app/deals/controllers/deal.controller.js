@@ -6,14 +6,14 @@
     .controller('DealController', DealController);
 
 
-  function DealController($log, $scope, $timeout, $stateParams, ngDialog, dataAPI){
+  function DealController($log, $scope, $timeout, $stateParams, $modal, dataAPI){
     var vm = this;
       vm.deal = null;
       vm.selectedDeal = null;
-      vm.openModal = openModal;
       vm.carousel = [];
       vm.dealsRef = dataAPI.dbArrRef("deals/");
       vm.category = null;
+      vm.showPurchaseModal = showPurchaseModal;
 
     // Carousel Options
     vm.carouselNavOptions = {
@@ -28,34 +28,42 @@
       asNavFor: '#dealCarousel',
       percentPosition: false
     }
+
+        // Loads deal from $stateParams on view ready
     $scope.$on('$viewContentLoaded', function () {
       getDealByKey();
     });
 
-
-
-
-
-    function openModal(){
-      ngDialog.open({
-        template: 'app/deals/templates/dealPurchaseModal.template.html',
-        className: 'ngdialog-theme-default',
-        appendClassName: 'ngDialog-custom',
-        width: '90%',
-        controller: 'PurchaseModalController',
-        controllerAs: 'purchase',
-        data: vm.deal,
-        closeByNavigation: true
+   
+    // Opens Purchase Modal
+    function showPurchaseModal(){
+      // Create New isolate scope for modal
+      var modalScope = $scope.$new(true);
+      // Pass modal data
+      modalScope.order = vm.deal;
+      var newPurchaseModal = $modal(
+        {
+          scope: modalScope, 
+          animation: 'am-slide-top',
+          templateUrl: 'app/deals/templates/dealPurchaseModal.template.html',
+          controller: 'PurchaseModalController',
+          controllerAs: 'purchase',
+          size: 'lg', 
+          show: false
+        });
+      newPurchaseModal.$promise.then(function(){
+        newPurchaseModal.show();
       });
     }
 
-    //TODO - use REST API instead
+   //TODO - use REST API instead
     function getDealByKey(){
       dataAPI.dbObjRef("/deals/" + $stateParams.key)
         .$loaded()
         .then(function(snapshot){
           vm.deal = snapshot;
           vm.category = snapshot.category;
+          // Populate Deal Carousel images
           snapshot.relatedImages.forEach(function(data, key){
             vm.carousel.push({
               id:key,

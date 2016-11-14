@@ -137,17 +137,6 @@
       }
       &:hover{
         cursor: pointer;
-        // &:after{
-        //   content: ' ';
-        //   position: absolute;
-        //   width: 97.5%;
-        //   left: 15px;
-        //   top: 205px;
-        //   display: block;
-        //   height: 100px;
-        //   z-index: 1;
-        //   background:rgba($comp_1, 0.5);
-        // }
         & .body{
           & a{
             color: $comp_1;
@@ -176,9 +165,15 @@
         }
       }
     }
-
   }
 }
+
+// To figure out mobile optimization
+/*@media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+    .grid-layout{
+      flex-flow: column;
+    }
+}*/
 
 
 /*======== footer block ========*/

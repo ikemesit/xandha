@@ -20,8 +20,8 @@
 		'ngImageAppear',
 		'angular-spinkit',
 		'bc.Flickity',
-		'ngDialog',
-    'angularRandomString'
+    'angularRandomString',
+		'mgcrea.ngStrap'
 	]);
 
 })();
