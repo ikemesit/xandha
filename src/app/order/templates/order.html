@@ -24,7 +24,38 @@
       </div>
      </div>
      <div class="col-xs-6 guest-checkout">
-       <button type="button" class="btn btn-lg btn-success">Check Out as Guest</button>
+       <h4>Purchase without an account</h4>
+       <p>You can check out as a guest and create an account later.</p>
+       <form id="nibbs" action="#">
+          <input type="hidden" name="merchant_id" value="" />
+          <input type="hidden" name="product_id" value="" />
+          <input type="hidden" name="product_description" value="{{ ::order.data.dealCaption }}" />
+          <input type="hidden" name="amount" value="{{ ::order.data.total }}" />
+          <input type="hidden" name="currency" value="566" />
+          <input type="hidden" name="transaction_id" value="123456" />
+          <input type="hidden" name="response_url" value="http://www.xandha.com" />
+          <input type="hidden" name="hash" value="" />
+       </form>
+       <form class="guest-checkout-form">
+         <div class="col-xs-6">
+           <div class="form-group form-group-md">
+            <input type="text" class="form-control" placeholder="First Name">
+           </div>
+         </div>
+         <div class="col-xs-6">
+           <div class="form-group form-group-md">
+            <input type="text" class="form-control" placeholder="Last Name">
+           </div>
+         </div>
+         <div class="col-xs-12">
+          <div class="form-group form-group-md">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+         </div>
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success btn-lg" form="nibbs">Check Out as Guest <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
+        </div>
+      </form>
      </div>
   </div>   
 </div>

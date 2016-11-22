@@ -16,7 +16,7 @@
 				vm.data = $stateParams.order;
 			});
 
-
+			
 
 		// 	function generateCoupon() {
 		// 		html2canvas(document.getElementById('exportCanvas'), {

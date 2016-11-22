@@ -6,7 +6,7 @@
     margin: 0 0 50px 0;
     padding-top: 15px;
     padding-bottom: 15px;
-    min-height: 90vh;
+    min-height: 80vh;
     border-radius: 6px;
   }
   & .custom-page-header{
@@ -38,6 +38,18 @@
 
   & .guest-checkout{
     padding-top: 20px;
+    & h4{
+      font-family: $sourcesans-bold;
+    }
+    & p{
+      font-family: $sourcesans;
+    }
+    & .guest-checkout-form{
+      margin-top: 20px;
+      & div[class^="col-xs"]{
+        padding-left: 0;
+      }
+    }
   }
 
   

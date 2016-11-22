@@ -597,6 +597,9 @@ button.deactivated{
 }
 .deal-purchase-details-table{
   width: 100%;
+  & h2{
+	  font-family: $sourcesans-bold;
+  }
 }
 
 .modal-open {
