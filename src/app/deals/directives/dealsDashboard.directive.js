@@ -8,7 +8,7 @@
 
 		function dealsDashboard(_, $log, $interval){
 			var directive = {
-				restrict : 'A',
+				restrict : 'EA',
 				scope : {},
 				templateUrl: 'app/deals/templates/dealsDashboard.template.html',
 				controller: DealsDashboardController,

@@ -19,6 +19,7 @@
 
 			$scope.$on('$viewContentLoaded', function (){
 				vm.data = $stateParams.order;
+				$log.info(vm.data);
 				getConfigData();
 			});
 
@@ -31,12 +32,12 @@
 						vm.hostUrl = response.data.nibbs_host_url;
 						vm.secret = response.data.secret_key;
 						vm.hash = hashService(vm.merchantId + 
-												"567890" + 
+												vm.data.dealId + 
 												vm.data.dealCaption + 
 												vm.data.total + 
 												"566" + 
-												"123456" + 
-												"http://www.xandha.com" +
+												vm.data.orderId + 
+												"http://www.xandha.com/order/confirm" +
 												vm.secret);
 					}).catch(function(error){
 						$log.info(error);

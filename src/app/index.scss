@@ -23,7 +23,6 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
 
 
 // Import Partials
-@import "stylesheets/partials/functions";
 @import "stylesheets/partials/fonts";
 @import "stylesheets/partials/variables";
 @import "stylesheets/partials/mixins";
@@ -31,13 +30,9 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "stylesheets/partials/buttons";
 @import "stylesheets/partials/cards";
 @import "stylesheets/partials/forms";
-@import "stylesheets/partials/navs";
-@import "stylesheets/partials/footers";
 @import "stylesheets/partials/layouts";
 @import "stylesheets/partials/modules";
-@import "stylesheets/partials/destinations";
-@import "stylesheets/partials/deals";
-@import "stylesheets/partials/admin";
+
 //
 
 .browsehappy {
