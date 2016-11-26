@@ -11,6 +11,7 @@
 		'xandha.orders',
 		'xandha.login',
 		'xandha.home',
+		'xandha.user',
 
 		// Core dep
 		'ngAnimate',

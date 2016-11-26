@@ -10,7 +10,7 @@
 			var directive = {
 				restrict : 'A',
 				scope : {},
-				templateUrl: 'app/common/directives/dealsDashboard/dealsDashboard.template.html',
+				templateUrl: 'app/deals/templates/dealsDashboard.template.html',
 				controller: DealsDashboardController,
 				controllerAs: 'dashboard',
 				bindToController: { data: "="}
