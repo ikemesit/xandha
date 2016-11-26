@@ -1,0 +1,143 @@
+/*======== Destination Search module ========*/
+@keyframes animate-bg-fade{
+  from{ background-color: rgba($black, 0); }
+  to{ background-color: rgba($black, 0.6); }
+}
+.lookup-backdrop{
+	position: fixed;
+	z-index: 1;
+	background-color: rgba($black, 0.6);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+	animation-name: animate-bg-fade;
+	animation-duration: 0.6s;
+	animation-direction: alternate;
+}
+.destination-lookup-container{
+	display: block;
+	margin-top: 0;
+	border-radius: 2px;
+  	z-index: 5;
+
+	& .location-dropdown{
+		position: relative;
+		background-color: $white;
+		padding: 10px;
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+		border-right: thin solid rgba($black, 0.5);
+		float: left;
+		width: 25%;
+		cursor: pointer;
+		z-index: 5;
+		& span{
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		& span.location-init{
+			font-family: $raleway-bold;
+		}
+		// &.fa-location-arrow{
+		// 	display: block;
+		// }
+		& .location-list{
+			list-style: none;
+			background-color: $white;
+			top: 100%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			& .location-list-data{
+				display: none;
+				list-style: none;
+				padding: 10px 10px 10px 15px;
+				border-top: 1px solid #eee;
+				font-family: $raleway-bold;
+				transition: background-color 0.4s;
+				&:hover{
+					background-color: lighten($neutral2, 55%);
+				}
+			}
+		}
+	}
+
+	& .destination-dropdown{
+		position: relative;
+		background-color: $white;
+		width: 65%;
+		padding: 10.5px;
+		float: left;
+		cursor: pointer;
+		z-index: 5;
+		& .fa-search{
+			float: left;
+			margin-left: 0;
+			margin-right: 20px;
+			margin-top: 5px;
+		}
+		& span{
+			float: left;
+		}
+		& span.destination-init{
+			font-family: $raleway-bold;
+		}
+		& input{
+			width: 100%;
+			display: none;
+			outline: none;
+			border: 0;
+			position: absolute;
+			height: auto;
+			font-family: $raleway-bold;
+		}
+		& .fa-cog{
+			position: absolute;
+			z-index: 5;
+			font-size: 20px;
+			right: 10px;
+		}
+		& .destination-list{
+			//display: block;
+			list-style: none;
+			background-color: $white;
+			top: 100%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			& .destination-list-data{
+				display: none;
+				list-style: none;
+				padding: 10px 10px 10px 15px;
+				border-top: 1px solid #eee;
+				text-align: left;
+				font-family: $raleway-bold;
+			}
+		}
+	}
+	& button{
+		position: relative;
+		width: 10%;
+		height: 40.5px;
+		border: none;
+		border-radius: 0;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		padding: auto 15px;
+		background-color: $primary;
+		color: $white;
+		z-index: 5;
+		transition: background-color 0.2s;
+		&:hover{
+			background-color: $comp_1;
+			color: $white;
+		}
+
+	}
+}

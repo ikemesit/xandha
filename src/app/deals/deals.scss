@@ -441,5 +441,31 @@
   }
 }
 
+//Deal Purchase Modal
+.deal-purchase-modal-header{
+  font-family: $raleway-bold;
+  color: $prime-blue;
+  border: none;
+  & .close{
+    opacity: 0.5;
+    transition: opacity 0.15s linear;
+    & span{
+      color: $white;
+      font-size: 40px;
+    }
 
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+.deal-purchase-details-table{
+  width: 100%;
+  & h2{
+	  font-family: $sourcesans-bold;
+  }
+}
 
+.modal-open {
+    overflow: scroll;
+}

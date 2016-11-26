@@ -1,0 +1,139 @@
+// Login Form
+.login-page-wrap{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: url('https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b734e103303c5965225682077ee72f86') center center no-repeat;
+	background-size: cover;
+	box-shadow: inset 0 100vh rgba($prime-blue, 0.9);
+	.form-wrap{
+		display: block;
+		width: 500px;
+		margin-top: 10vh;
+		background-color: $white;
+		padding: 20px;
+		border-radius: 2px;
+		box-shadow: 0px 0px 10px rgba($black, 0.5);
+	}
+
+	form[role="signInUp"]{
+		.context-switch-wrap{
+			overflow: hidden;
+			display: block;
+			@include clearfix();
+		}
+
+		legend{
+			font-size: 3rem;
+			font-family: $raleway-bold, sans-serif;
+			padding: 10px;
+			color: $prime-blue;
+			margin: 0 0 20px 0;
+			display: block;
+			border-bottom: thin solid #e5e5e5;
+		}
+
+		label{
+			font-family: $raleway-bold, sans-serif;
+		}
+
+		i{
+			position: absolute;
+			margin-left: 35%;
+			margin-top: -2.5%;
+		}
+
+		i[class*="fa-check"]{
+			color: $primary;
+		}
+
+		i[class*="fa-close"]{
+			color: $comp_1;
+		}
+
+		a{
+			display: block;
+			font-size: 12px;
+			margin-top: 20px;
+			&:hover{
+				color: $comp_1;
+			}
+		}
+
+		button{
+			background-color: $white;
+			border: 2px solid $primary;
+			color: $primary;
+			transition: all 0.4s;
+			&:hover{
+				background-color: $comp_1;
+				border: 2px solid $comp_1;
+				color: $white;
+			}
+			& i{
+				color: $white;
+				display: inline;
+			}
+		}
+
+    .auth-status{
+      padding: 5px;
+      background-color: $neutral1;
+      & i{
+        display: inline-block;
+        margin: 0;
+        margin-right: 20px;
+        color: $primary;
+      }
+      & p{
+        display: inline-block;
+        margin-left: 50px;
+        font-family: $raleway-bold;
+        margin-top: 5px;
+        color: $primary;
+      }
+
+    }
+
+    .error-messages{
+      background-color: $comp_1;
+      color: $white;
+      font-family: $raleway-bold;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 2px;
+    }
+
+		small{
+			display: inline-block;
+			margin-right: 20px;
+			& a{
+				font-family: $raleway-bold, sans-serif;
+				text-decoration: none;
+			}
+			& button{
+				display: inline-block;
+				background-color: $white; //$comp_1;
+				border: thin solid $comp_1;
+				color: $comp_1;
+				&:hover{
+					border: thin solid $comp_1;
+				}
+			}
+			& button.reg{
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+.context-switch-wrap.ng-hide{
+	transition: all 0.4s;
+	opacity: 0;
+	position: absolute;
+	z-index: -1000;
+}
+
+button.deactivated{
+  display: none !important;
+}

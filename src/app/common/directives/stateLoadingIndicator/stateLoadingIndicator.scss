@@ -1,0 +1,44 @@
+// Loading Indicator
+.loading-indicator{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	overflow: hidden;
+	z-index: 100000;
+	display: block;
+	background-color: rgba($prime-blue, 0.1);
+
+	& .loading-indicator-body{
+		@include center-block;
+		margin-top: 35vh;
+		display: block;
+		width: 400px;
+		// background-color: $comp_1;
+	}
+
+	& .loading-title{
+		font-family: $opensans-bold;
+		color: $white;
+		text-align: center;
+	}
+
+    & .three-bounce-spinner{
+		& .bounce1, .bounce2, .bounce3{
+			background-color: $white;
+		}
+	}
+
+	& .double-bounce-spinner{
+		& .double-bounce1, .double-bounce2{
+			background-color: $white;
+		}
+	}
+}
+
+.loading-indicator.ng-hide-add, .loading-indicator.ng-hide-remove{
+	transition: all 0.2s linear;
+}
+
+.loading-indicator.ng-hide{
+	opacity: 0;
+}

@@ -1,0 +1,107 @@
+// User Profile
+.user-profile-wrap{
+  margin: 0;
+  display: block;
+  width: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: lighten(#C5CDE0, 10%); //#f1f1f1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+  .profile-header{
+    // margin-top: 20px;
+    background-color: $comp_2;
+    clear: both;
+    padding: 10px 20px;
+    & .profile-img{
+      border-radius: 360px;
+      display: inline-block;
+      background: url('https://lh3.googleusercontent.com/-p9Qqcq0svuw/VekKi2TcQYI/AAAAAAAAAdE/iIBhbwxaDiw/w426-h425/Rick%252Band%252Bmorty%252Bfor%252Ba%252Bhundred%252Byears%252Brick%252Band%252Bmorty%252B_406a982d46ccc523799e6aef45080387.png') center center no-repeat;
+      background-size: cover;
+      width: 150px;
+      height: 150px;
+      margin: 10px 20px;
+      float: left;
+    }
+
+    & .header-content{
+      display: inline-block;
+      float: left;
+      padding-top: 20px;
+      font-family: $raleway-bold, sans-serif;
+      color: $white;
+      margin-left: 20px;
+      & h1{
+        font-size: 3em;
+        margin-bottom: 10px;
+      }
+      & p{
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+      & p.email{
+        font-family: $raleway-bold, sans-serif;
+      }
+    }
+  }
+
+  .profile-content-sidebar{
+    margin-top: 20px;
+    background-color: $prime-blue;
+    padding: 0;
+    height: 400px;
+    max-height: 400px;
+    & ul{
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      & li{
+        display: block;
+        & a{
+          clear: both;
+          display: block;
+          padding: 20px;
+          font-family: $raleway-bold, sans-serif;
+          text-decoration: none;
+          border-bottom: thin solid lighten($prime-blue, 5%);
+          background-color: $prime-blue;
+          color: $white;
+          transition: all 0.2s;
+          &:hover{
+            background-color: $comp_2;
+            border-bottom: thin solid darken($comp_2, 5%);
+            color: $white;
+            text-decoration: none;
+          }
+        }
+        & i{
+          color: $white;
+          float: right;
+        }
+      }
+    }
+  }
+
+  .profile-content{
+    min-height: 400px;
+    background-color: $white;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 20px;
+
+    & legend{
+      font-family: $raleway-bold, sans-serif;
+      font-size: 2em;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    & label{
+      margin-top: 15px;
+      text-align: right;
+    }
+
+  }
+
+}
