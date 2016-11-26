@@ -1,0 +1,101 @@
+<div class="modal-header deal-purchase-modal-header">
+    <h1 class="modal-title" id="modal-title">Edit Destination {{managedest.destEdit.name}}</h1>
+</div>
+<form name="destEditationForm">
+<div class="deal-purchase-modal-wrap">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-name">Name</label>
+					<input type="text" class="form-control" id="dest-name" style="color: black; background-color: #fff;" placeholder="Name of destEditation" ng-model="cd.destEdit.name" required="">
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-address">Address</label>
+					<input type="text" class="form-control" id="dest-address" style="color: black; background-color: #fff;" placeholder="Address of destEditation" ng-model="cd.destEdit.address" required="">
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-address">Description</label>
+					<ng-wig placeholder="Description" style="color: black; background-color: #fff;" ng-model="cd.destEdit.desc" source-mode-allowed></ng-wig>
+				</div>
+			</div>
+			
+
+		</div>
+		
+</div>
+</div>
+<div class="deal-purchase-modal-wrap">
+<br>
+		<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-activities">Activities</label>
+					<input type="text" class="form-control" style="color: black; background-color: #fff;" id="dest-activities" placeholder="Enter Activities seperated by a comma" ng-model="cd.destEdit.activities" required="">
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-cordinates">Map Cordinates</label>
+					<input type="text" class="form-control" id="dest-activities" style="color: black; background-color: #fff;" placeholder="Enter Location cordinates seperated by a comma" ng-model="cd.destEdit.cordinates" required="">
+				</div>
+			</div>
+		<div class="col-xs-12">
+			<br>
+				<button type="button" class="btn btn-primary" ng-click="cd.adddestEditation(cd.destEdit)" ng-disabled="cd.$invalid"> Update Details</button>
+			</div>
+
+		<div class="row" ng-show="cd.showUpper == false">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-activities">Add Images</label>
+					<input type="file" class="form-control" id="dest-images-upload" placeholder="Upload Images" multiple>
+				</div>
+				<uib-progressbar max="max" value="cd.progress" ng-show="cd.progress > 0"><span style="color:green; white-space:nowrap;"></span></uib-progressbar>
+			</div>
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-primary" ng-click="cd.uploadDestImages(cd.destEdit.name)">Add Images</button>
+			</div>
+		</div>
+	<!-- <h4>Personal Details</h4>
+	<hr>
+	<form role="form">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="form-group form-group-md">
+					<label for="">First Name</label>
+					<input type="text" class="form-control" ng-model="purchase.order.firstName" placeholder="First Name">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="form-group form-group-md">
+					<label for="">Last Name</label>
+					<input type="text" class="form-control" ng-model="purchase.order.lastName" placeholder="Last Name">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="form-group form-group-md">
+					<label for="">Email</label>
+					<input type="text" class="form-control" ng-model="purchase.order.email" placeholder="Email">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="form-group form-group-md">
+					<label for="">Phone Number</label>
+					<input type="text" class="form-control" ng-model="purchase.order.phone" placeholder="Phone Number">
+				</div>
+			</div>
+		</div>
+		<div class="form-group form-group-md">
+			<label for="">Address</label>
+			<textarea class="form-control" rows="8" ng-model="purchase.order.address" placeholder="Address"></textarea>
+		</div>
+		<button type="button" class="btn btn-success btn-lg" ng-click="purchase.getOrderData()">Next <i class="fa fa-angle-right fa-lg"></i></button>
+	</form> -->
+</div>
+</form>

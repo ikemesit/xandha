@@ -1,129 +1,72 @@
+
 <div class="row">
-	<div class="col-xs-12">
-		<h1 class="admin-page-title">Manage Destinations</h1>
-		<ol class="breadcrumb">
-		  <li><a href="#">Admin</a></li>
-		  <li class="active">Manage Destinations</li>
-		</ol>
-	</div>
-	<div class="col-xs-12">
-		<uib-tabset active="activeJustified" justified="false">
-			<uib-tab index="0" heading="Add a Facility">
-				<div class="panel panel-default">
-				  	<div class="panel-body">
-						<form>
-							<div class="row" ng-show="managedest.showUpper == true">
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="dest-name">Name</label>
-										<input type="text" class="form-control" id="dest-name" placeholder="Name" ng-model="managedest.destIn.name">
-									</div>
-								</div>
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="dest-address">Address</label>
-										<input type="text" class="form-control" id="dest-address" placeholder="Address" ng-model="managedest.destIn.address">
-									</div>
-								</div>
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="dest-address">Description</label>
-										<ng-wig placeholder="Description" ng-model="managedest.destIn.desc" source-mode-allowed></ng-wig>
-									</div>
-								</div>
-								<div class="col-xs-8">
-									<div class="form-group">
-										<label for="dest-activities">Activities</label>
-										<input type="text" class="form-control" id="dest-activities" placeholder="Activities" ng-model="managedest.destIn.activities">
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="form-group">
-										<label for="dest-cordinates">Map Cordinates</label>
-										<input type="text" class="form-control" id="dest-activities" placeholder="Activities" ng-model="managedest.destIn.cordinates">
-									</div>
-								</div>
-								<div class="col-xs-12">
-									<button type="button" class="btn btn-primary btn-lg" ng-click="managedest.addDestination(managedest.destIn)">Add Details</button>
-								</div>
-							</div>
-							<div class="row" ng-show="managedest.showUpper == false">
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="dest-activities">Add Images</label>
-										<input type="file" class="form-control" id="dest-images-upload" placeholder="Upload Images" multiple>
-									</div>
-									<uib-progressbar max="max" value="managedest.progress" ng-show="managedest.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
-								</div>
-								<div class="col-xs-12">
-									<button type="button" class="btn btn-primary btn-lg " ng-click="managedest.uploadDestImages(managedest.destIn.name)">Add Images</button>
-								</div>
-							</div>
-						</form>
-					</div>
+
+	<div class="col-md-12 col-lg-12">
+		<div class="row">
+			<div class="panel panel-body" style="border: none">
+				<div class="panel-header">
+				<h3 align="center">POST A <img src="assets/images/dest.png" height="30" width="30">DESTINATION</h3>
+				<p align="center">Put your destination in front of millions of tourist seekers</p>
 				</div>
-			</uib-tab>
-	    	<uib-tab index="1" heading="Edit Destinations">
-	    		<div class="row">
-		    		<div class="col-xs-4">
-		    			<div class="available-destinations-list" ng-repeat="data in managedest.destOut">
-		    				<p class="pull-left">{{ data.name }}</p>
-		    				<div class="pull-right">
-		    					<button type="button" class="btn btn-default btn-sm" ng-click="managedest.editDestination(data.name)">Edit</button>
-		    					<button type="button" class="btn btn-warning btn-sm" ng-click="managedest.deleteDestination(data.name)">Delete</button>
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="col-xs-8">
-		    			<div class="row">
-		    				<form ng-hide="managedest.editFormHidden">
-							
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="dest-name">Name</label>
-											<input type="text" class="form-control" id="dest-name" placeholder="Name" ng-model="managedest.destEdit.name">
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="dest-address">Address</label>
-											<input type="text" class="form-control" id="dest-address" placeholder="Address" ng-model="managedest.destEdit.address">
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="dest-address">Description</label>
-											<ng-wig placeholder="Description" ng-model="managedest.destEdit.desc" source-mode-allowed></ng-wig>
-										</div>
-									</div>
-									<div class="col-xs-4">
-										<div class="form-group">
-											<label for="dest-activities">Activities</label>
-											<input type="text" class="form-control" id="dest-activities" placeholder="Enter Activities seperated by a comma - temporary" ng-model="managedest.destEdit.activities">
-										</div>
-									</div>
-									<div class="col-xs-4">
-										<div class="form-group">
-											<label for="dest-activities">Map Cordinates</label>
-											<input type="text" class="form-control" id="dest-activities" placeholder="Enter Location cordinates seperated by a comma - temporary" ng-model="managedest.destEdit.cordinates">
-										</div>
-									</div>
-									<div class="col-xs-4">
-										<div class="form-group">
-											<label for="dest-activities">Header Image</label>
-											<input type="text" class="form-control" id="dest-activities" placeholder="Enter image full url - temporary" ng-model="managedest.destEdit.himage">
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="managedest.saveEdit()">Submit</button>
-									</div>
-								</div>
-							</form>
-		    			</div>
-		    		</div>
-	    		</div>
-	    	</uib-tab>
-		</uib-tabset>
+			</div>
+		</div>
 	</div>
+
+	<div class="container">
+			<div class="clearfix"></div>
+
+		<div class="row">
+			<section class="panel panel-priamry">
+							<header class="panel-heading" style="background-color: #06043d">
+								<h2 class="panel-title" style="color: #fff">Manage your Destinations</h2>
+							</header>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-md">
+												<button type="button" class="btn btn-primary" ng-click="managedest.openModal()">Add Destination <i class="fa fa-plus-square"></i></button>
+										</div>
+									</div>
+									<br>
+								</div>
+								<table class="table table-bordered table-striped mb-none" id="datatable-default">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Name</th>
+											<th>Activities</th>
+											<th class="hidden-phone">Address</th>
+											<th class="hidden-phone">Cordinates</th>
+											<th class="hidden-phone">Actions</th>
+
+
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr class="gradeX" ng-repeat="data in managedest.destOut">
+											<td align="center"><img src="{{data.himage}}" ng-if="data.himage" ng-cloak class="img-responsive" height="80" width="80">
+											<img src="http://www.jan-sigurd.com/images/marker.png"  ng-if="!data.himage" ng-cloak class="img-responsive" height="80" width="80">
+											</td>
+											<td style="font-weight: bolder;" ng-bind="data.name"></td>
+											<td ng-bind="data.activities"></td>
+											<td ng-bind="data.address"></td>
+											<td class="center hidden-phone" ng-bind="data.cordinates"></td>
+											<td class="actions" align="center">
+												<a href="#" ng-click="managedest.editDestination(data.name)" class="on-default edit-row" title="Edit Destination"><i class="fa fa-pencil"></i></a>
+												<a href="#" ng-click="managedest.deleteDestination(data.name)" class="on-default remove-row" title="Delete Destination"><i class="fa fa-trash-o"></i></a>
+											</td>
+
+										</tr>
+										
+										
+									</tbody>
+
+								</table>
+							</div>
+						</section>
+		</div>
+
+	</div>
+
 </div>

@@ -64,7 +64,10 @@
 							downloadURLs.push(uploadTask.snapshot.downloadURL);
 							// firebase.database().ref("/deals/" + key).update({ relatedImages:downloadURLs });
 							toastr.success("Images Uploaded");
+							ngDialog.closeAll();
 				});
+            
+				
 			}
 		}
 	}// End

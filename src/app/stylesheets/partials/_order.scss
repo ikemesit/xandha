@@ -25,6 +25,11 @@
       height: 150px;
       border-radius: 50%;
     }
+
+    & h4{
+      font-family: $sourcesans-bold;
+      color: #3a3a3a;
+    }
     
     & ul{
       padding-left: 0;

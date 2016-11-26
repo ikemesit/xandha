@@ -1,1 +1,82 @@
-<h1>Hello World</h1>
+   <div id="page-wrapper">
+    <style type="text/css">
+                        .wrapper_ {
+                            border-color:#e0e0e0;-moz-box-shadow:1px 1px 1px 0px #b9b9b9;
+    -webkit-box-shadow:1px 1px 3px 0px #b9b9b9;
+    box-shadow:1px 1px 3px 0px #b9b9b9;
+    -moz-border-radius:9px;
+    -webkit-border-radius:9px;
+    border-radius:9px;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color: #fff
+                        }
+                </style>
+            <div class="row wrapper_" class="alert alert-primary" >
+                <div class="container">
+                   <!--  <h1 style="color:black"><img src="assets/images/covisions_logo.svg" height="100" alt="FordePro" style=""></h1> -->
+                       <h4 align="center" style="color: #000; font-weight: bold"> Welcome Admin </h4>
+                           <h6 align="center" style="color: #000">{{ clock  | date:'medium'}}</h6>
+                  
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+               
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="hidden-md panel panel-featured-left panel-featured-primary">
+                                    <div class="panel-body wrapper_" >
+                                        <div class="widget-summary widget-summary-xlg">
+                                            <div class="widget-summary-col widget-summary-col-icon">
+                                                <div class="summary-icon bg-primary"  style="background-color: transparent;">
+                                                   <img src="assets/images/dest.png" height="100" width="100">
+                                                </div>
+                                            </div>
+                                            <div class="widget-summary-col">
+                                                <div class="summary">
+                                                    <h4 class="title" style="color: #1fc13f; font-weight: bolder;">Destinations ({{admindash.destOut.length}})</h4>
+                                                    <div class="info">
+                                                       <!--  <strong class="amount">1281</strong> -->
+                                                        <span class="text-primary" style="color: #1fc13f; font-weight: lighter;">Add & Manage destinations</span>
+                                                    </div>
+                                                </div>
+                                                <div class="summary-footer">
+                                                    <a class="text-muted text-uppercase" ui-sref="admin.destinations">(view all)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                </div>
+
+                <div class="col-lg-6">
+                 <section class="hidden-md panel panel-featured-left panel-featured-primary" >
+                                    <div class="panel-body wrapper_">
+                                        <div class="widget-summary widget-summary-xlg">
+                                            <div class="widget-summary-col widget-summary-col-icon">
+                                                <div class="summary-icon bg-primary"  style="background-color: transparent;">
+                                                    <img src="assets/images/deal.png" height="100" width="100">
+                                                </div>
+                                            </div>
+                                            <div class="widget-summary-col">
+                                                <div class="summary">
+                                                    <h4 class="title" style="color: #1fc13f;font-weight: bolder;"> Deals ({{admindash.dealDataStore.length}})</h4>
+                                                    <div class="info">
+                                                        <span class="text-primary" style="color: #1fc13f; font-weight: lighter;">Add & Manage deals</span>
+                                                    </div>
+                                                </div>
+                                                <div class="summary-footer">
+                                                    <a class="text-muted text-uppercase" ui-sref="admin.deals">(view all)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                   
+                </div>
+            </div>
+        </div>

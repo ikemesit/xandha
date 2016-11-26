@@ -1,0 +1,148 @@
+<div class="modal-header deal-purchase-modal-header">
+    <h1 class="modal-title" id="modal-title" ng-if="cd.dealEdit != null">Edit Deal</h1>
+    <h1 class="modal-title" id="modal-title" ng-if="cd.dealEdit == null">Add Deal</h1>
+
+</div>
+<form name="destinationForm">
+<div class="deal-purchase-modal-wrap">
+	<div class="panel panel-default">
+				  <div class="panel-body">
+				    <form role="form">
+				    	<div class="row">
+				    		<div class="col-xs-12">
+						    	<div class="form-group">
+						    		<label for="deal-caption">Deal Caption</label>
+						    		<input type="text" class="form-control" id="deal-caption" style="color: black; background-color: #fff;" ng-model="cd.deal.caption" placeholder="Deal Caption">
+						    	</div>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						    	<div class="form-group">
+						    		<label for="price">Price</label>
+						    		<input type="text" class="form-control" id="price" style="color: black; background-color: #fff;" ng-model="cd.deal.price" placeholder="Price">
+						    	</div>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						    	<div class="form-group">
+						    		<label for="discount">Discount</label>
+						    		<input type="text" class="form-control" style="color: black; background-color: #fff;" id="discount"
+						    		ng-change="cd.calculateDiscountedPrice(cd.deal.price, cd.deal.discount)" ng-model="cd.deal.discount" placeholder="Discount">
+						    	</div>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						    	<div class="form-group">
+						    		<label for="discounted-price">Discounted Price</label>
+						    		<input type="text" class="form-control" style="color: black; background-color: #fff;" id="discounted-price"
+						    		 ng-model="cd.deal.discountedPrice" placeholder="Discounted Price" disabled>
+						    	</div>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+					    		<label for="start-date">Starts</label>
+					    		<p class="input-group">
+						    		<input type="date" class="form-control" style="color: black; background-color: #fff;"
+						    			 ng-model="cd.deal.startDate"
+						    			ng-required="true"
+						    			placeholder="Start Date">
+						    		<!-- <span class="input-group-btn">
+							            <button type="button" class="btn btn-default" ng-click="cd.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+							        </span> -->
+						         </p>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+					    		<label for="end-date">Ends</label>
+					    		<p class="input-group">
+						    		<input type="date" class="form-control" style="color: black; background-color: #fff;"
+							    		ng-model="cd.deal.endDate"
+							    		ng-required="true"
+							    		placeholder="End Date">
+						    		<!-- <span class="input-group-btn">
+							            <button type="button" class="btn btn-default" ng-click="cd.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+							        </span> -->
+						         </p>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						    	<div class="form-group">
+						    		<label for="categories">Category</label>
+						    		<select id="categories" class="form-control"  ng-model="cd.deal.category">
+						    			<option value="food & drinks">Food & Drinks</option>
+						    			<option value="activities">Activities</option>
+						    			<option value="getaways">getaways</option>
+						    		</select>
+						    	</div>
+						    </div>
+						     <div class="col-xs-12 col-md-12">
+						    	<div class="form-group">
+						    		<label for="location">Location</label>
+						    		<select id="location" class="form-control"  ng-model="cd.deal.location">
+						    			<option value="Abuja">Abuja</option>
+						    			<option value="Lagos">Lagos</option>
+						    			<option value="Others">Others</option>
+						    		</select><!-- 
+						    		<input type="text" class="form-control" style="color: black; background-color: #fff;" id="discounted-price"
+						    		 ng-model="cd.deal.location" placeholder="Location"> -->
+						    	</div>
+						    </div>
+
+						    <div class="col-xs-12">
+						    	<div class="form-group">
+						    		<label for="deal-details">Deal Details</label>
+						    		<ng-wig ng-model="cd.deal.details" source-mode-allowed></ng-wig>
+						    	</div>
+						    </div>
+
+							
+							<!-- <div class="col-xs-12">
+								<button type="button" class="btn btn-primary btn-lg " ng-click="cd.uploadDealImages()">Add Images</button>
+							</div> -->
+						
+						    
+				    	</div>
+				    	
+				   
+				  </div>
+				</div>
+
+
+
+
+</div>
+<div class="deal-purchase-modal-wrap">
+<br>
+	
+		
+	    <div class="col-xs-12">
+	    	<div class="form-group">
+	    		<label for="company-details">Company Details</label>
+	    		<ng-wig  ng-model="cd.deal.company" ></ng-wig>
+
+	    	</div>
+	    </div>
+	    <div class="col-xs-12">
+	    	<div class="form-group">
+	    		<label for="other-details">Other Details</label>
+	    		<ng-wig ng-model="cd.deal.other"></ng-wig>
+	    	</div>
+	    </div>
+	    <div class="col-xs-12">
+	    <br>
+
+			<button type="submit" ng-click="cd.submitDealEntry(); cd.showNext()"class="btn btn-primary" ng-if="cd.dealEdit == null">Submit</button>
+			<p ng-show="cd.showError" class="alert alert-danger" style="margin-top: 10px; margin-bottom: 5px; color: #000" ng-cloak>{{cd.showError | lowercase}}</p>
+			<button type="submit" ng-click="cd.saveEdit()" class="btn btn-primary" ng-if="cd.dealEdit != null">Update</button>
+
+		</div>
+		<div class="row" ng-show="cd.showUpper == false">
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label for="deal-images-upload">Upload Images For {{cd.deal.caption}}</label>
+								<input type="file" class="form-control" id="images_upload" placeholder="Upload Image" multiple="multiple">
+							</div>
+							<uib-progressbar max="cd.max" value="cd.progress" ng-show="cd.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
+						</div>
+						<div class="col-xs-12">
+							<button type="button" class="btn btn-primary" ng-click="cd.uploadDealImages()">Add Images</button>
+						</div>
+					</div>
+		
+	 </form>
+</div>
+</form>

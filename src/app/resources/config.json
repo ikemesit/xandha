@@ -1,0 +1,6 @@
+{
+    "nibbs_merchant_id":"NIBSS0000000078",
+    "nibbs_host_url": "https://staging.nibss-plc.com. ng/CentralPayPlus/pay",
+    "nibss_requery_url": "https://staging.nibss-plc.com.ng/CentralPayPlus/merchantTransQueryJSON",
+    "secret_key": "D40077D6D98DA8B35EB9129DF23B2853"
+}

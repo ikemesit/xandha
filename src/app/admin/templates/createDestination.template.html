@@ -1,0 +1,69 @@
+<div class="modal-header deal-purchase-modal-header">
+    <h1 class="modal-title" id="modal-title" ng-if="cd.dealEditMode == null">Add <img src="assets/images/dest.png" height="30" width="30">Destination</h1>
+    <h1 class="modal-title" id="modal-title" ng-if="cd.dealEditMode">Edit <img src="assets/images/dest.png" height="30" width="30">Destination ({{cd.destIn.name}})</h1>
+
+</div>
+<form name="destinationForm" id="destinationForm">
+<div class="deal-purchase-modal-wrap">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-name">Name : </label><br>
+					<input type="text" class="form-control" id="dest-name" style="color: black; background-color: #fff;" placeholder="Name of Destination" ng-model="cd.destIn.name" required="">
+				</div>
+			</div><br>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-address">Address : </label><br>
+					<input type="text" class="form-control" id="dest-address" style="color: black; background-color: #fff;" placeholder="Address of Destination" ng-model="cd.destIn.address" required="">
+				</div>
+			</div><br>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-activities">Activities : </label><br>
+					<input type="text" class="form-control" style="color: black; background-color: #fff;" id="dest-activities" placeholder="Enter Activities seperated by a comma" ng-model="cd.destIn.activities" required="">
+				</div>
+			</div><br>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="dest-cordinates">Map Cordinates : </label><br>
+					<input type="text" class="form-control" id="dest-activities" style="color: black; background-color: #fff;" placeholder="Enter Location cordinates seperated by a comma" ng-model="cd.destIn.cordinates" required="">
+				</div>
+			</div>
+			
+
+		</div>
+		
+</div>
+</div>
+<div class="deal-purchase-modal-wrap">
+<br>
+
+	<div class="col-xs-12">
+		<div class="form-group">
+			<label for="dest-address">Description</label>
+			<ng-wig style="color: black; background-color: #fff;" ng-model="cd.destIn.desc"></ng-wig>
+		</div>
+	</div>
+		
+		<div class="col-xs-12">
+			<br>
+				<button type="button" class="btn btn-primary" ng-if="cd.dealEditMode == null" ng-click="cd.addDestination(cd.destIn)" ng-disabled="cd.$invalid"><i ng-cloak ng-show="cd.showUpper == false" class="fa fa-spinner fa-spin"></i> Submit</button>
+				<p ng-show="cd.showError" class="alert alert-danger" style="margin-top: 10px; margin-bottom: 5px; color: #000" ng-cloak>{{cd.showError | lowercase}}</p>
+				<button type="button" class="btn btn-primary" ng-if="cd.dealEditMode != null" ng-click="cd.saveEdit()"><i ng-cloak ng-show="cd.showUpper == false" class="fa fa-spinner fa-spin"></i> Update</button>
+			</div>
+			<div class="row" ng-show="cd.showUpper == false">
+								<div class="col-md-10">
+									<div class="form-group">
+										<label for="dest-activities">Upload Images For {{cd.destIn.name}}</label>
+										<input type="file" class="form-control" id="images_upload" multiple>
+									</div>
+									<uib-progressbar max="max" value="cd.progress" ng-show="cd.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
+								</div>
+								<div class="col-xs-12">
+									<button type="button" class="btn btn-primary" ng-click="cd.uploadDestImages(cd.destIn.name)">Add Images</button>
+								</div>
+							</div>
+</div>
+</form>

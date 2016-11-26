@@ -3,6 +3,16 @@
 
   angular
     .module('xandha', [
+		
+		// Feature dep
+		'xandha.admin',
+		'xandha.deals',
+		'xandha.destinations',
+		'xandha.orders',
+		'xandha.login',
+		'xandha.home',
+
+		// Core dep
 		'ngAnimate',
 		'ngCookies',
 		'ngTouch',
@@ -10,18 +20,17 @@
 		'ngMessages',
 		'ngAria',
 		'ngResource',
+
+		// External dep
 		'ui.router',
 		'ui.bootstrap',
-		'toastr',
 		'firebase',
 		'LocalStorageModule',
 		'ngMap',
-		'ngWig',
 		'ngImageAppear',
 		'angular-spinkit',
-		'bc.Flickity',
-    'angularRandomString',
 		'mgcrea.ngStrap'
+		
 	]);
 
 })();

@@ -8,7 +8,7 @@
 
 
 
-  function destinationFactory($log, $timeout, toastr, dataAPI, localStorageService){
+  function destinationFactory($log, $timeout, toastr, ngDialog, dataAPI, localStorageService){
     var factory = {
       addDest : addDest,
       getAllDest : getAllDest,
@@ -53,6 +53,7 @@
 
       for(var i = 0; i < data.length; i++){
         var uploadTask = dataAPI.storage.ref('/' + key + '/' + data[i].name ).put(data[i]);
+        console.log(uploadTask);
         // Listen for state changes, errors, and completion of the upload.
         uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
           function(snapshot) {
@@ -86,6 +87,7 @@
           firebase.database().ref("/destinations/" + key).update({ himage:downloadURL[0] });
           loadDest();
           toastr.success("Images Uploaded");
+           ngDialog.closeAll();
         });
       }
       

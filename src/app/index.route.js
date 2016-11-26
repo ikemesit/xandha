@@ -86,9 +86,7 @@
         controller: 'UserAcctController',
         controllerAs: 'user',
         resolve: {
-          "currentAuth": ["authService", function(authService){
-            return authService.auth().$requireSignIn();
-          }]
+          "userAuth": userAuth
         }
       })
 
@@ -121,6 +119,14 @@
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
+
+    // UserAuth Resolver 
+    userAuth.$inject = ["authService"];
+    function userAuth(authService){
+      return authService.auth().$requireSignIn();
+    }
+
+
   }
 
 })();

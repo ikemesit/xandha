@@ -5,16 +5,43 @@
 		.module('xandha')
 		.controller('OrderController', OrderController);
 
-		function OrderController ($scope, $log, $stateParams, pdfMake, html2canvas) {
+		function OrderController ($scope, $log, $stateParams, $sce, configService, hashService, pdfMake, html2canvas) {
 			var vm = this;
 			vm.data = null;
+			vm.merchantId = null;
+			vm.hostUrl = null;
+			vm.hash = null;
+			vm.secret = null;
+
 
 			// Public Methods
 			// vm.generateCoupon = generateCoupon;
 
 			$scope.$on('$viewContentLoaded', function (){
 				vm.data = $stateParams.order;
+				getConfigData();
 			});
+
+
+			function getConfigData(){
+				configService
+					.getConfig()
+					.then(function(response){
+						vm.merchantId = response.data.nibbs_merchant_id;
+						vm.hostUrl = response.data.nibbs_host_url;
+						vm.secret = response.data.secret_key;
+						vm.hash = hashService(vm.merchantId + 
+												"567890" + 
+												vm.data.dealCaption + 
+												vm.data.total + 
+												"566" + 
+												"123456" + 
+												"http://www.xandha.com" +
+												vm.secret);
+					}).catch(function(error){
+						$log.info(error);
+					});
+			}
 
 			
 

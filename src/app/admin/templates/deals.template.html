@@ -1,231 +1,70 @@
 <div class="row">
-	<div class="col-xs-12">
-		<h1 class="admin-page-title">Manage Deals</h1>
-		<ol class="breadcrumb">
-		  <li><a href="#">Admin</a></li>
-		  <li class="active">Manage Deals</li>
-		</ol>
+	<div class="col-md-12 col-lg-12">
+		<div class="row">
+			<div class="panel panel-body" style="border: none">
+				<div class="panel-header">
+				<h3 align="center">POST A <img src="assets/images/deal.png" height="30" width="30">DEAL</h3>
+				<p align="center">Put your deal in front of millions of tourist seekers</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-xs-12">
-		<uib-tabset active="activeJustified" justified="false">
-			<uib-tab index="0" heading="Add New Deals">
-				<div class="panel panel-default">
-				  <div class="panel-body">
-				    <form role="form">
-				    	<div class="row" ng-show="managedeal.showUpper == true">
-				    		<div class="col-xs-12">
-						    	<div class="form-group">
-						    		<label for="deal-caption">Deal Caption</label>
-						    		<input type="text" class="form-control" id="deal-caption" ng-model="managedeal.deal.caption" placeholder="Deal Caption">
-						    	</div>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-						    	<div class="form-group">
-						    		<label for="price">Price</label>
-						    		<input type="text" class="form-control" id="price" ng-model="managedeal.deal.price" placeholder="Price">
-						    	</div>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-						    	<div class="form-group">
-						    		<label for="discount">Discount</label>
-						    		<input type="text" class="form-control" id="discount"
-						    		ng-keyup="managedeal.calculateDiscountedPrice(managedeal.deal.price, managedeal.deal.discount)" ng-model="managedeal.deal.discount" placeholder="Discount">
-						    	</div>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-						    	<div class="form-group">
-						    		<label for="discounted-price">Discounted Price</label>
-						    		<input type="text" class="form-control" id="discounted-price"
-						    		 ng-model="managedeal.deal.discountedPrice" placeholder="Discounted Price" disabled>
-						    	</div>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-					    		<label for="start-date">Starts</label>
-					    		<p class="input-group">
-						    		<input type="text" class="form-control"
-						    			uib-datepicker-popup ng-model="managedeal.deal.startDate"
-						    			is-open="managedeal.popup1.opened"
-						    			datepicker-options="managedeal.dateOptions"
-						    			ng-required="true"
-						    			close-text="Close",
-						    			placeholder="Start Date">
-						    		<span class="input-group-btn">
-							            <button type="button" class="btn btn-default" ng-click="managedeal.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-							        </span>
-						         </p>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-					    		<label for="end-date">Ends</label>
-					    		<p class="input-group">
-						    		<input type="text" class="form-control"
-							    		uib-datepicker-popup
-							    		ng-model="managedeal.deal.endDate"
-							    		is-open="managedeal.popup2.opened"
-							    		datepicker-options="managedeal.dateOptions"
-							    		ng-required="true" close-text="Close"
-							    		placeholder="End Date">
-						    		<span class="input-group-btn">
-							            <button type="button" class="btn btn-default" ng-click="managedeal.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-							        </span>
-						         </p>
-						    </div>
-						    <div class="col-xs-12 col-md-4">
-						    	<div class="form-group">
-						    		<label for="categories">Category</label>
-						    		<select id="categories" class="form-control" ng-model="managedeal.deal.category">
-						    			<option value="food & drinks">Food & Drinks</option>
-						    			<option value="activities">Activities</option>
-						    			<option value="getaways">getaways</option>
-						    		</select>
-						    	</div>
-						    </div>
-						    <div class="col-xs-12">
-						    	<div class="form-group">
-						    		<label for="deal-details">Deal Details</label>
-						    		<ng-wig placeholder="Description" id="deal-details" ng-model="managedeal.deal.details" source-mode-allowed></ng-wig>
-						    	</div>
-						    </div>
-						    <div class="col-xs-12">
-						    	<div class="form-group">
-						    		<label for="company-details">Company Details</label>
-						    		<ng-wig placeholder="Description" id="company-details" ng-model="managedeal.deal.company" source-mode-allowed></ng-wig>
-						    	</div>
-						    </div>
-						    <div class="col-xs-12">
-						    	<div class="form-group">
-						    		<label for="other-details">Other Details</label>
-						    		<ng-wig placeholder="Description" id="other-details" ng-model="managedeal.deal.other"source-mode-allowed></ng-wig>
-						    	</div>
-						    </div>
-						    <div class="col-xs-12">
-				    			<button type="submit" ng-click="managedeal.submitDealEntry(); managedeal.showNext()"class="btn btn-primary btn-lg">Submit</button>
-				    		</div>
-				    	</div>
-				    	<div class="row" ng-show="managedeal.showUpper == false">
-							<div class="col-xs-12">
-								<div class="form-group">
-									<label for="deal-images-upload">Add Images</label>
-									<input type="file" class="form-control" id="deal-images-upload" placeholder="Upload Image" multiple="multiple">
-								</div>
-								<uib-progressbar max="managedeal.max" value="managedeal.progress" ng-show="managedeal.progress > 0"><span style="color:white; white-space:nowrap;"></span></uib-progressbar>
-							</div>
-							<div class="col-xs-12">
-								<button type="button" class="btn btn-primary btn-lg " ng-click="managedeal.uploadDealImages()">Add Images</button>
+
+	<div class="container">
+			<div class="clearfix"></div>
+
+		<div class="row">
+			<section class="panel panel-priamry">
+				<header class="panel-heading" style="background-color: #06043d">
+					<h2 class="panel-title" style="color: #fff">Manage your Deals</h2>
+				</header>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="mb-md">
+									<button type="button" class="btn btn-primary" ng-click="managedeal.openModal()">Add Deal <i class="fa fa-plus-square"></i></button>
 							</div>
 						</div>
-				    </form>
-				  </div>
-				  <div class="panel-footer">Panel footer</div>
+						<br>
+					</div>
+					<table class="table table-bordered table-striped mb-none" id="datatable-default">
+						<thead>
+							<tr>
+								<th>Caption</th>
+								<th>Category</th>
+								<th class="hidden-phone">Location</th>
+								<th class="hidden-phone">Price</th>
+								<th class="hidden-phone">End Date</th>
+
+								<th class="hidden-phone">Actions</th>
+
+
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr class="gradeX" ng-repeat="data in managedeal.dealDataStore track by data.$id">
+								
+								<td style="font-weight: bolder;" ng-bind="data.caption"></td>
+								<td ng-bind="data.category"></td>
+								<td ng-bind="data.location"></td>
+								<td class="center hidden-phone">{{data.price | number:'2'}}</td>
+								<td class="center hidden-phone">{{data.endDate | date}}</td>
+
+								<td class="actions" align="center">
+									<a href="#" ng-click="managedeal.editModal(data)" class="on-default edit-row" title="Edit Destination"><i class="fa fa-pencil"></i></a>
+									<a href="#" ng-click="managedeal.deleteDeal(data)" class="on-default remove-row" title="Delete Destination"><i class="fa fa-trash-o"></i></a>
+								</td>
+
+							</tr>
+							
+							
+						</tbody>
+
+					</table>
 				</div>
-			</uib-tab>
-			<uib-tab index="1" heading="Edit Existing Deals">
-				<div class="row">
-		    		<div class="col-xs-4">
-		    			<div class="available-destinations-list" ng-repeat="data in managedeal.dealDataStore track by data.$id">
-		    				<p class="pull-left">{{ data.caption }}</p>
-		    				<div class="pull-right">
-		    					<button type="button" class="btn btn-default btn-sm" ng-click="managedeal.editDeal(data)">Edit</button>
-		    					<button type="button" class="btn btn-warning btn-sm" ng-click="managedeal.deleteDeal(data)">Delete</button>
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="col-xs-8">
-		    			<div class="row">
-		    				<form ng-hide="managedeal.editFormHidden">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="caption">Deal Caption</label>
-											<input type="text" class="form-control" id="dest-name" placeholder="Name" ng-model="managedeal.dealEdit.caption">
-										</div>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<div class="form-group">
-											<label for="price">Price</label>
-											<input type="text" class="form-control" id="price" placeholder="Address" ng-model="managedeal.dealEdit.price">
-										</div>
-									</div>
-									<div class="col-xs-12 col-md-4">
-								    	<div class="form-group">
-								    		<label for="discount">Discount</label>
-								    		<input type="text" class="form-control" id="discount"
-								    		ng-model="managedeal.dealEdit.discount" placeholder="Discount">
-								    	</div>
-								    </div>
-								    <div class="col-xs-12 col-md-4">
-								    	<div class="form-group">
-								    		<label for="discounted-price">Discounted Price</label>
-								    		<input type="text" class="form-control" id="discounted-price"
-								    		 ng-model="managedeal.dealEdit.discountedPrice" placeholder="Discounted Price" disabled>
-								    	</div>
-								    </div>
-								    <div class="col-xs-12 col-md-4">
-							    		<label for="start-date">Starts</label>
-							    		<p class="input-group">
-								    		<input type="text" class="form-control"
-								    			uib-datepicker-popup ng-model="managedeal.dealEdit.startDate"
-								    			is-open="managedeal.popup1.opened"
-								    			datepicker-options="managedeal.dateOptions"
-								    			ng-required="true"
-								    			close-text="Close",
-								    			placeholder="Start Date">
-								    		<span class="input-group-btn">
-									            <button type="button" class="btn btn-default" ng-click="managedeal.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-									        </span>
-								         </p>
-								    </div>
-								    <div class="col-xs-12 col-md-4">
-							    		<label for="start-date">Ends</label>
-							    		<p class="input-group">
-								    		<input type="text" class="form-control"
-								    			uib-datepicker-popup ng-model="managedeal.dealEdit.endDate"
-								    			is-open="managedeal.popup2.opened"
-								    			datepicker-options="managedeal.dateOptions"
-								    			ng-required="true"
-								    			close-text="Close",
-								    			placeholder="Start Date">
-								    		<span class="input-group-btn">
-									            <button type="button" class="btn btn-default" ng-click="managedeal.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-									        </span>
-								         </p>
-								    </div>
-								    <div class="col-xs-12 col-md-4">
-								    	<div class="form-group">
-								    		<label for="categories">Category</label>
-								    		<select id="categories" class="form-control" ng-model="managedeal.dealEdit.category">
-								    			<option value="food & drinks">Food & Drinks</option>
-								    			<option value="activities">Activities</option>
-								    			<option value="getaways">getaways</option>
-								    		</select>
-								    	</div>
-								    </div>
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="details">Details</label>
-											<ng-wig placeholder="Details" ng-model="managedeal.dealEdit.details" source-mode-allowed></ng-wig>
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="company">Company</label>
-											<ng-wig placeholder="Company" ng-model="managedeal.dealEdit.company" source-mode-allowed></ng-wig>
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<div class="form-group">
-											<label for="others">Others</label>
-											<ng-wig placeholder="others" ng-model="managedeal.dealEdit.other" source-mode-allowed></ng-wig>
-										</div>
-									</div>
-									<div class="col-xs-12">
-										<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="managedeal.saveEdit()">Submit</button>
-									</div>
-								</div>
-							</form>
-		    			</div>
-		    		</div>
-	    		</div>
-			</uib-tab>
-		</uib-tabset>
+			</section>
+		</div>
+
 	</div>
 </div>
