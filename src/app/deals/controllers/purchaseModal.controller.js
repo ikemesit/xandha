@@ -67,7 +67,7 @@
       localStorageService.set("orderID:" + vm.order.orderId, vm.order);
       $timeout(function(){
         $scope.$hide();
-        $state.go('order.place', {order: vm.order});
+        $state.go('order', {order: vm.order});
       }, 300);
     }
 

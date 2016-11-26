@@ -5,13 +5,14 @@
 		.module('xandha')
 		.controller('OrderController', OrderController);
 
-		function OrderController ($scope, $log, $stateParams, $sce, configService, hashService, pdfMake, html2canvas) {
+		function OrderController ($scope, $log, $stateParams, $http, configService, hashService, pdfMake, html2canvas) {
 			var vm = this;
 			vm.data = null;
 			vm.merchantId = null;
 			vm.hostUrl = null;
 			vm.hash = null;
 			vm.secret = null;
+			// vm.placeOrder = placeOrder;
 
 
 			// Public Methods
@@ -43,6 +44,22 @@
 						$log.info(error);
 					});
 			}
+
+			// function placeOrder(){
+			// 	var api = 	'https://staging.nibss-plc.com.ng/CentralPayPlus/pay'
+			// 				vm.merchantId + 
+			// 				vm.data.dealId + 
+			// 				vm.data.dealCaption + 
+			// 				vm.data.total + 
+			// 				"566" + 
+			// 				vm.data.orderId + 
+			// 				"http://www.xandha.com/order/confirm" +
+			// 				vm.hash;
+							
+			//   $http.get(api).then(function(resp){
+			// 	  $log.info(resp);
+			//   });
+			// }
 
 			
 

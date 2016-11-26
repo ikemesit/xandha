@@ -65,25 +65,12 @@
 
       .state('order', {
         url: '/order',
-        abstract: true,
-        templateUrl: 'app/order/templates/order.html'
-      })
-
-      .state('order.place', {
-        url: '/place',
-        templateUrl: 'app/order/templates/orderPlacement.html',
+        templateUrl: 'app/order/templates/order.html',
         controller: 'OrderController',
         controllerAs: 'order',
         params: {
           order: null
         }
-      })
-
-      .state('order.confirm', {
-        url: '/confirm',
-        templateUrl: 'app/order/templates/orderConfirmation.html',
-        controller: 'OrderConfController',
-        controllerAs: 'orderconf'
       })
 
       .state('login', {
