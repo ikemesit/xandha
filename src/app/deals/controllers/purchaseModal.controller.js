@@ -64,7 +64,8 @@
       vm.order.orderId = vm.order.orderId.concat(now);
       
       // Store Order session in Local storage
-      localStorageService.set("orderID:" + vm.order.orderId, vm.order);
+      // localStorageService.set("orderID:" + vm.order.orderId, vm.order);
+      localStorageService.set("activeOrder", vm.order);
       $timeout(function(){
         $scope.$hide();
         $state.go('order', {order: vm.order});

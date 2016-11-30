@@ -17,7 +17,7 @@
                 .catch(getConfigFailed);
             
             function getConfigComplete(response){
-                return response;
+                return response.data;
             }
 
             function getConfigFailed(error){
