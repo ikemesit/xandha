@@ -5,6 +5,7 @@
 // --- Regular colors --- //
 $white       			:	rgb(255,255,255);
 $black					:	rgb(0, 0, 0);
+$fancy-black			:   #484848;
 $orange					:	rgb(246, 146, 30);
 $primary				:	#33B67C; //#009145; //#38C1C1;
 $comp_1					:	#ff4a4a; //#FF6345;
@@ -60,6 +61,9 @@ $sourcesans-light		:   'source_sans_prolight';
 $sourcesans-extralight	: 	'source_sans_proextralight';
 $sourcesans-bold 		: 	'source_sans_probold';
 
+// Noto Sans
+$noto					:   'Noto Sans', sans-serif;
+
 
 
 
@@ -75,4 +79,4 @@ $link-font-family		: 	$opensans;
 
 
 // Layout Variables
-$body-bg-color			: 	darken($neutral1, 3%);
+$body-bg-color			: 	#f0f0f0; //darken($neutral1, 3%);

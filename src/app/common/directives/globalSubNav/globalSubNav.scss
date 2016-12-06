@@ -3,11 +3,12 @@ nav[role="sub-nav"]{
   // padding-top: 5px;
   min-height: auto;
   height: auto;
-  background-color: $prime-blue;//$comp_1;
+  background-color: $white; //$prime-blue;//$comp_1;
   margin-bottom: 0;
   border: none;
   padding-bottom: 0;
   border-radius: 0;
+  border-top: thin solid rgba($black, 0.1);
   
   .navbar-nav{
     padding-left: 0;
@@ -16,30 +17,24 @@ nav[role="sub-nav"]{
 
   .navbar-nav{
     & a{
-      color: $white;
-      font-family: $opensans-semibold;
-      transition: all 0.4s;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-left: thin solid rgba($white, 0.2);
-      // border-right: thin solid rgba($white, 0.5);
-      // border-bottom: thick solid transparent;
+      @include noto-bold;
+      color: $fancy-black;
+      transition: all 0.6s;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-bottom: 2px solid $white;
+      margin-right: 20px;
       &:hover{
-        color: $white;
+        color: $fancy-black;
         cursor: pointer;
-        background-color: rgba($black, 0.2);
-        border-left: thin solid transparent;
       }
       &:focus{
-        color: $white;
-        // border-bottom: thick solid $white;
+        color: $fancy-black;
       }
     }
   }
-
   & .navbar-nav > li > a.active{
-    color: $white;
-    background-color: rgba($black, 0.2);
-    border-left: thin solid transparent;
+    color: $fancy-black;
+    border-bottom: 2px solid $comp_1;
   }
 }

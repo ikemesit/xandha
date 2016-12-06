@@ -1,8 +1,15 @@
-//Rem Fontsize with Px fallback
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: rem-calc($size);
+// 
+@mixin noto-regular(){
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
 }
+
+@mixin noto-bold(){
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+}
+
+
 
 // Background Gradient
 // @param {Color} $startColor [#3C3C3C] - Start Color

@@ -30,7 +30,8 @@
 		'ngMap',
 		'ngImageAppear',
 		'angular-spinkit',
-		'mgcrea.ngStrap'
+		'mgcrea.ngStrap',
+		'angular-loading-bar'
 		
 	]);
 

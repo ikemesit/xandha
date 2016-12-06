@@ -1,0 +1,53 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-header login-modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+		</div>
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="form-wrap center-block">
+                    <form role="signInUp" class="login-form">
+                        <div class="context-switch-wrap" ng-hide="login.context == 'registration'">
+                        <legend>Sign In</legend>
+
+                        <div class="error-messages" ng-if="login.signInError">
+                            {{ login.signInError }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""><small>Sign In with your Email</small></label>
+                            <!-- <input type="text" class="form-control" id="" placeholder="Username" ng-model="login.existingUser.email"> -->
+                            <input type="text" class="form-control" id="" placeholder="Email" ng-model="login.existingUser.email" ng-keyup="login.validateEmailInput(login.existingUser.email)">
+                            <i class="fa fa-close fa-lg" ng-show="login.emailError"></i>
+                            <i class="fa fa-check fa-lg" ng-hide="login.emailSuccess"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <!-- <input type="text" class="form-control" id="" placeholder="Password" ng-model="login.existingUser.password"> -->
+                            <input type="password" class="form-control" id="" placeholder="Password" ng-model="login.existingUser.password" ng-keyup="login.checkEmpty(login.existingUser.password)">
+                            <i class="fa fa-close fa-lg" ng-show="login.valueError"></i>
+                            <i class="fa fa-check fa-lg" ng-hide="login.valueSuccess"></i>
+                        </div>
+
+                        <!-- <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="login.signInWithEmailAndPassword()">Sign In</button> -->
+                        <button type="button"
+                                class="btn btn-primary btn-block btn-lg"
+                                ng-click="login.signInWithEmailAndPassword()"
+                                ng-class="{deactivated:login.authActive}">Sign In</button>
+
+                        <div class="auth-status" ng-show="login.authActive == true">
+                            <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+                            <p>Sigining In. Please wait ...</p>
+                        </div>
+
+                        <small><a class="pull-left" href="#" title="">Forgot your password?</a></small>
+                        <small><button class="pull-right" type="button" ng-click="login.switchContext()">New here?  Create an account here</button></small>
+                        </div>
+                    </form>    
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+

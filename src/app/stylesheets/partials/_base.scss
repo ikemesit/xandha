@@ -3,7 +3,7 @@
 /* Set body base font family and lighter body text */
 
 body {
-  color: #3a3a3a;
+  color: $fancy-black;
   font-family: $paragraph-font-family;
   font-size: 14px;
   background-color: $body-bg-color;
@@ -20,7 +20,7 @@ body.noscroll{
 }
 
 h1,h2,h3,h4,h5,h6,a{
-  color: $prime-blue;
+  color: $fancy-black;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {

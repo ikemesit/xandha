@@ -8,11 +8,6 @@ nav[role="top-nav"]{
   margin-bottom: 0;
   display: block;
 
-  .navbar-collapse{
-    // padding-left: 0;
-    // padding-right: 0;
-  }
-
   .navbar-toggle{
     border: transparent;
     & span.icon-bar{
@@ -26,15 +21,16 @@ nav[role="top-nav"]{
   }
 
   .navbar-brand{
+    @include noto-bold;
     font-size: 3.5rem;
-    font-family: $headings-font-family;
-    color: $prime-blue;//$white;
+    // font-family: $headings-font-family;
+    color: $comp_1; //$prime-blue;//$white;
     // font-weight: bold;
     & img{
       max-width: 10em;
     }
     &:hover{
-      color: $prime-blue; //$white;
+      color: $comp_1;
     }
     & span{
       font-size: 0.6em;
@@ -67,6 +63,7 @@ nav[role="top-nav"]{
       }
     }
   }
+
 
   button.navbar-toggle{
     color: $white;
@@ -148,16 +145,17 @@ ul.dropdown-menu:after {
 }
 
   button.btn-primary, button.btn-default{
+    @include noto-bold;
     padding: 5px 20px;
     transition: all 0.3s ease;
-    font-family: $opensans-bold;
   }
 
   button.btn-primary{
     color: $white;
-    background-color: transparent;
-    border: 2px solid $white;
-    margin-right: 5px;
+    background-color: $comp_1;
+    border: 2px solid $comp_1;
+    border-radius: 16px;
+    margin-right: 0;
     &:hover{
       color:$white;
       background-color: $comp_1;
@@ -166,9 +164,10 @@ ul.dropdown-menu:after {
   }
 
   button.btn-default{
-    color: $white;
+    color: $primary;
     background-color: transparent;
-    border: 2px solid transparent; //$primary;
+    border: 2px solid transparent;
+    padding-left: 10px;
     &:focus{
       background-color: transparent;
       color: $primary;

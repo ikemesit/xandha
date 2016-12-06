@@ -15,7 +15,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, $compileProvider, $httpProvider, localStorageServiceProvider, toastrConfig) {
+  function config($logProvider, $compileProvider, $httpProvider, localStorageServiceProvider, cfpLoadingBarProvider, toastrConfig) {
     // Disable Debug Data for Production
     $compileProvider.debugInfoEnabled(true);
 
@@ -36,6 +36,9 @@
 
     // Enable Cross Domain $http Calls
     $httpProvider.defaults.useXDomain = true;
+
+    // Xhr loading bar latency
+    cfpLoadingBarProvider.latencyThreshold = 10;
 
   }
 })();

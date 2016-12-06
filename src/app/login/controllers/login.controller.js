@@ -6,7 +6,7 @@
     .controller('LoginController', LoginController);
 
 
-  function LoginController($log, $timeout, $state, $firebaseAuth, toastr, authService){
+  function LoginController($log, $timeout, $scope, $state, $firebaseAuth, toastr, authService){
     var vm = this;
       vm.newUser = {
         name: null,
@@ -16,8 +16,8 @@
       };
 
       vm.existingUser = {
-		email: null,
-		password: null
+		    email: null,
+		    password: null
       };
 
       // DOM Manipulation Switches
@@ -29,6 +29,9 @@
       vm.passwordMatchSuccess = true;
       vm.passwordMatchError = false;
       vm.authActive = false;
+
+      // Show form modal
+      vm.showLoginModal = showLoginModal;
 
       // Validation
       vm.validateEmailInput = validateEmailInput;
@@ -47,6 +50,28 @@
       vm.signInWithEmailAndPassword = signInWithEmailAndPassword;
 
     checkAuthState();
+
+
+    // Opens Login Modal
+    function showLoginModal(){
+      // Create New isolate scope for modal
+      var modalScope = $scope.$new(true);
+      // Pass modal data
+      modalScope.order = vm.deal;
+      var newLoginModal = $modal(
+        {
+          scope: modalScope, 
+          animation: 'am-slide-top',
+          templateUrl: 'app/login/templates/login-modal.template.html',
+          controller: 'loginModalController',
+          controllerAs: 'loginModal',
+          size: 'lg', 
+          show: false
+        });
+      newLoginModal.$promise.then(function(){
+        newLoginModal.show();
+      });
+    }
 
 
     function switchContext(){
