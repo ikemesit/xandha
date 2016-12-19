@@ -49,6 +49,7 @@
     vm.getawayDeals = [];
     vm.activitiesDeals = [];
     vm.foodDeals = [];
+    vm.search = "Search for Restaurants, Bars, Resorts etc...";
 
 
     vm.carouselInstanceId = Math.round(Math.random() * 10000);

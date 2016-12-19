@@ -4,8 +4,8 @@
   angular
     .module('xandha')
     .controller('LoginController', LoginController);
-
-
+  
+  /** @ngInject */
   function LoginController($log, $timeout, $scope, $state, $firebaseAuth, toastr, authService){
     var vm = this;
       vm.newUser = {

@@ -4,7 +4,7 @@
 
 
 	angular
-		.module('xandha')
+		.module('xandha.carouselModule', ['bc.Flickity'])
 		.directive('dealCarousel', dealCarousel);
 	
 
@@ -14,7 +14,7 @@
 			scope: {},
 			controller: DealCarouselController,
 			controllerAs: 'dlcarousel',
-			bindToController: { data: "=" },
+			bindToController: { data: "<" },
 			link: linkFunc,
 			template: "<div id='dealCarousel' class='deal-carousel-container'>" +
 					"<div data-ng-repeat='data in dlcarousel.slides track by $index'>" +
@@ -38,8 +38,8 @@
 		function linkFunc(scope){
 			var carouselElem = angular.element($document[0].getElementById('dealCarousel'));
 			var carouselNavElem = angular.element($document[0].getElementById('dealCarouselNav'));
-			var carouselInstanceId = Math.round(Math.random() * 1000); //carouselElem[0].id;
-			var carouselNavInstanceId = Math.round(Math.random() * 1000); //carouselElem[0].id;
+			var carouselInstanceId = Math.round(Math.random() * 1000) + Date.now();
+			var carouselNavInstanceId = Math.round(Math.random() * 1000) + Date.now(); //carouselElem[0].id;
 			var carouselOptions = {
 				// setGallerySize: false,
 				imagesLoaded: true,
@@ -64,11 +64,6 @@
 				percentPosition: false,
 				prevNextButtons: false
 			}
-
-			// Initialize Flickity Carousel on document ready
-			// angular.element($document[0]).ready(function(){
-			// 	FlickityService.create(carouselElem[0], carouselInstanceId);
-			// });
 
 			$timeout(function(){
 				FlickityService.create(carouselElem[0], carouselInstanceId, carouselOptions);

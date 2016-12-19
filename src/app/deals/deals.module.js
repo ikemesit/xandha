@@ -3,6 +3,8 @@
 
     angular
       .module('xandha.deals', [
-          'bc.Flickity'
+          'xandha.dashboardModule',
+          'xandha.carouselModule',
+          'xandha.dealsPageHeaderModule'
     ]);
 })();

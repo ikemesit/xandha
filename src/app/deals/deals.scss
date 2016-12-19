@@ -1,11 +1,26 @@
 .deal-page-header{
-  padding-top: 40px;
-  padding-bottom: 40px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
+  height:150px;
+  & .overlay{
+    margin: 0;
+    background: linear-gradient(160deg, #1A2980, #26D0CE);
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    opacity: 0.8;
+  }
   & h2{
-    @include center-block();
+    display: block;
     text-align: center;
     font-family: $raleway-bold;
     color: $white;
+    margin: auto;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    z-index: 5;
+    padding-top: 50px;
   }
 }
 
@@ -173,11 +188,11 @@
       padding-bottom: 15px;
       margin-bottom: 20px;
       border-bottom: thin dashed darken($body-bg-color, 10%);
-      &:before{
-        content: '\f0b0';
-        font-family: 'FontAwesome';
-        margin-right: 5px;
-      }
+      // &:before{
+      //   content: '\f0b0';
+      //   font-family: 'FontAwesome';
+      //   margin-right: 5px;
+      // }
     }
     & ul{
       padding-left: 0;
