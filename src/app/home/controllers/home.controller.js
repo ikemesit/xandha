@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController($log, $document, destinationFactory, dataAPI, dealsDataService) {
+  function HomeController($log, $timeout, $document, destinationFactory, dataAPI, dealsDataService) {
     var vm = this;
       vm.popularDestinations = null;
       vm.carousel = [
@@ -49,7 +49,8 @@
     vm.getawayDeals = [];
     vm.activitiesDeals = [];
     vm.foodDeals = [];
-    vm.search = "Search for Restaurants, Bars, Resorts etc...";
+    vm.localDataSearch = [];
+    vm.searchDeal = searchDeal;
 
 
     vm.carouselInstanceId = Math.round(Math.random() * 10000);
@@ -57,6 +58,17 @@
     loadGetawayDeals();
     loadFoodDeals();
     loadActivitiesDeals();
+
+    // $timeout(function(){
+    //   function mergeDeals() { 
+    //     return lodashFactory.concat(vm.activitiesDeals, vm.getawayDeals, vm.foodDeals);
+    //   };
+
+    //   vm.localDataSearch = mergeDeals();
+    //   $log.info(vm.localDataSearch);
+       
+    // }, 300);
+   
 
 
     // const carouselElem = angular.element($document[0].getElementById('homeCarousel'));
@@ -100,6 +112,7 @@
         });
       })
     }
+
     function loadFoodDeals(){
       dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
         snapshot.filter(function(obj){
@@ -109,6 +122,7 @@
         });
       })
     }
+
     function loadActivitiesDeals(){
       dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
         snapshot.filter(function(obj){
@@ -118,6 +132,19 @@
         });
       })
     }
+
+    function searchDeal(str){
+        var matches = [];
+        vm.localDataSearch.forEach(function(deal) {
+          if ((deal.category.toLowerCase().indexOf(str.toString().toLowerCase()) >= 0) ||
+              (deal.caption.toLowerCase().indexOf(str.toString().toLowerCase()) >= 0) ||
+              (deal.location.toLowerCase().indexOf(str.toString().toLowerCase()) >= 0)) {
+            matches.push(deal);
+          }
+        });
+        return matches;
+    }
+
 
 
   }

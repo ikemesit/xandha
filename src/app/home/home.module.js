@@ -3,6 +3,6 @@
 
     angular
       .module('xandha.home', [
-          
+        'angucomplete-alt'
     ]);
 })();

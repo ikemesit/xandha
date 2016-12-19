@@ -5,6 +5,7 @@
       .module('xandha.deals', [
           'xandha.dashboardModule',
           'xandha.carouselModule',
-          'xandha.dealsPageHeaderModule'
+          'xandha.dealsPageHeaderModule',
+          'xandha.activitiesModule'
     ]);
 })();

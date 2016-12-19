@@ -16,7 +16,18 @@
             Find amazing deals on top spots & destinations to relax. We provide you with information on the best spots to chill and relax across Nigeria as well as deals on getaways, luxury dining and fun activities
           </p>
           <div class="search-container">
-            <input type="text" class="form-control" ng-model="home.search">
+            <!--<input type="text" class="form-control" ng-model="home.search" placeholder="Search for Restaurants, Bars, Resorts etc...">-->
+            <angucomplete-alt id="ex2"
+              placeholder="Search for Restaurants, Bars, Resorts etc..."
+              pause="300"
+              selected-object="selectedDeal"
+              local-data="home.localDataSearch"
+              local-search="home.searchDeal"
+              title-field="searchTerm",
+              search-fields = "caption, location, category"
+              minlength="2"
+              input-class="form-control"
+              match-class="highlight" /> 
             <i class="fa fa-search fa-lg"></i>
           </div>
         </div>

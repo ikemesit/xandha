@@ -6,7 +6,7 @@
 		.factory('dealFactory', dealFactory);
 
 
-	function dealFactory($log, dataAPI, toastr){
+	function dealFactory($log, dataAPI, toastr, ngDialog){
 		var factory = {
 			addDeal: addDeal,
 			getAllDeals: getAllDeals,

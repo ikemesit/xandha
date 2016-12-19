@@ -5,11 +5,8 @@
     .module('xandha', [
 		
 		// Feature dep
-		'xandha.admin',
 		'xandha.deals',
 		'xandha.destinations',
-		'xandha.orders',
-		'xandha.login',
 		'xandha.home',
 		'xandha.user',
 
@@ -28,10 +25,15 @@
 		'firebase',
 		'LocalStorageModule',
 		'ngMap',
+		'angularRandomString',
 		'ngImageAppear',
 		'angular-spinkit',
 		'mgcrea.ngStrap',
-		'angular-loading-bar'
+		'angular-loading-bar',
+		'ngDialog',
+        'ngWig',
+        'toastr'
+		
 		
 	]);
 
