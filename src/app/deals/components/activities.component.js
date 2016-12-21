@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('xandha.activitiesModule', [])
+		.module('xandha')
 		.component('activitiesComponent', {
 			restrict: 'E',
 			templateUrl: 'app/deals/templates/activities.template.html',
 			controller: ActivitiesController,
-			controllerAs: 'actv'
+			controllerAs: '$ctrl'
 		});
 
 	ActivitiesController.$inject = ['dataAPI'];

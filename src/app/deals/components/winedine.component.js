@@ -3,10 +3,16 @@
 
 	angular
 		.module('xandha')
-		.controller('GetawaysController', GetawaysController);
+		.component('winedineComponent', {
+			restrict: 'E',
+			templateUrl: 'app/deals/templates/winedine.template.html',
+			controller: WineDineController,
+			controllerAs: '$ctrl'
+		});
 
+	WineDineController.$inject = ['dataAPI'];
 
-	function GetawaysController(dataAPI){
+	function WineDineController(dataAPI){
 		var vm = this;
 			vm.deals = [];
 			vm.categoryFilters = {
@@ -22,11 +28,10 @@
 			 * and pushes to controller
 			 * model for use			 * 
 			 */
-
 			function loadDeals(){
 				dataAPI.dbArrRef("deals").$loaded().then(function(snapshot){
 					snapshot.filter(function(obj){
-						return obj.category == "getaways";
+						return obj.category == "food & drinks";
 					}).forEach(function(data){
 						vm.deals.push(data);
 					});

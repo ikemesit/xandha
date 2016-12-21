@@ -37,23 +37,20 @@
 
       .state('deals.getaways', {
         url: '/getaways',
-        templateUrl: 'app/deals/templates/getaways.template.html',
-        controller: 'GetawaysController',
-        controllerAs: 'gw'
+        template: '<getaways-component></getaways-component>',
+        component: 'getawaysComponent'
       })
 
       .state('deals.winedine', {
         url: '/wine_dine',
-        templateUrl: 'app/deals/templates/winedine.template.html',
-        controller: 'WineDineController',
-        controllerAs: 'wd'
+        template: '<winedine-component></winedine-component>',
+        component: 'winedineComponent'
       })
 
       .state('deals.activities', {
         url: '/activities',
-        templateUrl: 'app/deals/templates/activities.template.html',
-        controller: 'ActivitiesController',
-        controllerAs: 'actv'
+        template: '<activities-component></activities-component>',
+        component: 'activitiesComponent'
       })
 
       .state('deal', {
