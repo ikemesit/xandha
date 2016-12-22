@@ -1,70 +1,44 @@
 <div class="row">
-	<div class="col-md-12 col-lg-12">
-		<div class="row">
-			<div class="panel panel-body" style="border: none">
-				<div class="panel-header">
-				<h3 align="center">POST A <img src="assets/images/deal.png" height="30" width="30">DEAL</h3>
-				<p align="center">Put your deal in front of millions of tourist seekers</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-			<div class="clearfix"></div>
-
-		<div class="row">
-			<section class="panel panel-priamry">
-				<header class="panel-heading" style="background-color: #06043d">
-					<h2 class="panel-title" style="color: #fff">Manage your Deals</h2>
-				</header>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="mb-md">
-									<button type="button" class="btn btn-primary" ng-click="managedeal.openModal()">Add Deal <i class="fa fa-plus-square"></i></button>
-							</div>
-						</div>
-						<br>
+	<section class="panel panel-default">
+		<header class="panel-heading">
+			<h2 class="panel-title">Manage Deals</h2>
+		</header>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="mb-md">
+						<button type="button" class="btn btn-primary" ng-click="$ctrl.createDeal()">Add Deal <i class="fa fa-plus-square"></i></button>
 					</div>
-					<table class="table table-bordered table-striped mb-none" id="datatable-default">
-						<thead>
-							<tr>
-								<th>Caption</th>
-								<th>Category</th>
-								<th class="hidden-phone">Location</th>
-								<th class="hidden-phone">Price</th>
-								<th class="hidden-phone">End Date</th>
-
-								<th class="hidden-phone">Actions</th>
-
-
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr class="gradeX" ng-repeat="data in managedeal.dealDataStore track by data.$id">
-								
-								<td style="font-weight: bolder;" ng-bind="data.caption"></td>
-								<td ng-bind="data.category"></td>
-								<td ng-bind="data.location"></td>
-								<td class="center hidden-phone">{{data.price | number:'2'}}</td>
-								<td class="center hidden-phone">{{data.endDate | date}}</td>
-
-								<td class="actions" align="center">
-									<a href="#" ng-click="managedeal.editModal(data)" class="on-default edit-row" title="Edit Destination"><i class="fa fa-pencil"></i></a>
-									<a href="#" ng-click="managedeal.deleteDeal(data)" class="on-default remove-row" title="Delete Destination"><i class="fa fa-trash-o"></i></a>
-								</td>
-
-							</tr>
-							
-							
-						</tbody>
-
-					</table>
 				</div>
-			</section>
-		</div>
+				<br>
+			</div>
+			<table class="table table-bordered table-striped mb-none" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Caption</th>
+						<th>Category</th>
+						<th class="hidden-phone">Location</th>
+						<th class="hidden-phone">Price</th>
+						<th class="hidden-phone">End Date</th>
+						<th class="hidden-phone">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="gradeX" ng-repeat="data in $ctrl.dealDataStore track by data.$id">
+						
+						<td style="font-weight: bolder;" ng-bind="data.caption"></td>
+						<td ng-bind="data.category"></td>
+						<td ng-bind="data.location"></td>
+						<td class="center hidden-phone">{{data.price | number:'2'}}</td>
+						<td class="center hidden-phone">{{data.endDate | date}}</td>
 
-	</div>
+						<td class="actions" align="center">
+							<a href="#" ng-click="$ctrl.editModal(data)" class="on-default edit-row" title="Edit Destination"><i class="fa fa-pencil"></i></a>
+							<a href="#" ng-click="$ctrl.deleteDeal(data)" class="on-default remove-row" title="Delete Destination"><i class="fa fa-trash-o"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
 </div>

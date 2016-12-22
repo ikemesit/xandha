@@ -12,13 +12,15 @@
 }
 // Admin Content
 .admin-content{
-	width: 80vw;
+	width: 85vw;
 	min-height: 100vh;
 	height: 100%;
 	display: inline-block;
-	padding-left: 20px;
+	padding: 0;
 	float: left;
-	margin-left: 15vw;
+	left: 15vw;
+	position: absolute;
+	top: 0;
 	& form{
 		& .btn{
 			// @include center-block();
@@ -49,21 +51,27 @@
 }
 
 // Admin Sidebar
-h2.nav-title{
-	color: $white;
-	display: 'block';
-	padding-left: 20px;
-	// text-align: center;
-	font-family: $raleway-bold;
-}
+
 .admin-sidebar{
 	width: 15vw;
 	min-height: 100vh;
 	background-color: $prime-blue;
-	padding: 50px 0;
+	padding: 20px 0 50px 0;
 	display: inline-block;
 	float: left;
 	position: fixed;
+	& h3.nav-title{
+		color: $white;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		display: 'block';
+		font-family: $raleway-bold;
+		padding-left: 20px;
+		& a{
+			text-decoration: none;
+			color: $white;
+		}
+	}
 }
 
 // Admin Sidebar Nav
@@ -193,3 +201,4 @@ div.tab-pane{
 	opacity: 0;
 	transition: all 1s;
 }
+

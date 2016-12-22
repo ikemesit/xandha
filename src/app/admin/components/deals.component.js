@@ -3,10 +3,16 @@
 
 	angular
 		.module('xandha')
-		.controller('ManageDealsController', ManageDealsController);
+		.component('manageDealsComponent', {
+			restrict: 'E',
+			templateUrl: 'app/admin/templates/deals.template.html',
+			controller: ManageDealsController,
+			controllerAs: '$ctrl'
+		});
 
+	ManageDealsController.$inject = ['$log', '$timeout', '$rootScope', '$uibModal', 'dealFactory', 'dataAPI', 'toastr', '_'];
 
-	function ManageDealsController($log, $timeout, $rootScope, dealFactory, ngDialog, dataAPI, toastr, _){
+	function ManageDealsController($log, $timeout, $rootScope, $uibModal, dealFactory, dataAPI, toastr, _){
 		var vm = this;
 		// Deal models
 		vm.dealEdit = null;
@@ -15,12 +21,8 @@
 		vm.dataEntryKey = null;
 		vm.max = 100;
 		vm.progress = 0;
-		vm.openModal = openModal;
-		vm.editModal = editModal;
-
-
-
-		
+		vm.createDeal = createDeal;
+		vm.editModal = editModal;		
 		vm.editDeal = editDeal;
 		//vm.saveEdit = saveEdit;
 		vm.deleteDeal = deleteDeal;
@@ -28,17 +30,22 @@
 		// Populate dealDataStore model
 		loadAllDeals();
 
-		function openModal(){
-			$rootScope.dealEdit = null;
-	      ngDialog.open({
-	        template: 'app/admin/templates/createDeal.template.html',
-	        className: 'ngdialog-theme-default',
-	        appendClassName: 'ngDialog-custom',
-	        width: '90%',
-	        controller: 'CreateDealModalController',
-       		 controllerAs: 'cd',
-	        closeByNavigation: true
-	      });
+		function createDeal(){
+		  var modalInstance = $uibModal.open({
+				ariaLabelledBy: 'modal-title',
+				ariaDescribedBy: 'modal-body',
+				backdrop: 'static',
+				templateUrl: 'app/admin/templates/create-deal.template.html',
+				controller: 'CreateDealModalController',
+				controllerAs: '$ctrl',
+				size: 'lg'
+			});
+
+			modalInstance.result.then(function () {
+				$log.info('Modal opened at: ' + new Date());
+				}, function () {
+				$log.info('Modal dismissed at: ' + new Date());
+			});
 	    }
 
 	    function editModal(data){
@@ -57,8 +64,6 @@
 	        closeByNavigation: true
 	      });
 	    }
-
-		// }
 
 		function loadAllDeals(){
 			vm.dealDataStore = dealFactory.getAllDeals();

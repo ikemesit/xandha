@@ -53,7 +53,7 @@
     }
     & .intro-text{
       position: absolute;
-      margin-top: 10vh;
+      margin-top: 15vh;
       display: block;
     }
     & h1{
@@ -77,6 +77,11 @@
       padding-right: 10vw;
       line-height: 1.2em;
       font-size: 18px;
+    }
+    // Temp Feature
+    & i{
+      color: $white;
+      margin-top: 50px;
     }
     & .search-container{
       width: 100%;

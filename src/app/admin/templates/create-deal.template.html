@@ -1,0 +1,112 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$close()"><span aria-hidden="true">&times;</span></button>
+	<h4 class="modal-title">Add Deal</h4>
+</div>
+<div class="modal-body">
+	<form role="form">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="deal-caption">Deal Caption</label>
+					<input type="text" class="form-control" id="deal-caption"  ng-model="$ctrl.deal.caption" placeholder="Deal Caption">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="price">Old Price</label>
+					<input type="text" class="form-control" id="old-price"  ng-model="$ctrl.deal.oldPrice" placeholder="Old Price">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="discount">New Price</label>
+					<input type="text" class="form-control" id="new-price"
+					ng-change="$ctrl.calculateDiscount($ctrl.deal.oldPrice, $ctrl.deal.newPrice)" ng-model="$ctrl.deal.newPrice" placeholder="New Price">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="discounted-price">Calculated Discount</label>
+					<input type="text" class="form-control" id="calculated-discount"
+						ng-model="$ctrl.deal.discount" placeholder="Calculated Discount" disabled>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="start-date">Starts</label>
+					<input type="date" class="form-control" 
+						ng-model="$ctrl.deal.startDate"
+						ng-required="true"
+						placeholder="Start Date">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="end-date">Ends</label>
+					<input type="date" class="form-control" 
+						ng-model="$ctrl.deal.endDate"
+						ng-required="true"
+						placeholder="End Date">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="form-group">
+					<label for="categories">Category</label>
+					<select id="categories" class="form-control input-lg"  ng-model="$ctrl.deal.category">
+						<option value="food & drinks">Food & Drinks</option>
+						<option value="activities">Activities</option>
+						<option value="getaways">getaways</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12">
+				<div class="form-group">
+					<label for="location">Location</label>
+					<select id="location" class="form-control input-lg"  ng-model="$ctrl.deal.location">
+						<option value="Abuja">Abuja</option>
+						<option value="Lagos">Lagos</option>
+						<option value="Others">Others</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="deal-details">Deal Details</label>
+					<ng-wig ng-model="$ctrl.deal.details" source-mode-allowed></ng-wig>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="company-details">Company Details</label>
+					<ng-wig  ng-model="$ctrl.deal.company" source-mode-allowed></ng-wig>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="well">
+					<form class="dropzone"
+						action="/images"
+						method="post"
+						enctype="multipart/form-data"
+						ng-dropzone
+						dropzone-config="$ctrl.dropzoneConfig"
+						event-handlers="{ 'addedfile': $ctrl.dzAddedFile, 'error': $ctrl.dzError }">
+						<!--<div class="dz-default dz-message">
+							<h4>Drop here files to upload</h4>
+						</div>-->
+					</form>
+				</div>
+				<!--<button type="button" class="btn btn-primary" ng-click="$ctrl.uploadDealImages()">Add Images</button>-->			
+			</div>
+			<div class="col-xs-12">
+				<p>{{ $ctrl.showError }}</p>
+			</div>
+		</div><!-- .row -->
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="$close()">Close</button>
+	<button type="button" class="btn btn-primary" ng-click="$ctrl.submitDealEntry()" >Save Deal</button>
+</div>
+
+
+

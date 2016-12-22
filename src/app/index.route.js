@@ -95,9 +95,8 @@
 
       .state('admin.dashboard', {
         url: '/dashboard',
-        templateUrl: 'app/admin/templates/dashboard.template.html',
-        controller: 'AdminDashboardController',
-        controllerAs: 'admindash'
+        template: '<admin-dashboard-component></admin-dashboard-component>',
+        component: 'adminDashboardComponent'
       })
 
       .state('admin.destinations', {
@@ -109,9 +108,8 @@
 
       .state('admin.deals', {
         url: '/manage/deals',
-        templateUrl: 'app/admin/templates/deals.template.html',
-        controller: 'ManageDealsController',
-        controllerAs: 'managedeal'
+        template: '<manage-deals-component></manage-deals-component>',
+        component: 'manageDealsComponent'
       });
 
     $urlRouterProvider.otherwise('/');

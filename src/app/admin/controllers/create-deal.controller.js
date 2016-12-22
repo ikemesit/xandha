@@ -6,46 +6,24 @@
 
     .controller('CreateDealModalController', CreateDealModalController);
 
-
-  function CreateDealModalController($log, $state, toastr, $scope, $rootScope, dataAPI, ngDialog, destinationFactory, dealFactory, _, $filter){
+  /**@ngInject */
+  function CreateDealModalController($log, $state, $document, toastr, $scope, $timeout, dataAPI, $uibModalInstance, destinationFactory, dealFactory, _, $filter){
     var vm = this;
-        //vm.deal = null;
     vm.showError = null;   
-    //vm.dealDataStore = null; // Firebase data store reference
-    if($rootScope.dealEdit != null) {
-         vm.dealEdit = $rootScope.dealEdit;
-        vm.deal = vm.dealEdit;
-    }
-    else
-    {
-        vm.deal = {
-            caption: null,
-            price: '0.00',
-            discount: '0.00',
-            discountedPrice: null,
-            startDate: new Date(),
-            endDate: new Date(),
-            category: null,
-            details: null,
-            company: null,
-            other: null,
-            relatedImages: 'Image not available'
-        };
-    }
-    // Init
-    vm.submitDealEntry = submitDealEntry;
-    vm.calculateDiscountedPrice = calculateDiscountedPrice;
-    vm.destEdit;
-    //vm.uploadDestImages = uploadDestImages;
-    // discount: '0%',
-    loadAllDeals();
-    function loadAllDeals(){
-            vm.dealDataStore = dealFactory.getAllDeals();
-        } 
+    vm.deal = {
+                caption: null,
+                oldPrice: '0.00',
+                newPrice: '0.00',
+                discount: null,
+                startDate: new Date(),
+                endDate: new Date(),
+                category: null,
+                details: null,
+                company: null,
+                relatedImages: 'Image not available'
+            };
     vm.dt = new Date();
     vm.format = 'dd-MMMM-yyyy';
-    vm.popup1 = { opened: false};
-    vm.popup2 = { opened: false };
     vm.dateOptions = {
         formatYear: 'yy',
         showWeeks: false,
@@ -53,36 +31,44 @@
         maxMode: 'month',
         appendToBody: true,
         startingDay: 1
-    }
-    vm.saveEdit = saveEdit;
+    };
+    vm.dataEntryKey = null;
     vm.uploadDealImages = uploadDealImages;
-    vm.open1 = open1;
-    vm.open2 = open2;
-    vm.showUpper = true;
-    vm.showNext = showNext;
+    vm.submitDealEntry = submitDealEntry;
+    vm.calculateDiscount = calculateDiscount;
+    // Dropzone Methods & Config
+    vm.dzAddedFile = dzAddedFile;
+    vm.dzError = dzError;
+    vm.dropzoneConfig = {
+        parallelUploads: 3,
+        maxFileSize: 30,
+        autoProcessQueue: false
+    };
+    // vm.dropzone = new Dropzone();
 
-    function showNext(){
-         vm.showUpper = false;
-        }
-    function open1(){
-            vm.popup1.opened = true;
+
+
+    $log.info($document[0].querySelector('.dropzone'));
+
+    function dzAddedFile(file) {
+        $log.log(file);
     }
 
-    function open2(){
-        vm.popup2.opened = true;
+    function dzError(file, errorMessage) {
+        $log.log(errorMessage);
+    }
+    // Calculates discount percentage from old price and new price
+    function calculateDiscount(oldPrice, newPrice){
+        vm.deal.discount =  100 - Math.floor((Number(newPrice)/Number(oldPrice)) * 100);
     }
 
-    function calculateDiscountedPrice(price, discount){
-            vm.deal.discountedPrice =  Number(price) - Number(price) * Number(Number(discount)/100);
-        }
-
-    function saveEdit(){
-            vm.deal.startDate = $filter('date')(vm.deal.startDate, "fullDate");
-            vm.deal.endDate = $filter('date')(vm.deal.endDate, "fullDate");
-            vm.dealDataStore.$save(vm.deal);
-            ngDialog.closeAll();
-            toastr.success("Deal Successfully Edited !");
-        }
+    // function saveEdit(){
+    //         vm.deal.startDate = $filter('date')(vm.deal.startDate, "fullDate");
+    //         vm.deal.endDate = $filter('date')(vm.deal.endDate, "fullDate");
+    //         vm.dealDataStore.$save(vm.deal);
+    //         ngDialog.closeAll();
+    //         toastr.success("Deal Successfully Edited !");
+    //     }
 
     function submitDealEntry(){
         if(
@@ -111,7 +97,7 @@
     }
     function uploadDealImages(){
             if( vm.dataEntryKey !== null){
-                var data = document.querySelector("#images_upload").files;
+                var data = $document[0].querySelector("#images_upload").files;
                 var images = [];
                 dealFactory.uploadDealImages(vm.dataEntryKey, data);
                 // grab image storage URls on upload completion

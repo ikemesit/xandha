@@ -4,11 +4,11 @@
 		<div class="hidden-xs col-md-2 dashboard-sidebar">
 			<h5>Filter by Location</h5>
 			<ul>
-				<li ng-repeat = "location in dashboard.locations track by $index">
+				<li ng-repeat = "location in $ctrl.locations track by $index">
 					<label>
 						<input type="checkbox" 
-							ng-model = "dashboard.locationFilters[$index]" 
-							ng-change = "dashboard.getFilterVal(location);">{{ ::location }}
+							ng-model = "$ctrl.locationFilters[$index]" 
+							ng-change = "$ctrl.getFilterVal(location);">{{ ::location }}
 					</label>
 				</li>
 			</ul>
@@ -16,7 +16,7 @@
 		<div class="col-xs-12 col-md-10 deals-dashboard">
 			<div class="row">
 				<div class="col-xs-12 col-md-4"
-					ng-repeat="deal in dashboard.deals | locationFilter: dashboard.filter
+					ng-repeat="deal in $ctrl.deals | locationFilter: $ctrl.filter
 					track by deal.$id">
 					<a ui-sref="deal({key: deal.$id})" title="">
 						<div class="card" ui-sref="deal">
@@ -37,7 +37,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-xs-12 default-content" ng-show="!dashboard.deals.length">
+				<div class="col-xs-12 default-content" ng-show="!$ctrl.deals.length">
 					<h4>Nothing to show here...</h4>
 					<i class="fa fa-frown-o fa-2x"></i>
 				</div>

@@ -32,7 +32,8 @@
 		'angular-loading-bar',
 		'ngDialog',
         'ngWig',
-        'toastr'
+        'toastr',
+		'ngDropzone'
 		
 		
 	]);

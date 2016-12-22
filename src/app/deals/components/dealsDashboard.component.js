@@ -8,7 +8,7 @@
 			restrict : 'E',
 			templateUrl: 'app/deals/templates/dealsDashboard.template.html',
 			controller: DealsDashboardController,
-			controllerAs: 'dashboard',
+			controllerAs: '$ctrl',
 			bindings: { data: "<"}
 		});
 
